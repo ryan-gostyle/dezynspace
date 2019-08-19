@@ -1,0 +1,597 @@
+@import '~antd/dist/antd.css';
+
+.ant-llapse-header {
+  color: #fff !important;
+}
+h1{
+  font-size: 24px !important;
+}
+h3{
+  font-size: 1.17em !important;
+}
+body{
+  font-family: "Fira Sans",sans-serif;
+}
+.App {
+  text-align: center;
+}
+.ant-layout{
+  background: #fff;
+}
+.ant-layout-header {
+  height: 80px;
+  padding: 0 50px;
+  line-height: 50px;
+  background: #4f3949;
+}
+
+.title{
+  padding: 15px 0 0 0;
+  font-weight: 700;
+  color: #4f3949;
+  font-size: xx-large;
+}
+.rowWidth{
+  max-width: 1075px;
+  margin: 0 auto;
+}
+.sections{
+  padding: 35px 15px;
+  height:100%;
+}
+
+.section-2,.section-4,.section-5{
+  margin: 10px;
+  padding: 10px 15px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff !important;
+  font-weight: 600;
+}
+
+.navbar-dark .navbar-toggler {
+  color: rgba(0,0,0,.5);
+  border-color: rgba(0,0,0,.1);
+  border: none;
+}
+
+.howItWorksTitle{
+  padding: 15px 0 0 0;
+  color: #2d2926 ;
+}
+.howItWorksImage{
+  width: 100%;
+  height: 100%;
+  margin: 10px;
+  padding: 5px 15px 0 15px;
+}
+.howItWorksButton{
+  -moz-user-select: "none";
+  -ms-user-select: "none";
+  -webkit-user-select: "none";
+  user-select: "none";
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  position: relative;
+  width: auto;
+  background-color: #4F3948;
+  border-radius: 0;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 2.2;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: outline 0.1s linear;
+  color: #fff;
+  border: none;
+  padding: 5px 15px;
+}
+/* .column-padding{
+  padding: 15px 10px;
+} */
+
+.content-align{
+  /* max-height: 560px; */
+  height: 100%;
+  top: 15px;
+ /* left: 29px;*/
+  display: block;
+  padding: 15px 0;
+  margin: 20px 0;
+}
+.section-3, .section-6{
+  margin: 10px 0;
+  background-color: rgb(79, 57, 73);
+  padding: 10px 15px;
+
+}
+
+.titleAboutUs,.titleSubscribe{
+  padding: 15px 0;
+  font-weight: 700;
+  color: #fff;
+  font-size: xx-large;
+}
+
+.contentParagraph{
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 500;
+  line-height: 26px;
+  font-size: 15px;
+  color: #fff !important;
+  text-align: justify;
+  max-width: 430px;
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.aboutUsImage{
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  margin: 0 auto;
+  max-width: 390px;
+  max-height: 505px;
+  padding: 5px 15px 0 15px;
+}
+
+.ant-avatar.ant-avatar-icon {
+  width: 100px;
+  height: 100px;
+  line-height: 64px;
+  font-size: 85px;
+  position: relative;
+  top: -48px;
+  background: #4F3439;
+}
+.contentParagraphInverse{
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 600;
+  line-height: 26px;
+  font-size: 15px;
+  color: #4F3439 !important;
+  text-align: center;
+  max-width: 430px;
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  top: -42px;
+  font-style: italic;
+  position: relative;
+  padding: 10px;
+}
+.h3Testimonial{
+  position: relative;
+  top: -25px;
+  color: #4f3439;
+  font-weight: 600;
+}
+.rowWidthTestimonial{
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 75px;
+}
+.ant-avatar.ant-avatar-icon{
+  line-height: 43px !important;
+}
+.subscribeTitle{
+  padding: 15px 0 0 0;
+  color: #fff;
+  font-weight: 600;
+}
+
+.contentParagraphSubscribe{
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 500;
+  line-height: 26px;
+  font-size: 15px;
+  color: #fff !important;
+  text-align: center;
+  max-width: 430px;
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.subscribeImage{
+  width: 70%;
+  height: inherit;
+  margin: 10px;
+  padding: 5px 15px 0 15px;
+}
+.signupButton{
+  -moz-user-select: "none";
+  -ms-user-select: "none";
+  -webkit-user-select: "none";
+  user-select: "none";
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  position: relative;
+  width: auto;
+  background-color: #4F3948;
+  border-radius: 0;
+  font-size: large;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 2.2;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: outline 0.1s linear;
+  color: #fff;
+  border: none;
+  padding: 5px 68px;
+}   
+.signupAlready{
+  color: #4F3948;
+  font-weight: 400;
+  font-size: large;
+  padding: 5px;
+  margin: 5px 10px; 
+}
+
+.footer li{
+  list-style-type: none;
+  text-align: left;
+  padding: 2px;
+}
+
+.footer li a{
+  font-weight: 500;
+  color:  #333;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.getStartedButton{
+    border-radius: 5px;
+    background-color: #4F3948;
+    color: white;
+    width: 200px;
+    height: 50px;
+    border: 0px;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 5px;
+}
+.faqs ul li{
+  font-weight:500;
+}
+
+.ant-collapse {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #a64d79;
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5;
+  list-style: none;
+  -webkit-font-feature-settings: 'tnum';
+  font-feature-settings: 'tnum', "tnum";
+  background-color: #fafafa;
+  border: 1px solid rgb(79, 57, 72);
+  border-bottom: 0;
+  border-radius: 4px;
+}
+
+.ant-collapse > .ant-collapse-item > .ant-collapse-header{
+  background-color: rgb(79, 57, 72) !important;
+  color: #fff;
+}
+li.nav-item {
+  padding: 5px;
+}
+/* 
+img:hover {
+  transition: transform .5s ease !important;
+  transform: scale(1.5) !important;
+} */
+.navbar-dark .navbar-toggler {
+  color: rgba(255,255,255,.5);
+  border-color: rgba(255,255,255,.1);
+  border: 1px solid #fff;
+  border-radius: 3px;
+}
+
+@media (min-width:320px)  { 
+  .banner-hero div:nth-child(1){
+    background-image: url('https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Rectangle+123.png');
+    background-size: cover;
+    height: 500px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+  .banner-hero div:nth-child(2){
+    background-image: url('https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Hero+Banner+vr+04.png');
+    background-size: cover;
+    height: 300px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+  .wave{
+    opacity: 0.6;
+    width: 100%; 
+    position: relative; 
+    z-index: 2; 
+    top: 80%; 
+    right: 20%;
+  }
+  .section-four .img-container img.service-list{
+    height:50px;
+    width:50px;
+  }
+  .dots{
+    position: relative;
+    z-index: 2;
+    right: 123px;
+    top: 170px;
+    height: 400px;
+  }
+}
+@media (min-width:481px)  {
+  .banner-hero div:nth-child(1){
+    background-image: url('https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Rectangle+123.png');
+    background-size: cover;
+    height: 500px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+  .banner-hero div:nth-child(2){
+    background-image: url('https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Hero+Banner+vr+04.png');
+    background-size: cover;
+    height: 300px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+  .wave{
+    opacity: 0.6;
+    width: 100%; 
+    position: relative; 
+    bottom: top; 
+    z-index: 2; 
+    top: 80%; 
+    right: 20%;
+  }
+  .section-four .img-container img.service-list{
+    height:50px;
+    width:50px;
+  }
+  .dots{
+    position: relative;
+    z-index: 2;
+    top:200px;
+    right: 200px;
+    height: 400px;
+  }
+}
+@media (min-width:641px)  { 
+  .banner-hero div:nth-child(1){
+    background-image: url('https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Rectangle+123.png');
+    background-size: cover;
+    height: 300px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+  .banner-hero div:nth-child(2){
+    background-image: url('https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Hero+Banner+vr+04.png');
+    background-size: cover;
+    height: 300px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+  .wave{
+    opacity: 0.6;
+    width: 100%; 
+    position: relative; 
+    bottom: top; 
+    z-index: 2; 
+    top: 67%; 
+    right: 20%;
+    height: 145px;
+  }
+  .section-four .img-container img.service-list{
+    height:100px;
+    width:100px;
+  }
+  .dots{
+    position: relative;
+    z-index: 2;
+    top: 325px;
+    right: 270px;
+    height: 350px;
+  }
+}
+@media (min-width:961px)  {
+  .banner-hero div:nth-child(1){
+    background-image: url('https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Rectangle+123.png');
+    background-size: cover;
+    height: 720px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+  .banner-hero div:nth-child(2){
+    background-image: url('https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Hero+Banner+vr+04.png');
+    background-size: cover;
+    height: 720px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+  .wave{
+    opacity: 0.6;
+    width: 900px; 
+    position: relative; 
+    bottom: top; 
+    z-index: 2; 
+    top: 80%; 
+    right: 20%;
+    height: 145px;
+  }
+  .section-four .img-container img.service-list{
+    height:150px;
+    width:auto;
+  }
+  .dots{
+    position: relative;
+    z-index: 2;
+    top: 325px;
+    right: 200px;
+    height: 400px;
+  }
+ }
+@media (min-width:1025px) {
+  .banner-hero div:nth-child(1){
+    background-image: url('https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Rectangle+123.png');
+    background-size: cover;
+    height: 720px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+  .banner-hero div:nth-child(2){
+    background-image: url('https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Hero+Banner+vr+04.png');
+    background-size: cover;
+    height: 720px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+  .wave{
+    opacity: 0.6;
+    width: 900px; 
+    position: relative; 
+    bottom: top; 
+    z-index: 2; 
+    top: 80%; 
+    right: 20%;
+    height: 145px;
+  }
+  .section-four .img-container img.service-list{
+    height:150px;
+    width:auto;
+  }
+  .dots{
+    position: relative;
+    z-index: 2;
+    top: 325px;
+    right: 310px;
+    height: 400px;
+  }
+}
+/* section two */
+.section-two .img-container{
+  background:#e5e5e5;
+  height:500px;
+  width:100%;
+}
+
+.section-two .text-content{
+  margin: 0px auto;
+  max-height: 540px;
+  height: 100%;
+  width: 100%;
+  max-width: 700px;
+  text-align: left;
+  padding: 10px 15px;
+}
+.section-two h1 {
+  font-size: 32px !important;
+  font-weight: 400 !important;
+}
+/* -section two */
+/*section three*/
+.section-three .text-container,.section-three .video-container{
+  max-height:540px;
+  height:100%;
+  width:100%;
+  text-align: center;
+  padding: 20px;
+}
+
+.section-three .text-content{
+  position: relative;
+  text-align: justify;
+  padding: 15px 5px 5px 5px;
+  height:400px;
+  max-width:470px;
+  margin:0 auto;
+}
+
+.section-three .text-content h2{
+  color: #f2273b;
+}
+
+.section-three .text-content p{
+  color:#333;
+  position:relative;
+  text-align:justify;
+  padding:5px 12px;
+}
+
+.section-three .video-content{
+  background:#333;
+  height:400px;
+  max-width:700px;
+  position:relative;
+  margin:0 auto;
+}
+/*- section three */
+/*section four*/
+.section-four{
+  background: #8360c3;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2ebf91, #8360c3);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2ebf91, #8360c3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  margin:50px 0;
+  height:860px;
+  width:100%; 
+  position:relative; 
+  top:230px; 
+}
+
+.section-four .section-container{
+  max-height: 1000px;
+  display:inline-block;
+  position:relative;
+  bottom:230px;
+}
+
+.section-four .img-container{
+  max-width: 1250px;
+  width:100%;
+  border-radius: 28px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.section-four h1{
+  color:#000;
+  width:100%;
+  height: auto;
+  text-align: center;
+  margin:0 auto;
+  font-size: 25px !important;
+  font-weight: 400 !important;
+}
+
+.jumbotron{
+    background:#fff !important;
+    max-width:1250px;
+    width:100%;
+    border-radius: 28px !important;
+    margin:0 auto;
+    padding:20px !important;
+
+}
+
+/*-section four */
