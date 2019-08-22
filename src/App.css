@@ -10,7 +10,7 @@ h3{
   font-size: 1.17em !important;
 }
 body{
-  font-family: "Fira Sans",sans-serif;
+  font-family: "Open Sans", sans-serif !important;
 }
 .App {
   text-align: center;
@@ -44,10 +44,20 @@ body{
   margin: 10px;
   padding: 10px 15px;
 }
-
-.navbar-dark .navbar-nav .nav-link {
+.login-navitem{
+  text-align: center;
+  background: rgb(242, 39, 59);
+  padding: 5px 30px !important;
+  border-radius: 25px;
+  margin-left: 25px;
+  
+}
+.login-navitem .login{
   color: #fff !important;
-  font-weight: 600;
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: #a20021 !important;
+  font-weight: 400;
 }
 
 .navbar-dark .navbar-toggler {
@@ -306,21 +316,38 @@ img:hover {
   border-radius: 3px;
 }
 
-@media (min-width:320px)  { 
+@media (min-width:320px)  {
+  .banner-description{
+    width:auto;
+    position:relative;
+    top:20%;
+    font-size:1em;
+  }
   .banner-hero div:nth-child(1){
-    background-image: url('https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Rectangle+123.png');
+    background-image: url('https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Rectangle+124.png');
     background-size: cover;
     height: 500px;
     background-position: 50% 50%;
     background-repeat: no-repeat;
   }
   .banner-hero div:nth-child(2){
-    background-image: url('https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Hero+Banner+vr+04.png');
+    background-image: url('https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/081919web-banner-vr-04.png');
     background-size: cover;
     height: 300px;
     background-position: 50% 50%;
     background-repeat: no-repeat;
   }
+  .sectiontwo-dots{
+    opacity: 0.9;
+    width: auto;
+    position: relative;
+    z-index: 2;
+    bottom: 10px;
+    left: 75%;
+    height: 450px;
+    display:none;
+  }
+  
   .wave{
     opacity: 0.6;
     width: 100%; 
@@ -337,30 +364,138 @@ img:hover {
     position: relative;
     z-index: 2;
     right: 123px;
-    top: 170px;
     height: 400px;
+    display:none;
   }
+  .head-1{
+    color:#f2273b;
+    font-size:1.8em;
+    font-weight:500;
+    text-align:center;
+  }
+  .head-2{
+    color:#03cea4;
+    font-size:1.3em;
+    font-weight:400;
+    text-align:center;
+  }
+  .head-3{
+    color:#f2273b;
+    font-size:2.5em;
+    font-weight:400;
+    text-align:left;
+    margin-top:1.5em;
+    text-align:center;
+  }
+  .head-5{
+    color:#fff;
+    font-size:1.5em;
+    font-weight:400;
+    margin-top:1.5em;
+    text-align:center;
+  }
+  .head-6{
+    color:#fff;
+    font-size:1em;
+    font-weight:400;
+    margin-top:1.5em;
+    text-align:justify;
+    padding:10px 15px;
+  }
+  .mobile{
+    width: auto;
+    position: relative;
+    height: 560px;
+}
+.left-purple{
+  bottom: 800px;
+  position: relative;
+  right: 400px;
+}
+.right-purple{
+  bottom: 2500px;
+  position: relative;
+  left: 320px;
+}
+.xmarks{
+  position: relative;
+  height: 420px;
+  width: auto;
+  z-index: 2;
+  left: 130px;
+  top: 150px;
+  display:none;
+}
+.arrow{
+  margin:15px 10px;
+  width: 300px;
+  height: auto;
+}
+.item-1, 
+.item-2, 
+.item-3,
+.item-4,
+.item-5{
+  top: 18em;
+  font-size: 1.2em;
+}
 }
 @media (min-width:481px)  {
+  .banner-description{
+    width:auto;
+    position:relative;
+    top:20%;
+    font-size:1em;
+  }
   .banner-hero div:nth-child(1){
-    background-image: url('https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Rectangle+123.png');
+    background-image: url('https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Rectangle+124.png');
     background-size: cover;
     height: 500px;
     background-position: 50% 50%;
     background-repeat: no-repeat;
   }
   .banner-hero div:nth-child(2){
-    background-image: url('https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Hero+Banner+vr+04.png');
+    background-image: url('https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/081919web-banner-vr-04.png');
     background-size: cover;
     height: 300px;
     background-position: 50% 50%;
     background-repeat: no-repeat;
   }
+  .sectiontwo-dots{
+    opacity: 0.9;
+    width: auto;
+    position: relative;
+    z-index: 2;
+    bottom: 10px;
+    left: 75%;
+    height: 450px;
+    display:none;
+
+  }
+  .head-1{
+    color:#f2273b;
+    font-size:1.6em;
+    font-weight:500;
+    text-align:center;
+  }
+  .head-2{
+    color:#03cea4;
+    font-size:1.3em;
+    font-weight:400;
+    text-align:center;
+  }
+  .head-3{
+    color:#f2273b;
+    font-size:2.5em;
+    font-weight:400;
+    text-align:left;
+    margin-top:1.5em;
+    text-align:center;
+  }
   .wave{
     opacity: 0.6;
     width: 100%; 
-    position: relative; 
-    bottom: top; 
+    position: relative;  
     z-index: 2; 
     top: 80%; 
     right: 20%;
@@ -372,31 +507,98 @@ img:hover {
   .dots{
     position: relative;
     z-index: 2;
-    top:200px;
     right: 200px;
     height: 400px;
+    display:none;
   }
+  .head-5{
+    color:#fff;
+    font-size:1.5em;
+    font-weight:400;
+    text-align:center;
+    margin-top:1.5em;
+  }
+  .head-6{
+    color:#fff;
+    font-size:1em;
+    font-weight:400;
+    margin-top:1.5em;
+    text-align:center;
+  }
+  .mobile{
+    width: auto;
+    position: relative;
+    height: 560px;
+}
+.left-purple{
+  bottom: 800px;
+  position: relative;
+  right: 400px;
+}
+.right-purple{
+  bottom: 2500px;
+  position: relative;
+  left: 320px;
+}
+.xmarks{
+  position: relative;
+  height: 420px;
+  width: auto;
+  z-index: 2;
+  left: 130px;
+  top: 150px;
+  display:none;
+}
+.arrow{
+  margin:15px 10px;
+  width: 300px;
+  height: auto;
+}
+.item-1, 
+.item-2, 
+.item-3,
+.item-4,
+.item-5{
+  top: 18em;
+  font-size: 1.2em;
+}
 }
 @media (min-width:641px)  { 
+  .banner-description{
+    width:auto;
+    position:relative;
+    top:20%;
+    left:10px;
+    font-size:1em;
+  }
   .banner-hero div:nth-child(1){
-    background-image: url('https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Rectangle+123.png');
+    background-image: url('https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Rectangle+124.png');
     background-size: cover;
     height: 300px;
     background-position: 50% 50%;
     background-repeat: no-repeat;
   }
   .banner-hero div:nth-child(2){
-    background-image: url('https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Hero+Banner+vr+04.png');
+    background-image: url('https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/081919web-banner-vr-04.png');
     background-size: cover;
     height: 300px;
     background-position: 50% 50%;
     background-repeat: no-repeat;
   }
+  .sectiontwo-dots{
+    opacity: 0.9;
+    width: auto;
+    position: relative;
+    z-index: 2;
+    bottom: 10px;
+    left: 75%;
+    height: 450px;
+    display:inline-block;
+  }
   .wave{
     opacity: 0.6;
     width: 100%; 
-    position: relative; 
-    bottom: top; 
+    position: relative;  
     z-index: 2; 
     top: 67%; 
     right: 20%;
@@ -409,93 +611,329 @@ img:hover {
   .dots{
     position: relative;
     z-index: 2;
-    top: 325px;
     right: 270px;
     height: 350px;
+    display:none;
   }
+  .head-5{
+    color:#fff;
+    font-size:2em;
+    font-weight:400;
+    text-align:left;
+    margin-top:1.5em;
+    text-align:center;
+  }
+  .head-6{
+    color:#fff;
+    font-size:1.5em;
+    font-weight:400;
+    text-align:left;
+    margin-top:1.5em;
+    text-align:center;
+    padding:10px 15px;
+  }
+  .mobile{
+    width: auto;
+    position: relative;
+    height: 560px;
+    bottom: 300px;
+    left: 200px;
+}
+.left-purple{
+  bottom: 800px;
+  position: relative;
+  right: 400px;
+}
+.right-purple{
+  bottom: 2500px;
+  position: relative;
+  left: 320px;
+}
+.xmarks{
+  position: relative;
+  height: 200px;
+  width: auto;
+  z-index: 2;
+  left: 130px;
+  top: 150px;
+}
+.arrow{
+  margin:15px 10px;
+  width: 300px;
+  height: auto;
+}
+.item-1, 
+.item-2, 
+.item-3,
+.item-4,
+.item-5{
+  top: 18em;
+  font-size: 1.5em;
+}
 }
 @media (min-width:961px)  {
+  .banner-description{
+    width:auto;
+    position:relative;
+    top:20%;
+    left:10px;
+    font-size:1em;
+  }
   .banner-hero div:nth-child(1){
-    background-image: url('https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Rectangle+123.png');
+    background-image: url('https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Rectangle+124.png');
     background-size: cover;
     height: 720px;
     background-position: 50% 50%;
     background-repeat: no-repeat;
   }
   .banner-hero div:nth-child(2){
-    background-image: url('https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Hero+Banner+vr+04.png');
+    background-image: url('https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/081919web-banner-vr-04.png');
     background-size: cover;
     height: 720px;
     background-position: 50% 50%;
     background-repeat: no-repeat;
   }
+  .sectiontwo-dots{
+    opacity: 0.9;
+    width: auto;
+    position: relative;
+    z-index: 2;
+    bottom: 10px;
+    left: 75%;
+    height: 450px;
+    display:inline-block;
+  }
   .wave{
     opacity: 0.6;
     width: 900px; 
-    position: relative; 
-    bottom: top; 
+    position: relative;  
     z-index: 2; 
     top: 80%; 
     right: 20%;
     height: 145px;
   }
   .section-four .img-container img.service-list{
-    height:150px;
+    height:100px;
     width:auto;
   }
   .dots{
     position: relative;
     z-index: 2;
-    top: 325px;
     right: 200px;
     height: 400px;
+    display:inline-block;
   }
+  .head-5{
+    color:#fff;
+    font-size:1.5em;
+    font-weight:400;
+    text-align:center;
+    margin-top:1.5em;
+    padding:10px 15px;
+  }
+  .head-6{
+    color:#fff;
+    font-size:1em;
+    font-weight:400;
+    text-align:justify;
+    margin-top:1.5em;
+    padding:10px 15px;
+  }
+  .mobile{
+    width: auto;
+    position: relative;
+    height: 560px;
+    bottom: 300px;
+    left: 200px;
+}
+.left-purple{
+  bottom: 800px;
+  position: relative;
+  right: 400px;
+}
+.right-purple{
+  bottom: 2500px;
+  position: relative;
+  left: 320px;
+}
+.xmarks{
+  position: relative;
+  height: 420px;
+  width: auto;
+  z-index: 2;
+  left: 130px;
+  top: 150px;
+  display:inline-block;
+}
+.arrow{
+  margin:15px 10px;
+  width: 300px;
+  height: 100px;
+}
+.item-1, 
+.item-2, 
+.item-3,
+.item-4,
+.item-5{
+  top: 12em;
+  font-size: 2em;
+}
  }
 @media (min-width:1025px) {
+  .banner-description{
+    width:auto;
+    position:relative;
+    top:20%;
+    left:10px;
+    font-size:1em;
+  }
   .banner-hero div:nth-child(1){
-    background-image: url('https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Rectangle+123.png');
+    background-image: url('https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Rectangle+124.png');
     background-size: cover;
     height: 720px;
     background-position: 50% 50%;
     background-repeat: no-repeat;
+    width:18.833333%;
   }
   .banner-hero div:nth-child(2){
-    background-image: url('https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Hero+Banner+vr+04.png');
+    background-image: url('https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/081919web-banner-vr-04.png');
     background-size: cover;
     height: 720px;
     background-position: 50% 50%;
     background-repeat: no-repeat;
+    width:81.166667%;
+  }
+  .sectiontwo-dots{
+    opacity: 0.9;
+    width: auto;
+    position: relative;
+    z-index: 2;
+    bottom: 10px;
+    left: 75%;
+    height: 450px;
+    display:inline-block;
+  }
+  .head-1{
+    color:#f2273b;
+    font-size:2.8em;
+    font-weight:500;
+    text-align:left;
+    
+  }
+  .head-2{
+    color:#03cea4;
+    font-size:1.3em;
+    font-weight:400;
+    text-align:left;
+  }
+  .head-3{
+    color:#f2273b;
+    font-size:2.5em;
+    font-weight:400;
+    text-align:left;
+    margin-top:2.5em;
+    width: 280px;
+    border-bottom: 2px solid #f2273b;
   }
   .wave{
     opacity: 0.6;
     width: 900px; 
-    position: relative; 
-    bottom: top; 
+    position: relative;  
     z-index: 2; 
-    top: 80%; 
-    right: 20%;
+    top: 65%; 
+    right: 37%;
     height: 145px;
   }
   .section-four .img-container img.service-list{
-    height:150px;
+    height:100px;
     width:auto;
   }
   .dots{
     position: relative;
     z-index: 2;
-    top: 325px;
-    right: 310px;
-    height: 400px;
+    right: 165px;
+    height: 460px;
+    display:inline-block;
   }
+  .head-5{
+    color:#fff;
+    font-size:2.8em;
+    font-weight:400;
+    margin-top:1.5em;
+    text-align:left;
+  }
+  .head-6{
+    color:#fff;
+    font-size:1.2em;
+    font-weight:400;
+    margin-top:3.5em;
+    text-align:left;
+  }
+  .mobile{
+    width: auto;
+    position: relative;
+    height: 556px;
+    bottom: 400px;
+    left: 450px;
+    z-index: 3;
+}
+  .xmarks{
+    position: relative;
+    height: 390px;
+    width: auto;
+    z-index: 2;
+    left: 130px;
+    top: 100px;
+    display:inline-block;
+  }
+  .arrow{
+    margin:15px 10px;
+    width: 380px;
+    height: 120px;
+  }
+  .left-purple{
+    bottom: 238px;
+    position: relative;
+    right: 120px;
+    height: 1120px;
+  }
+  .right-purple{
+    position: relative;
+    left: 1220px;
+    height: 1120px;
+    bottom: 1300px;
+  }
+ .section-six .container {
+    max-width: 1450px !important;
+}
+.item-1, 
+.item-2, 
+.item-3,
+.item-4,
+.item-5{
+  top: 12em;
+  font-size: 2em;
+}
 }
 /* section two */
-.section-two .img-container{
-  background:#e5e5e5;
-  height:500px;
+.section-two .img-container:nth-child(1){
   width:100%;
+  height:0px;
 }
-
+.section-two .img-container:nth-child(2){
+  width:100%;
+  height:130px;
+}
 .section-two .text-content{
+  margin: 0px auto;
+  max-height: 540px;
+  height: 100%;
+  width: 100%;
+  max-width: 700px;
+  text-align: left;
+  padding: 10px 15px;
+}
+.section-two .text-content-struggling{
   margin: 0px auto;
   max-height: 540px;
   height: 100%;
@@ -520,7 +958,7 @@ img:hover {
 
 .section-three .text-content{
   position: relative;
-  text-align: justify;
+  text-align: left;
   padding: 15px 5px 5px 5px;
   height:400px;
   max-width:470px;
@@ -529,6 +967,8 @@ img:hover {
 
 .section-three .text-content h2{
   color: #f2273b;
+  font-size:1.9em;
+  font-weight:800;
 }
 
 .section-three .text-content p{
@@ -539,18 +979,18 @@ img:hover {
 }
 
 .section-three .video-content{
-  background:#333;
-  height:400px;
+  height:350px;
   max-width:700px;
   position:relative;
   margin:0 auto;
 }
+.section-three .video-content video-3{
+  width:100%;
+}
 /*- section three */
 /*section four*/
 .section-four{
-  background: #8360c3;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #2ebf91, #8360c3);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #2ebf91, #8360c3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-image: url('https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Rectangle+103.png');
   margin:50px 0;
   height:860px;
   width:100%; 
@@ -570,8 +1010,6 @@ img:hover {
   width:100%;
   border-radius: 28px;
   margin: 0 auto;
-  padding: 20px;
-  margin-top: 50px;
 }
 
 .section-four h1{
@@ -580,8 +1018,15 @@ img:hover {
   height: auto;
   text-align: center;
   margin:0 auto;
-  font-size: 25px !important;
-  font-weight: 400 !important;
+  font-size: 2.1em !important;
+  font-weight: 500 !important;
+  margin: 25px 0 70px 0px;
+}
+.jumbotron p{
+  padding:5px; 
+  color: #283a67;
+  font-size:1.1em;
+  margin: 10px 0px;
 }
 
 .jumbotron{
@@ -595,3 +1040,217 @@ img:hover {
 }
 
 /*-section four */
+
+
+/*new*/
+.banner-hero .section-interview-list ul{
+    list-style: none;
+    padding: 5px;
+    text-align: left;
+}
+.banner-hero .section-interview-list li{
+    padding: 5px;
+    max-width:250px;
+}
+
+.banner-hero .hero-button button.book{
+  background: rgba(0,0,0,0);
+  color: #a20021;
+  padding: 8px 15px;
+  border: 2px solid #a20021;
+  border-radius: 25px;
+  font-size: 1.1em;
+  min-width: 88px;
+}
+.banner-hero .hero-button button.inquire {
+  background: rgba(0,0,0,0);
+  color: #fff;
+  padding: 8px 15px;
+  border: 2px solid #fff;
+  border-radius: 25px;
+  font-size: 1.1em;
+  min-width: 88px;
+}
+.banner-hero .hero-button a{
+  margin:10px 25px;
+}
+
+.text-content-head{
+  text-align:left;
+  margin:0 auto;
+  margin:30px 10px;
+}
+.jumbotron {
+  background: #fff !important;
+  max-width: 1140px;
+  width: 100%;
+  border-radius: 28px !important;
+  margin: 0 auto;
+  padding: 20px !important;
+}
+
+/*section five*/
+.section-five p{
+  text-align:left;
+  padding:5px 20px;
+  max-width: 370px;
+  margin:0 auto;
+}
+
+/*section 6*/
+.section-six h2{
+  color: #f2273b;
+  font-size:1.9em;
+  font-weight:800;
+}
+.categories{
+  height: 600px;
+  max-width: 750px;
+  width:100%;
+  margin: 0 auto;
+  top: 650px;
+  left: 400px;
+  position:absolute;
+}
+
+.categories .btn{
+  border-radius: 25px;
+  padding: 10px 20px;
+  background: rgba(0,0,0,0);
+  color: #000;
+  border: 2px solid #f2273b;
+  max-width: 230px;
+  width:100%;
+  margin:10px;
+}
+.categories .btn:hover{
+  background: #f2273b;
+  color: #fff;
+  border: 2px solid #f2273b;
+}
+/*section seven*/
+.pink-gradient{
+  background-image: url('https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Rectangle+137.png');
+  background-size: cover;
+  height: auto;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  margin: 5px 25px;
+  padding-bottom: 25px;
+}
+
+
+
+
+
+
+
+/**key frames*/
+
+.item-1, 
+.item-2, 
+.item-3,
+.item-4,
+.item-5{
+	position: absolute;
+  display: block;
+
+  color:#f2273b;
+  width: 80%;
+
+
+
+
+	-webkit-animation-duration: 20s;
+
+	        animation-duration: 20s;
+	-webkit-animation-timing-function: ease-in-out;
+	        animation-timing-function: ease-in-out;
+	-webkit-animation-iteration-count: infinite;
+	        animation-iteration-count: infinite;
+}
+
+.item-1{
+	-webkit-animation-name: anim-1;
+	        animation-name: anim-1;
+}
+
+.item-2{
+	-webkit-animation-name: anim-2;
+	        animation-name: anim-2;
+}
+
+.item-3{
+	-webkit-animation-name: anim-3;
+	        animation-name: anim-3;
+}
+.item-4{
+	-webkit-animation-name: anim-4;
+	        animation-name: anim-4;
+}
+
+.item-5{
+	-webkit-animation-name: anim-5;
+	        animation-name: anim-5;
+}
+
+@-webkit-keyframes anim-1 {
+	0%, 8.3% { left: 0; opacity: 0; }
+  8.3%,16.6% { left: 22%; opacity: 1; }
+  20.00%, 100% { left: 45%; opacity: 0; }
+}
+
+@keyframes anim-1 {
+	0%, 8.3% { left: 0; opacity: 0; }
+  8.3%,16.6% { left: 22%; opacity: 1; }
+  20%, 100% { left: 45%; opacity: 0; }
+}
+
+@-webkit-keyframes anim-2 {
+	0%, 20% { left: 0; opacity: 0; }
+  28.3%, 36.6% { left: 22%; opacity: 1; }
+  40.00%, 100% { left: 45%; opacity: 0; }
+}
+
+@keyframes anim-2 {
+	0%, 20% { left: 0; opacity: 0; }
+  28.3%, 36.6% { left: 22%; opacity: 1; }
+  40.00%, 100% { left: 45%; opacity: 0; }
+}
+
+@-webkit-keyframes anim-3 {
+	0%, 40.00% { left: 0; opacity: 0; }
+  48.3%, 56.6% { left: 22%; opacity: 1; }
+  60.00%, 100% { left: 45%; opacity: 0; }
+}
+
+@keyframes anim-3 {
+	0%, 40.00% { left: 0; opacity: 0; }
+  48.3%, 56.6% { left: 22%; opacity: 1; }
+  60.00%, 100% { left: 45%; opacity: 0; }
+}
+
+@-webkit-keyframes anim-4 {
+	0%, 60.00% { left: 0; opacity: 0; }
+  68.3%,76.6% { left: 22%; opacity: 1; }
+  80.00%, 100% { left: 45%; opacity: 0; }
+}
+
+@keyframes anim-4 {
+	0%, 60.00% { left: 0; opacity: 0; }
+  68.3%,76.6% { left: 22%; opacity: 1; }
+  80.00%, 100% { left: 45%; opacity: 0; }
+}
+
+@-webkit-keyframes anim-5 {
+	0%, 80.3% { left: 0; opacity: 0; }
+  88.3%, 96.6% { left: 22%; opacity: 1; }
+  100% { left: 45%; opacity: 0; }
+}
+
+@keyframes anim-5 {
+	0%, 80.3% { left: 0; opacity: 0; }
+  88.3%, 96.6% { left: 22%; opacity: 1; }
+  100% { left: 45%; opacity: 0; }
+}
+

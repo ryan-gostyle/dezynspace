@@ -26,11 +26,13 @@ class Header extends Component {
       isOpen: !this.state.isOpen
     });
   }
+  
   render() {
     return (
       <div>
-      <Navbar color="#fff" style={{background:'rgba(0,0,0,0)',position:'fixed',zIndex:'999999',width:'100%'}} dark expand="md">
-          <NavbarBrand href="/"><img src="https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/DEZYNSPACE+FULL+COLOR+LOGO_Horizontal_FC+(2).png" alt=''  style={{width: 'auto',height: '75px',left: '33px'}} /></NavbarBrand>
+        {/* 'rgba(0,0,0,0)',position:'fixed' */}
+      <Navbar color="#fff" style={{background:'white',zIndex:'999999',width:'100%'}} dark expand="md">
+          <NavbarBrand href="/"><img src="https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/colored+logo.png" alt=''  style={{width: 'auto',height: '55px',left: '33px'}} /></NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
@@ -38,19 +40,22 @@ class Header extends Component {
                 <NavLink href="/">Home</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/about">About</NavLink>
+                <NavLink href="/">About</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/process">Process</NavLink>
+                <NavLink href="/">Portfolio</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/portfolio">Portfolio</NavLink>
+                <NavLink href="/">Success Stories</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="pricing">Pricing</NavLink>
+                <NavLink href="">Pricing</NavLink>
               </NavItem>
-              <NavItem style={{textAlign:"center",background:"red",padding:"0px 30px",borderRadius:"25px"}}>
-                <NavLink href="/login" >Login</NavLink>
+              <NavItem>
+                <NavLink href="/">Book</NavLink>
+              </NavItem>
+              <NavItem className="login-navitem">
+                <NavLink className="login" href="/login" >Login</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
