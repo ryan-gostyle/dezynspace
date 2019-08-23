@@ -39,19 +39,22 @@ export default class SectionFour extends Component {
                     <Col xs={24} sm={24} md={12} lg={9} className="column-padding section-container" >
                     <div className="img-container">
                         <img src='https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Path+9.png' className="dots"/>
+                        <img src='https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Iphone+8.png' className="mobile"/>
                     </div>
                     </Col>
                     <Col xs={24} sm={24} md={12} lg={15} className="column-padding section-container" >
-                        <section style={{maxWidth:'500px'}}>
-                        <div className="text-content-head-four" >
-                                <h2 className="head-5" >Real-time questions, real-time answers.</h2>
-                        </div>
-                        <div className="text-content-head-four" style={{maxWidth:'600px'}}>
-                                <h5 className="head-6" >No more back-and-forth and missed deadlines,communicate as much as you need, in any manner you wish via Slack. <br/> <br/>
-                                Our 1-to-1 setup assures you of your designer’s focus and responsiveness with your needs. Ready whenever and wherever you are.</h5>
-                        </div>
+                        <section className="position-content-four">
+                            <div className="text-content-head-four" >
+                                    <h2 className="head-5" >Real-time questions, real-time answers.</h2>
+                            </div>
+                            <div className="text-content-head-four" style={{maxWidth:'600px'}}>
+                                    <h5 className="head-6" >No more back-and-forth and missed deadlines,communicate as much as you need, in any manner you wish via Slack. <br/> <br/>
+                                    Our 1-to-1 setup assures you of your designer’s focus and responsiveness with your needs. Ready whenever and wherever you are.</h5>
+                            </div>
                         </section>
-                        <img src='https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Iphone+8.png' className="mobile"/>
+                        <div className="laptop-container">
+                        <img src='https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Slack+Screenshot_laptop.png' className="laptop"/>
+                        </div>
                         <img src='https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Path+10.png' className="xmarks"/>
                     </Col>
                 </Row>

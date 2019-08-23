@@ -5,8 +5,8 @@ import { relative } from 'path';
 export default class SectionThree extends Component {
     render() {
         return (
-            <div className="col-24 section-three" style={{margin:"30px 0",overflow:"hidden",height:"600px"}}>
-                <Row style={{margin: '5rem 0'}}>
+            <div className="col-24 section-three" style={{margin:"30px 0",overflow:"hidden",height:"550px"}}>
+                <Row >
                 <Col xs={24} sm={24} md={12} lg={12} className="column-padding" style={{maxHeight: 1000, display:'inline-block', position:'relative'}}>
                     <div className="text-container">
                         <div className="text-content" >
@@ -24,9 +24,10 @@ export default class SectionThree extends Component {
                 </Col>
 
                 <Col xs={24} sm={24} md={12} lg={12} className="column-padding" style={{maxHeight: 1000, display:'inline-block', position:'relative'}}>
+                    <div className="video-gradient"></div>
                     <div className="video-container">
                         <div className="video-content" >
-                        <iframe width="500" height="350" src="https://www.youtube.com/embed/2aYPbeBZrG4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="600" height="350" src="https://www.youtube.com/embed/2aYPbeBZrG4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                 </Col>

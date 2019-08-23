@@ -4,30 +4,32 @@ import { Row, Col } from 'antd';
 export default class SectionTwo extends Component {
     render() {
         return (
-            <div className="col-24 section-two" style={{margin:"30px 0",overflow:"hidden",height:"900px"}}>
+            <div className="col-24 section-two" >
                 <Row>
                 <Col xs={24} sm={24} md={24} lg={24} className="column-padding" style={{maxHeight: 1000, display:'inline-block', position:'relative',padding:'20px 35px;'}}>
                     <section className="container" style={{maxWidth:'900px'}}>
-                    <div className="img-container">
+                        <div className="img-container">
                             <img src='https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Path+9.png' className="sectiontwo-dots"/>
                         </div>
-                        <div className="text-content-head" >
-                            <h2 className="head-1" >Are you struggling in finding a professional graphic designer?</h2>
+                        <div className="text-content-head" style={{maxWidth:'600px'}}  >
+                        <div className="img-container">
+                            <img src='https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Group+232.png' className="corners"/>
                         </div>
-                        <div className="text-content-head" style={{maxWidth:'600px'}}>
-                            <h2 className="head-2" >Renting your own graphic designer is the modern day solution for
+                            <h2 className="head-1" >Are you struggling in finding a professional graphic designer?</h2>
+                            <h2 className="head-2" style={{maxWidth:'430px'}}>Renting your own graphic designer is the modern day solution for
     all your hiring woes.</h2>
+
                         </div>
                         <div className="text-content-head">
-                            <h2 className="head-3">No more stress</h2>
+                            <h2 className="head-3">No more</h2>
                             <p className="item-1">Scheduling job interviews</p>
                             <p className="item-2">Dealing with all HR and management concerns.</p>
                             <p className="item-3">On missing deadlines just because you don’t have a graphic designer</p>
                             <p className="item-4">Worrying about minimum contract period.</p>
                             <p className="item-5">Risking your money to the wrong talent</p>
                         </div>
-                        <div style={{borderRadius:'26px',width:'100%',padding:'20px 25px',border:'2px solid #a3cea4',maxWidth:'320px',background:'#a3cea4',margin:'0 auto',marginTop:'120px',marginBottom:'15px'}}>
-                            <h2 style={{color:'#fff',fontSize:'1.2em',fontWeight:'500',textAlign:'center'}}>Plan your design needs better.<br/> Rent a graphic designer now.</h2>
+                        <div style={{color:'#a3cea4',margin:'0 auto'}}>
+                            <a href="" className="sectiontwo-link">Plan your design needs better.<br/> Rent a graphic designer now.</a>
                         </div>
                     </section>
                         <div className="img-container">
