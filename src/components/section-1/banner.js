@@ -23,13 +23,13 @@ function Banner() {
             <li>Satisfaction guaranteed or get your money back</li>
            </ul>  
           </section>
-          <section className="hero-button" style={{width:'auto',position:'relative',top:'27%',textAlign:'left',fontSize:'1em'}}>
-              <a href=""><button className="book"> Book </button></a>
-              <a href=""><button className="inquire"> Inquire </button></a>
+          <section className="hero-button" >
+              <a href="/"><button className="book"> Book </button></a>
+              <a href="/"><button className="inquire"> Inquire </button></a>
           </section>
         </Col>
         <Col xs={24} sm={24} md={24} lg={19}>
-
+            {/* image background */}
         </Col>
     </Row>
   );

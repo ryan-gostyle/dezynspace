@@ -5,7 +5,7 @@ import { Button, UncontrolledPopover, PopoverHeader, PopoverBody } from 'reactst
 export default class SectionSix extends Component {
     render() {
         return (
-            <div className="col-24 section-six" style={{overflow:'hidden',height:'1350px'}} >
+            <div className="col-24 section-six">
             <Row style={{zIndex:'5'}}>
                 <Col xs={24} sm={24} md={24} lg={24} className="column-padding " >
                         <h1 className="title" style={{fontSize:"2.5em!important"}}>Save Time Looking For the Perfect Graphic Designer</h1>
@@ -15,15 +15,14 @@ export default class SectionSix extends Component {
                             <Row className="container">
                             {/*img size for mobile!! width: 50px; height: 50px; */}
                                 <Col xs={24} sm={24} md={8} lg={8}>
-                                <iframe width="350" height="250"  src="https://www.youtube.com/embed/2aYPbeBZrG4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+                                <iframe  src="https://www.youtube.com/embed/2aYPbeBZrG4" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>  
                                 </Col>
                                 <Col xs={24} sm={24} md={8} lg={8}>
-                                <iframe width="350" height="250" src="https://www.youtube.com/embed/2aYPbeBZrG4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+                                <iframe src="https://www.youtube.com/embed/2aYPbeBZrG4" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> 
                                 </Col>
                                 <Col xs={24} sm={24} md={8} lg={8}>
-                                <iframe width="350" height="250"  src="https://www.youtube.com/embed/2aYPbeBZrG4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+                                <iframe  src="https://www.youtube.com/embed/2aYPbeBZrG4" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>  
                                 </Col>
-
                             </Row>
                             </div>
 
@@ -196,14 +195,14 @@ export default class SectionSix extends Component {
                                     </UncontrolledPopover>
                                 </Col>
                                 <Col xs={24} sm={24} md={24} lg={24}>
-                                <a href="/" className="title" style={{textDecoration:'underline',margin:'25px 5px'}}>See more</a>
+                                <a href="/" style={{textDecoration:'underline',margin:'25px 5px'}}>View more</a>
                                 </Col>
                             </Row>
                 </Col>
                 </Row>
                 <div className="img-container" style={{zIndex:'2',width:'0',height:'0'}}>
-                        <img src='https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Path+25.png' className="left-purple" />
-                        <img src='https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Path+27.png' className="right-purple" />
+                        <img alt="" src='https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Asset+24.png' className="left-purple" />
+                        <img alt="" src='https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Asset+23.png' className="right-purple" />
                 </div>
             </div>
         )

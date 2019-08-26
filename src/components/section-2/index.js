@@ -6,14 +6,14 @@ export default class SectionTwo extends Component {
         return (
             <div className="col-24 section-two" >
                 <Row>
-                <Col xs={24} sm={24} md={24} lg={24} className="column-padding" style={{maxHeight: 1000, display:'inline-block', position:'relative',padding:'20px 35px;'}}>
-                    <section className="container" style={{maxWidth:'900px'}}>
+                <Col xs={24} sm={24} md={24} lg={24} className="column-padding" style={{maxHeight: 1000, display:'inline-block', position:'relative'}}>
+                    <section className="container" style={{maxWidth:'900px',marginTop:'20px'}}>
                         <div className="img-container">
-                            <img src='https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Path+9.png' className="sectiontwo-dots"/>
+                            <img alt="" src='https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Path+9.png' className="sectiontwo-dots"/>
                         </div>
                         <div className="text-content-head" style={{maxWidth:'600px'}}  >
                         <div className="img-container">
-                            <img src='https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Group+232.png' className="corners"/>
+                            <img alt="" src='https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Group+232.png' className="corners"/>
                         </div>
                             <h2 className="head-1" >Are you struggling in finding a professional graphic designer?</h2>
                             <h2 className="head-2" style={{maxWidth:'430px'}}>Renting your own graphic designer is the modern day solution for
@@ -29,11 +29,11 @@ export default class SectionTwo extends Component {
                             <p className="item-5">Risking your money to the wrong talent</p>
                         </div>
                         <div style={{color:'#a3cea4',margin:'0 auto'}}>
-                            <a href="" className="sectiontwo-link">Plan your design needs better.<br/> Rent a graphic designer now.</a>
+                            <a href="/" className="sectiontwo-link">Plan your design needs better.<br/> Rent a graphic designer now.</a>
                         </div>
                     </section>
                         <div className="img-container">
-                            <img src='https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Asset+4%403x.png' className="wave"/>
+                            <img alt="" src='https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Asset+4%403x.png' className="wave"/>
                         </div>
 
                 </Col>

@@ -9,13 +9,13 @@ import SectionFour from './components/section-4/';
 import SectionFive from './components/section-5/';
 import SectionSix from './components/section-6/';
 import SectionSeven from './components/section-7/';
-
-import SignUp from './components/section-8/signup'
-import PickCountry from './components/section-9/pickcountry'
-import About from './components/pages/about/about'
-import HowItWorksPage from './components/pages/how-it-works/howitworks'
-
-import Footer from './Footer'
+import SectionEight from './components/section-8/';
+import SectionNine from './components/section-9/';
+import SectionTen from './components/section-10/';
+import SectionEleven from './components/section-11/';
+import SectionTwelve from './components/section-12/';
+import SectionThirteen from './components/section-13/';
+import SectionFourteen from './components/section-14/';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 function App() {
   return (
@@ -42,12 +42,13 @@ const Home = () => (
     <SectionFive />
     <SectionSix />
     <SectionSeven />
-    {/* <AboutUs/>
-    <Brands/>
-    <Testimonials/>
-    <Subscribe/>
-    <SeenOn/>
-    <PickCountry/> */}
+    <SectionEight />
+    <SectionNine />
+    <SectionTen />
+    <SectionEleven />
+    <SectionTwelve />
+    <SectionThirteen />
+    <SectionFourteen />
   </div>
 );
 
