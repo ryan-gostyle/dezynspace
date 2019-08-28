@@ -1,21 +1,19 @@
 import React from 'react';
 import { Row, Col, Card, Form, Icon, Input, Button, Checkbox } from 'antd'
-import './Admin.css';
+import '../../admin/Admin.css';
 import Axios from 'axios';
-import {Redirect} from 'react-router-dom';
-import cookie from 'react-cookies'
 
-class Login extends React.Component {
+
+class CLogin extends React.Component {
 
     handleSubmit = e => {
         e.preventDefault();
         this.props.form.validateFields(async (err, values) => {
             if (!err) {
-                var submit = await Axios.post('http://ec2-18-222-135-215.us-east-2.compute.amazonaws.com/api/admin/login', {
+                var submit = await Axios.post('http://ec2-18-222-135-215.us-east-2.compute.amazonaws.com/api/login', {
                     email: values.email,
                     password: values.password,
                     accesstoken: "dezynspace"
-
                 }, { headers: { 'Content-Type': 'application/json' } }).catch(function (error) {
                     if (error.response) {
                         console.log(error.response.data);
@@ -27,9 +25,7 @@ class Login extends React.Component {
                     }
                 });
                 if (await submit) {
-                    cookie.save('token', await submit.data.message, { path: '/' });
-                    console.log(cookie.load('token'));
-                    window.location.href = "/admin/booking";
+                    console.log(await submit)
                 }
             }
         });
@@ -42,7 +38,7 @@ class Login extends React.Component {
             <div>
                 <Row type="flex" justify="center" align="middle" style={{ height: "80vh" }}>
                     <Col lg={9}>
-                        <h1 >Admin</h1>
+                        <h1 >Login</h1>
                         <br />
                         <Card className="login-card">
                             <Form onSubmit={this.handleSubmit} className="login-form" style={{ textAlign: "left" }}>
@@ -85,5 +81,5 @@ class Login extends React.Component {
         )
     }
 }
-const login = Form.create({ name: 'login' })(Login);
-export default login;
+const Clogin = Form.create({ name: 'login' })(CLogin);
+export default Clogin;

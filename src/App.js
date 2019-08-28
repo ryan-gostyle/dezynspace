@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {Layout} from 'antd';
+import { Layout } from 'antd';
 import Header from './Header';
 import Footer from './Footer';
 import Banner from './components/section-1/banner';
@@ -17,33 +17,36 @@ import SectionEleven from './components/section-11/';
 import SectionTwelve from './components/section-12/';
 import SectionThirteen from './components/section-13/';
 import SectionFourteen from './components/section-14/';
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import login from './admin/login';
 import register from './components/Accounts/register';
+import Clogin from './components/Accounts/login';
 /*admin*/
-// import AdminLayout from './admin/layout';
+import AdminLayout from './admin/layout';
 function App() {
   return (
     <Router>
       <Layout className="App">
-        <Header className="header"/>  
-         <Switch>
-            {/* <Route path="/" component={AdminLayout} exact /> */}
-            <Route path="/" component={Home} exact />
-            <Route path="/admin" component={login} exact />  
-            <Route path="/signup" component={register} exact />  
-            {/* <Route path="/about" component={About} /> */}
-            {/* <Route path="/how-it-works" component={HowItWorksPage}/> */}
+
+        <Switch>
+          <Route path="/admin/:link" component={AdminLayout} exact />
+          <Route path="/" component={Home} exact />
+          <Route path="/admin" component={login} exact />
+          <Route path="/signup" component={register} exact />
+          <Route path="/login" component={Clogin} exact />
+        {/* <Route path="/about" component={About} /> */}
+        {/* <Route path="/how-it-works" component={HowItWorksPage}/> */}
          </Switch>
-        <Footer/>
-      </Layout>
+         </Layout>
     </Router>
   );
 }
 
 const Home = () => (
   <div className="App">
-    <Banner/>
+          <Header className="header" />
+
+    <Banner />
     <SectionTwo />
     <SectionThree />
     <SectionFour />
@@ -57,6 +60,8 @@ const Home = () => (
     <SectionTwelve />
     <SectionThirteen />
     <SectionFourteen />
+    <Footer />
+
   </div>
 );
 
