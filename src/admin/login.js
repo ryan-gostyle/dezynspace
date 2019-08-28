@@ -1,15 +1,33 @@
 import React from 'react';
 import { Row, Col, Card, Form, Icon, Input, Button, Checkbox } from 'antd'
 import './Admin.css';
+import Axios from 'axios';
 
 
 class Login extends React.Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        this.props.form.validateFields((err, values) => {
+        this.props.form.validateFields(async (err, values) => {
             if (!err) {
-                console.log('Received values of form: ', values);
+                var submit = await Axios.post('http://ec2-18-222-135-215.us-east-2.compute.amazonaws.com/api/admin/login', {
+                    email: values.email,
+                    password: values.password,
+                    accesstoken: "dezynspace"
+
+                }, { headers: { 'Content-Type': 'application/json' } }).catch(function (error) {
+                    if (error.response) {
+                        console.log(error.response.data);
+                        console.log(error.response.status);
+                        console.log(error.response.headers);
+                    } else if (error.request) {
+
+                    } else {
+                    }
+                });
+                if (await submit) {
+                    console.log(await submit)
+                }
             }
         });
     };
@@ -22,10 +40,10 @@ class Login extends React.Component {
                 <Row type="flex" justify="center" align="middle" style={{ height: "80vh" }}>
                     <Col lg={9}>
                         <h1 >Admin</h1>
-                        <br/>
+                        <br />
                         <Card className="login-card">
-                            <Form onSubmit={this.handleSubmit} className="login-form" style={{textAlign:"left"}}>
-                                <Form.Item label="Email" style={{marginTop:"0%"}}>
+                            <Form onSubmit={this.handleSubmit} className="login-form" style={{ textAlign: "left" }}>
+                                <Form.Item label="Email" style={{ marginTop: "0%" }}>
                                     {getFieldDecorator('email', {
                                         rules: [{ required: true, message: 'Please input your username!' }],
                                     })(
@@ -55,7 +73,7 @@ class Login extends React.Component {
                                         Log in
                                   </Button>
                                 </Form.Item>
-                                
+
                             </Form>
                         </Card>
                     </Col>

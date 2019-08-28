@@ -19,7 +19,7 @@ class Register extends React.Component {
         e.preventDefault();
         this.props.form.validateFields(async (err, values) => {
             if (!err) {
-                var submit = await Axios.post('http://localhost:8000/api/register', {
+                var submit = await Axios.post('http://ec2-18-222-135-215.us-east-2.compute.amazonaws.com/api/register', {
                     first_name: values.first_name,
                     last_name: values.last_name,
                     country: values.country,
@@ -37,6 +37,7 @@ class Register extends React.Component {
                         console.log(error.response.status);
                         console.log(error.response.headers);
                     } else if (error.request) {
+
                     } else {
                         // Something happened in setting up the request that triggered an Error
                     }
