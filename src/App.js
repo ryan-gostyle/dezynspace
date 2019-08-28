@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import {Layout} from 'antd';
 import Header from './Header';
+import Footer from './Footer';
 import Banner from './components/section-1/banner';
 import SectionTwo from './components/section-2';
 import SectionThree from './components/section-3';
@@ -30,7 +31,7 @@ function App() {
             {/* <Route path="/about" component={About} /> */}
             {/* <Route path="/how-it-works" component={HowItWorksPage}/> */}
          </Switch>
-        {/* <Footer/> */}
+        <Footer/>
       </Layout>
     </Router>
   );

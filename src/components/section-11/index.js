@@ -20,7 +20,7 @@ export default class SectionEleven extends Component {
         <div className="col-24 section-eleven"> 
             <h4 >Frequently Asked Questions</h4>
             <Row className="container" >
-                <Col xs={24} sm={24} md={12} lg={12} >
+                <Col xs={24} sm={24} md={24} lg={24} >
                     <Collapse
                     bordered={false}
                     expandIcon={({ isActive }) => <Icon type="caret-right" rotate={isActive ? 90 : 0} />} expandIconPosition={"right"}
@@ -37,20 +37,13 @@ export default class SectionEleven extends Component {
                     <Panel header="This is panel header 3" key="4" style={customPanelStyle}>
                     <p>{text}</p>
                     </Panel>
-                    </Collapse>
-                </Col>
-                <Col xs={24} sm={24} md={12} lg={12} >
-                    <Collapse
-                    bordered={false}
-                    expandIcon={({ isActive }) => <Icon type="caret-right" rotate={isActive ? 90 : 0} />} expandIconPosition={"right"}
-                    >
-                    <Panel header="This is panel header 1" key="1" style={customPanelStyle}>
+                    <Panel header="This is panel header 1" key="5" style={customPanelStyle}>
                     <p>{text}</p>
                     </Panel>
-                    <Panel header="This is panel header 2" key="2" style={customPanelStyle}>
+                    <Panel header="This is panel header 2" key="6" style={customPanelStyle}>
                     <p>{text}</p>
                     </Panel>
-                    <Panel header="This is panel header 3" key="3" style={customPanelStyle}>
+                    <Panel header="This is panel header 3" key="7" style={customPanelStyle}>
                     <p>{text}</p>
                     </Panel>
                     </Collapse>
