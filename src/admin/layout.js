@@ -13,8 +13,8 @@ export default class AdminLayout extends React.Component {
     collapsed: false,
     headerTitle: '',
     link: null,
+    clicked: '',
   };
-
   componentDidMount() {
     this.setState({ link: this.props.match.params.link });
     console.log(this.props.match.params.link);
@@ -36,10 +36,14 @@ export default class AdminLayout extends React.Component {
           return <ViewBooking/>;
         case 'designer': 
         return <ViewDesigner/>;
+        case 'add-designer': 
+        return <AddDesignerForm/>;
+        case 'edit-booking': 
+        return <EditBookingForm/>;
       }
     }
     return (
-      <Layout style={{height:"100vh"}}>
+      <Layout style={{minHeight:"100vh",height:'100%'}}>
         <Sider
           breakpoint="lg"
           collapsedWidth="0"
@@ -56,19 +60,19 @@ export default class AdminLayout extends React.Component {
           <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
             <Menu.Item key="1">
               <Icon type="user" />
-              <span className="nav-text">Add Designer</span>
+             <span className="nav-text"> <a href="/admin/add-designer" >Add Designer</a></span>
             </Menu.Item>
             <Menu.Item key="2">
               <Icon type="video-camera" />
-              <span className="nav-text">View Designer</span>
+              <span className="nav-text"><a href="/admin/designer" >View Designer</a></span>
             </Menu.Item>
             <Menu.Item key="3">
               <Icon type="upload" />
-              <span className="nav-text">View Bookings</span>
+              <span className="nav-text"><a href="/admin/edit-booking" >View Bookings</a></span>
             </Menu.Item>
             <Menu.Item key="4">
               <Icon type="user" />
-              <span className="nav-text">Bookings</span>
+              <span className="nav-text"><a href="/admin/booking">Bookings</a></span>
             </Menu.Item>
           </Menu>
         </Sider>

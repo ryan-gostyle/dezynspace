@@ -69,9 +69,16 @@ img:hover {
 .section-seven,
 .section-eight,
 .section-nine,
-.section-ten,
-.section-eleven{
+.section-eleven,
+.section-twelve,
+.section-thirteen,
+.section-fourteen{
  margin: 40px 0;
+}
+.section-ten{
+  margin-top:40px;
+  margin-bottom:40px;
+  margin: 0 auto;
 }
 @media (min-width:320px)  {
   .App{
@@ -192,6 +199,7 @@ img:hover {
   .section-seven ul li{
     padding: 4px;
     font-size:1em;
+    color: #484848;
   }
   .section-seven h2{
     font-size: 1.4em;
@@ -374,6 +382,7 @@ img:hover {
   position: relative;
   right: 400px;
   height: 3634px;
+  display: none;
 }
 .right-purple{
   bottom: 2500px;
@@ -409,6 +418,15 @@ img:hover {
   top: 27%;
   text-align: center;
   font-size: 1em;
+}
+.fancy span:before,
+.fancy span:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-bottom: 1px solid #484848;
+  top: 18px;
+  width: 70px;
 }
 }
 @media (min-width:481px)  {
@@ -692,6 +710,7 @@ img:hover {
   bottom: 800px;
   position: relative;
   right: 400px;
+  display: none;
 }
 .right-purple{
   bottom: 2500px;
@@ -727,6 +746,15 @@ img:hover {
   top: 27%;
   text-align: center;
   font-size: 1em;
+}
+.fancy span:before,
+.fancy span:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-bottom: 1px solid #484848;
+  top: 18px;
+  width: 70%;
 }
 }
 @media (min-width:641px)  { 
@@ -982,6 +1010,7 @@ img:hover {
   bottom: 800px;
   position: relative;
   right: 400px;
+  display: inline-block;
 }
 .right-purple{
   bottom: 2500px;
@@ -1015,6 +1044,15 @@ img:hover {
   top: 27%;
   text-align: left;
   font-size: 1em;
+}
+.fancy span:before,
+.fancy span:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-bottom: 1px solid #484848;
+  top: 18px;
+  width: 100%;
 }
 }
 @media (min-width:961px)  
@@ -1270,6 +1308,7 @@ img:hover {
   bottom: 800px;
   position: relative;
   right: 400px;
+  display: inline-block;
 }
 .right-purple{
   bottom: 2500px;
@@ -1305,6 +1344,15 @@ img:hover {
   text-align: left;
   font-size: 1em;
 }
+.fancy span:before,
+.fancy span:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-bottom: 1px solid #484848;
+  top: 18px;
+  width: 300px;
+}
  }
 @media (min-width:1025px) {
   .App{
@@ -1317,6 +1365,15 @@ img:hover {
     text-align: left;
     font-size: 1em;
   }
+  .fancy span:before,
+.fancy span:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-bottom: 1px solid #484848;
+  top: 18px;
+  width: 600px;
+}
   .section-three .text-content{
     position: relative;
     text-align: left;
@@ -1638,6 +1695,7 @@ img:hover {
     position: relative;
     right: 120px;
     height: 2780px;
+    display: inline-block;
   }
   .right-purple{
     position: relative;
@@ -1807,9 +1865,11 @@ img:hover {
 .section-six h2{
   color: #f2273b;
   font-size:1.9em;
-  font-weight:800;
+  font-weight:500;
 }
-
+.section-six button {
+  color: #484848 !important;
+}
 .categories .btn{
   border-radius: 25px;
   padding: 10px 20px;
@@ -2081,7 +2141,7 @@ p.price {
 .steps-content {
   margin-top: 16px;
   border: 1px dashed #e9e9e9;
-  border-radius: 6px;
+  border-radius: 2px;
   background-color: #fafafa;
   min-height: 200px;
   text-align: center;
@@ -2091,14 +2151,21 @@ p.price {
 .steps-action {
   margin-top: 24px;
 }
+.ant-steps{
+  display: block;
+}
 
 /*booking form*/
+.ant-form-item {
+  margin: 10px 0 0 0 !important;
+}
 .section-seven .ant-form{
-  background: #fff;
+  background: #ffffff;
   border-radius: 2px;
   padding: 20px 15px;
   max-width: 470px;
   position: relative;
+  border: 1px solid #e5e5e5;
   margin: 0 auto;
   text-align:left;
   -webkit-box-shadow: -23px 23px 3px -2px rgba(3,206,164,0.97);
@@ -2167,15 +2234,20 @@ box-shadow: -23px 23px 3px -2px rgba(3,206,164,0.97);
   border-left: 0;
   border-right: 0;
   border-radius:0;
+  height:56px;
+  background: #ebebeb;
 }
 .ant-form-item{
   margin:25px 0 0 0;
 }
 .ant-form a{
-  color: #484848 !important;
+  color: #6e6a6a !important;
 }
 
 /*footer*/
+.sub-footer{
+  text-align: center;
+}
 .footer-logo{
   width: 200px;
 }
@@ -2201,15 +2273,7 @@ box-shadow: -23px 23px 3px -2px rgba(3,206,164,0.97);
   display: inline-block;
   position: relative;  
 }
-.fancy span:before,
-.fancy span:after {
-  content: "";
-  position: absolute;
-  height: 5px;
-  border-bottom: 2px solid #484848;
-  top: 18px;
-  width: 600px;
-}
+
 .fancy span:before {
   right: 100%;
   margin-right: 15px;

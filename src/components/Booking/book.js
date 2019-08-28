@@ -1,23 +1,23 @@
 import React, { Component } from 'react'
-import { Steps, Button, message } from 'antd';
-
+import { Steps, Button, message,Row,Col } from 'antd';
+import BookForm from '../section-7/form-book';
 const { Step } = Steps;
 
 const steps = [
   {
-    title: 'First',
-    content: 'First-content',
+    title: 'Book Informations',
+    content: <BookForm/>,
   },
   {
-    title: 'Second',
+    title: 'Book Questions',
     content: 'Second-content',
   },
   {
     title: 'Last',
-    content: 'Last-content',
+    content: 'Thank you! See you soon!',
   },
 ];
-export default class book extends Component {
+export default class CustomerBook extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -37,8 +37,10 @@ export default class book extends Component {
     render() {
         const { current } = this.state;
         return (
-<div>
-        <Steps current={current}>
+      <div className="container">
+        <Row>
+          <Col xs={24} sm={24} md={24} lg={24}>
+          <Steps current={current}>
           {steps.map(item => (
             <Step key={item.title} title={item.title} />
           ))}
@@ -61,6 +63,9 @@ export default class book extends Component {
             </Button>
           )}
         </div>
+          </Col>
+        </Row>
+        
       </div>
         );
     }

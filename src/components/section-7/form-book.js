@@ -92,21 +92,22 @@ class BookingForm extends React.Component {
             <Form.Item label="How Long">
             {getFieldDecorator('spandate', {
                 rules: [
-                { type: 'array' }],
+                { type: 'array',required: true, message: 'Choose a plan' }],
             })(<Cascader options={datelist}  placeholder="select one" />)}
             </Form.Item>
+              <a href="" style={{textDecoration:'underline'}}>Not sure how long you need a designer for? Click here</a>
           </Col>  
           <Col xs={24} sm={24} md={24} lg={24}>
             <Form.Item label="Start Date">
               {getFieldDecorator('startdate', {
-                  rules: [{ required: true}],
+                  rules: [{ required: true, message: 'When to start?'}],
               })(<RangePicker/>)}
             </Form.Item>
           </Col>
           <Col xs={24} sm={24} md={12} lg={12}>
             <Form.Item label="Reporting Time">
             {getFieldDecorator('reportingtime', {
-                      rules: [{ required: true}],
+                      rules: [{ required: true, message: 'Reporting time'}],
                   })(<TimePicker defaultOpenValue={moment('00:00:00', 'HH:mm:ss')} />
               )}
             </Form.Item>

@@ -21,22 +21,25 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import login from './admin/login';
 import register from './components/Accounts/register';
 import Clogin from './components/Accounts/login';
+import CustomerBook from './components/Booking/book';
 /*admin*/
 import AdminLayout from './admin/layout';
 function App() {
   return (
     <Router>
       <Layout className="App">
-
-        <Switch>
-          <Route path="/admin/:link" component={AdminLayout} exact />
-          <Route path="/" component={Home} exact />
-          <Route path="/admin" component={login} exact />
-          <Route path="/signup" component={register} exact />
-          <Route path="/login" component={Clogin} exact />
-        {/* <Route path="/about" component={About} /> */}
-        {/* <Route path="/how-it-works" component={HowItWorksPage}/> */}
-         </Switch>
+      <Header className="header" />
+          <Switch>
+            
+            <Route path="/admin/:link" component={AdminLayout} exact />
+            <Route path="/admin" component={login} exact />
+            <Route path="/" component={Home} exact />
+            <Route path="/signup" component={register} exact />
+            <Route path="/login" component={Clogin} exact />
+            <Route path="/booking" component={CustomerBook} exact />
+          {/* <Route path="/about" component={About} /> */}
+          {/* <Route path="/how-it-works" component={HowItWorksPage}/> */}
+          </Switch>
          </Layout>
     </Router>
   );
@@ -44,7 +47,7 @@ function App() {
 
 const Home = () => (
   <div className="App">
-          <Header className="header" />
+  
 
     <Banner />
     <SectionTwo />

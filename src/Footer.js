@@ -55,7 +55,7 @@ class Footer extends Component {
                     </span>
                     </p> 
                     </Col>
-                    <Col xs={24} sm={24} md={24} lg={24} stlye={{textAlign:"center"}}>
+                    <Col xs={24} sm={24} md={24} lg={24} className="sub-footer">
                         2019 Dezynspace is under RBGM Creative Design Studio. All Right Reserved.
                     </Col>
                 </Row>
