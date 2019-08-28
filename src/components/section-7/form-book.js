@@ -1,6 +1,21 @@
 import React from 'react';
 import 'antd/dist/antd.css';
-import { Form, Icon, Input, Button, Select, DatePicker, TimePicker } from 'antd';
+import {
+  Form,
+  Input,
+  Tooltip,
+  Icon,
+  Cascader,
+  Select,
+  Row,
+  Col,
+  Checkbox,
+  Button,
+  AutoComplete,
+  InputNumber,
+  DatePicker,
+  TimePicker
+} from 'antd';
 import moment from 'moment';
 
 function hasErrors(fieldsError) {
@@ -11,7 +26,21 @@ const dateFormatList = ['MM/DD/YYYY', 'MM/DD/YY'];
 function handleChange(value) {
   console.log(`selected ${value}`);
 }
-
+const datelist = [
+  {
+    value: '3',
+    label: '3',
+  },
+  {
+    value: '5',
+    label: '5',
+  },
+  {
+    value: '7',
+    label: '7',
+  },
+];
+const {RangePicker} = DatePicker;
 class BookingForm extends React.Component {
   componentDidMount() {
     // To disabled submit button at the beginning.
@@ -28,61 +57,81 @@ class BookingForm extends React.Component {
     });
   };
 
+  
   render() {
     const { getFieldDecorator, getFieldsError, getFieldError, isFieldTouched } = this.props.form;
-
+    const formItemLayout = {
+      labelCol: {
+        xs: { span: 24 },
+        sm: { span: 24 },
+      },
+      wrapperCol: {
+        xs: { span: 24 },
+        sm: { span: 24 },
+      },
+    };
+    const tailFormItemLayout = {
+      wrapperCol: {
+        xs: {
+          span: 24,
+          offset: 0,
+        },
+        sm: {
+          span: 16,
+          offset: 8,
+        },
+      },
+    };
    
     return (
 
-      <Form layout="inline" onSubmit={this.handleSubmit}>
+      <Form {...formItemLayout} onSubmit={this.handleSubmit}>
+        <Row>
           <h2 style={{textAlign:'left'}}>Book you exlusive professional graphic designer</h2>
-        <Form.Item label="How Long" labelAlign='left'>
-        {getFieldDecorator('spandate')(
-            <Select defaultValue="lucy" style={{ width: 420 }} onChange={handleChange}>
-            <Option value="jack">Jack</Option>
-            <Option value="lucy">Lucy</Option>
-            <Option value="disabled" disabled>
-                Disabled
-            </Option>
-            <Option value="Yiminghe">yiminghe</Option>
-        </Select>,
-          )}
-        <a href=""> Not sure how long you need a designer for? Click here</a>
-        </Form.Item>
-        <Form.Item label="Start Date" labelAlign='left'>
-        {getFieldDecorator('startdate')(
-        <DatePicker style={{ width: 420 }} defaultValue={moment('08/23/2019', dateFormatList[0])} format={dateFormatList} />
-        ,
-          )}
-        </Form.Item>
-        <Form.Item label="Reporting Time" labelAlign='left' style={{width:"44%",display:"inline-block"}}>
-        {getFieldDecorator('reportingtime')(
-         <TimePicker defaultOpenValue={moment('00:00:00', 'HH:mm:ss')} />
-        ,
-          )}
-        </Form.Item>
-        <Form.Item label="Timezone(ASIA)" labelAlign='left' style={{width:"48%",display:"inline-block"}}>
-        {getFieldDecorator('timezone')(
-            <Select defaultValue="lucy" style={{ width: 213 }} onChange={handleChange}>
-            <Option value="jack">Jack</Option>
-            <Option value="lucy">Lucy</Option>
-            <Option value="disabled" disabled>
-                Disabled
-            </Option>
-            <Option value="Yiminghe">yiminghe</Option>
-        </Select>,
-          )}
-        </Form.Item>
-        <Form.Item style={{margin:"30px 0 0 0"}} >
-            <div style={{margin:'0 auto',textAlign:'center'}}>
-                <Button  className="booking-button" size="large" block htmlType="submit" disabled={hasErrors(getFieldsError())}>
-                    RENT
-                </Button>
-          </div>
-        </Form.Item>
-        <Form.Item style={{textAlign:'center',margin:'0 auto'}}>
-        <a href="">Looking for long term graphic designer? Click here</a>
-        </Form.Item>
+          <Col xs={24} sm={24} md={24} lg={24}>
+            <Form.Item label="How Long">
+            {getFieldDecorator('spandate', {
+                rules: [
+                { type: 'array', required: true, message: 'Please select how long!' }],
+            })(<Cascader options={datelist}  placeholder="select one" />)}
+            </Form.Item>
+          </Col>  
+          <Col xs={24} sm={24} md={24} lg={24}>
+            <Form.Item label="Start Date">
+              {getFieldDecorator('startdate', {
+                  rules: [{ required: true}],
+              })(<RangePicker/>)}
+            </Form.Item>
+          </Col>
+          <Col xs={24} sm={24} md={12} lg={12}>
+            <Form.Item label="Reporting Time">
+            {getFieldDecorator('reportingtime', {
+                      rules: [{ required: true}],
+                  })(<TimePicker defaultOpenValue={moment('00:00:00', 'HH:mm:ss')} />
+              )}
+            </Form.Item>
+          </Col>
+          <Col xs={24} sm={24} md={12} lg={12}>
+            <Form.Item label="Timezone(ASIA)">
+              {getFieldDecorator('timezone', {
+                rules: [
+                { type: 'array', required: true}],
+              })(<Cascader options={datelist}  placeholder="select timezone" />)}
+              </Form.Item>
+          </Col>
+          <Col xs={24} sm={24} md={24} lg={24} >
+            <Form.Item className="btn-pos">
+              <Button htmlType="submit">
+                  Submit
+              </Button>
+            </Form.Item>
+          </Col>
+          <Col xs={24} sm={24} md={24} lg={24}>
+            <Form.Item style={{textAlign:'center',margin:'0 auto'}}>
+            <a href="">Looking for long term graphic designer? Click here</a>
+            </Form.Item>
+          </Col>
+        </Row>
       </Form>
     );
   }

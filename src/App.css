@@ -266,7 +266,7 @@ img:hover {
   .section-two{
     margin:0;
     overflow:hidden;
-    height:600px;
+    height:auto;
   }
   .banner-description{
     width:auto;
@@ -291,12 +291,9 @@ img:hover {
   .sectiontwo-dots{
     opacity: 0.9;
     width: auto;
-    position: relative;
     z-index: 2;
-    bottom: 50px;
-    left: 75%;
     height: 450px;
-    display:none;
+    display: none;
   }
   
   .wave{
@@ -304,8 +301,6 @@ img:hover {
     width: 100%; 
     position: relative; 
     z-index: 2; 
-    top: 50%; 
-    right: 15%;
   }
   .section-four .img-container img.service-list{
     height:50px;
@@ -323,6 +318,7 @@ img:hover {
     font-size:1.3em;
     font-weight:500;
     text-align:center;
+    margin-top: 0;
   }
   .head-2{
     color: #2b3a67;
@@ -331,6 +327,7 @@ img:hover {
     text-align: justify;
     padding: 5px 10px;
     border: 2px solid #f2273b;
+    margin: 5px;
   }
   .head-3{
     color:#f2273b;
@@ -339,6 +336,14 @@ img:hover {
     text-align:left;
     margin-top:1em;
     text-align:center;
+  }
+  .text-content-head-3 {
+    margin-top: 0px;
+  }
+  .sectiontwo-divlink {
+    color: rgb(163, 206, 164);
+    margin: 0px auto;
+    margin-top: 120px;
   }
   .head-5{
     color:#fff;
@@ -561,7 +566,7 @@ img:hover {
   .section-two{
     margin:0;
     overflow:hidden;
-    height:600px;
+    height:auto;
   }
   .corners{
     width: auto;
@@ -611,12 +616,9 @@ img:hover {
   .sectiontwo-dots{
     opacity: 0.9;
     width: auto;
-    position: relative;
     z-index: 2;
-    bottom: 10px;
-    left: 75%;
     height: 450px;
-    display:none;
+    display: none;
 
   }
   .head-1{
@@ -624,6 +626,7 @@ img:hover {
     font-size:1.4em;
     font-weight:500;
     text-align:center;
+    margin-top: 0;
     
   }
   .head-2{
@@ -631,6 +634,7 @@ img:hover {
     font-size:1.3em;
     font-weight:400;
     text-align:center;
+    margin: 5px;
   }
   .head-3{
     color:#f2273b;
@@ -640,13 +644,19 @@ img:hover {
     margin-top:1em;
     text-align:center;
   }
+  .text-content-head-3 {
+    margin-top: 0px;
+  }
+  .sectiontwo-divlink {
+    color: rgb(163, 206, 164);
+    margin: 0px auto;
+    margin-top: 120px;
+  }
   .wave{
     opacity: 0.6;
     width: 100%; 
     position: relative;  
     z-index: 2; 
-    top: 80%; 
-    right: 20%;
   }
   .section-four .img-container img.service-list{
     height:50px;
@@ -892,7 +902,7 @@ img:hover {
   .section-two{
     margin:0;
     overflow:hidden;
-    height:700px;
+    height:auto;
   }
 
   .corners{
@@ -927,10 +937,7 @@ img:hover {
   .sectiontwo-dots{
     opacity: 0.9;
     width: auto;
-    position: relative;
     z-index: 2;
-    bottom: 10px;
-    left: 75%;
     height: 450px;
     display:inline-block;
   }
@@ -939,8 +946,6 @@ img:hover {
     width: 100%; 
     position: relative;  
     z-index: 2; 
-    top: 67%; 
-    right: 20%;
     height: 145px;
   }
   .section-four .img-container img.service-list{
@@ -1007,7 +1012,6 @@ img:hover {
 .item-3,
 .item-4,
 .item-5{
-  top: 18em;
   font-size: 1.5em;
 }
 .banner-hero .hero-button {
@@ -1156,7 +1160,7 @@ img:hover {
   .section-two{
     margin:30px 0;
     overflow:hidden;
-    height:900px;
+    height:auto;
   }
   .square-orange {
     background-image: url('https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/Subtraction+5.png');
@@ -1226,20 +1230,15 @@ img:hover {
   .sectiontwo-dots{
     opacity: 0.9;
     width: auto;
-    position: relative;
     z-index: 2;
-    bottom: 10px;
-    left: 75%;
     height: 450px;
     display:inline-block;
   }
   .wave{
     opacity: 0.6;
-    width: 900px; 
+    width: 400px; 
     position: relative;  
     z-index: 2; 
-    top: 80%; 
-    right: 20%;
     height: 145px;
   }
   .section-four .img-container img.service-list{
@@ -1306,7 +1305,6 @@ img:hover {
 .item-3,
 .item-4,
 .item-5{
-  top: 14em;
   font-size: 1.6em;
 }
 .banner-hero .hero-button {
@@ -1521,7 +1519,7 @@ img:hover {
   .section-two{
     margin:30px 0;
     overflow:hidden;
-    height:800px;
+    height:auto;
   }
   .corners{
     width: auto;
@@ -1557,10 +1555,7 @@ img:hover {
   .sectiontwo-dots{
     opacity: 0.9;
     width: auto;
-    position: relative;
     z-index: 2;
-    bottom: 50px;
-    left: 75%;
     height: 450px;
     display:inline-block;
   }
@@ -1569,16 +1564,13 @@ img:hover {
     font-size: 2.5em;
     font-weight: 600;
     text-align: justify;
-    position: relative;
-    top: 70px;
+    margin-top: 75px;
   }
   .head-2{
     color:#2b3a67;
     font-size:1.3em;
     font-weight:400;
     text-align:left;
-    position: relative;
-    top: 90px;
     margin:0 auto;
     padding: 0;
     border: none;
@@ -1589,15 +1581,20 @@ img:hover {
     font-weight: 400;
     text-align: center;
     position: relative;
-    top: 162px;
+  }
+  .text-content-head-3 {
+    margin-top: 150px;
+  }
+  .sectiontwo-divlink {
+    color: rgb(163, 206, 164);
+    margin: 0px auto;
+    margin-top:110px;
   }
   .wave{
     opacity: 1;
-    width: 900px;
+    width: 450px;
     position: relative;
     z-index: 2;
-    top: 308px;
-    right: 50%;
     height: 145px;
   }
   .section-four .img-container img.service-list{
@@ -1670,7 +1667,6 @@ img:hover {
 .item-3,
 .item-4,
 .item-5{
-  top: 13.96em;
   font-size: 1.8em;
 }
 }
@@ -1682,13 +1678,15 @@ img:hover {
   font-weight: 400;
   text-align: center;
   position: relative;
-  top: 270px;
   text-decoration: underline;
 }
  
-.section-two .img-container:nth-child(1){
-  width:100%;
-  height:0px;
+.section-two .img-container-rectangle:nth-child(1){
+  width: auto;
+  top: 0;
+  height: auto;
+  position: absolute;
+  max-width: 600px;
 }
 .section-two .img-container:nth-child(2){
   width:100%;
@@ -1992,7 +1990,6 @@ p.price {
 .item-5{
 	position: absolute;
   display: block;
-
   color:#03cea4;;
   width: 80%;
 
@@ -2099,12 +2096,10 @@ p.price {
 /*booking form*/
 .section-seven .ant-form{
   background: #fff;
-  border-radius: 4px;
+  border-radius: 2px;
   padding: 20px 15px;
   max-width: 470px;
   position: relative;
-  top: 80px;
-  left: 50px;
   margin: 0 auto;
   text-align:left;
   -webkit-box-shadow: -23px 23px 3px -2px rgba(3,206,164,0.97);
@@ -2112,14 +2107,9 @@ p.price {
 box-shadow: -23px 23px 3px -2px rgba(3,206,164,0.97);
 }
 .section-seven .ant-form h2{
-  font-size:1.555em;
-}
-.booking-button{
-  font-size: 19px;
-  border-radius: 25px;
-  color: #fff;
-  background: #f2273b;
-  padding: 0px 35px
+    text-align: left;
+    color: #484848;
+    font-weight: 600;
 }
 
 .laptop-guy{
@@ -2134,7 +2124,7 @@ box-shadow: -23px 23px 3px -2px rgba(3,206,164,0.97);
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   background-color: #fff;
-  border: 1px solid #f2273b;
+  border: 1px solid #EBEBEB !important;
   border-top: 0;
   border-left: 0;
   border-radius:0;
@@ -2145,11 +2135,27 @@ box-shadow: -23px 23px 3px -2px rgba(3,206,164,0.97);
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   background-color: #fff;
-  border: 1px solid #f2273b;
+  border: 1px solid #EBEBEB !important;
   border-top: 0;
   border-left: 0;
-
   border-radius:0;
+}
+.ant-form label{
+  color:#484848;
+  
+}
+.ant-calendar-picker,.ant-time-picker{
+  width: 100%;
+}
+.ant-btn{
+  background:#FF5A5F;
+  color:#fff;
+}
+.btn-pos .ant-col.ant-form-item-control-wrapper.ant-col-xs-24.ant-col-sm-24{
+  text-align: right;
+}
+.ant-form-item-label{
+  text-align:left;
 }
 .ant-time-picker-input
 {
@@ -2157,7 +2163,7 @@ box-shadow: -23px 23px 3px -2px rgba(3,206,164,0.97);
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   background-color: #fff;
-  border: 1px solid #f2273b;
+  border: 1px solid #EBEBEB !important;
   border-top: 0;
   border-left: 0;
   border-right: 0;
@@ -2166,8 +2172,8 @@ box-shadow: -23px 23px 3px -2px rgba(3,206,164,0.97);
 .ant-form-item{
   margin:25px 0 0 0;
 }
-a{
-  color:#f2273b !important;
+.ant-form a{
+  color: #484848 !important;
 }
 
 

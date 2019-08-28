@@ -1,0 +1,82 @@
+#components-layout-demo-custom-trigger .trigger {
+    font-size: 18px;
+    line-height: 64px;
+    padding: 0 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  #components-layout-demo-custom-trigger .trigger:hover {
+    color: #1890ff;
+  }
+
+  #components-layout-demo-responsive .logo {
+    height: 32px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px;
+  }
+  .ant-layout.ant-layout-has-sider{
+    min-height: 720px;
+  }
+  .ant-layout-sider{
+    background:#363740;
+  }
+
+  .ant-menu-dark, .ant-menu-dark .ant-menu-sub {
+    color: #fff;
+    background: #363740;
+  }
+  .ant-menu.ant-menu-dark .ant-menu-item-selected, .ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected {
+    background-color: rgba(255,255,255,0.2);
+}
+
+.ant-menu-vertical > .ant-menu-item, .ant-menu-vertical-left > .ant-menu-item, .ant-menu-vertical-right > .ant-menu-item, .ant-menu-inline > .ant-menu-item, .ant-menu-vertical > .ant-menu-submenu > .ant-menu-submenu-title, .ant-menu-vertical-left > .ant-menu-submenu > .ant-menu-submenu-title, .ant-menu-vertical-right > .ant-menu-submenu > .ant-menu-submenu-title, .ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title {
+    height: 55px !important;
+    line-height: 55px  !important;
+}
+.ant-menu-vertical .ant-menu-item, .ant-menu-vertical-left .ant-menu-item, .ant-menu-vertical-right .ant-menu-item, .ant-menu-inline .ant-menu-item, .ant-menu-vertical .ant-menu-submenu-title, .ant-menu-vertical-left .ant-menu-submenu-title, .ant-menu-vertical-right .ant-menu-submenu-title, .ant-menu-inline .ant-menu-submenu-title {
+    height: 40px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding: 0 16px;
+    overflow: hidden;
+    font-size: 18px;
+    line-height: 40px;
+    text-overflow: ellipsis;
+}
+
+.ant-menu-item .anticon, .ant-menu-submenu-title .anticon{
+    font-size: 18px;
+}
+
+.ant-form-item-control-wrapper {
+  width: 93%;
+  margin:5px;
+  
+}
+
+.ant-input-number {
+  width: 100%;
+  border-radius: 1px;
+  height: 56px;
+}
+
+.ant-calendar-picker {
+  width: 100%;
+  border-radius: 1px;
+  height: 56px;
+}
+
+.ant-input,.ant-cascader-input.ant-input{
+  background: #e5e5e5 !important;
+  border-radius: 1px;
+  height: 56px;
+}
+/*table*/
+.table-operations {
+  margin-bottom: 16px;
+}
+
+.table-operations > button {
+  margin-right: 8px;
+}
