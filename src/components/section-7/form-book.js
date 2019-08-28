@@ -92,7 +92,7 @@ class BookingForm extends React.Component {
             <Form.Item label="How Long">
             {getFieldDecorator('spandate', {
                 rules: [
-                { type: 'array', required: true, message: 'Please select how long!' }],
+                { type: 'array' }],
             })(<Cascader options={datelist}  placeholder="select one" />)}
             </Form.Item>
           </Col>  
@@ -115,7 +115,7 @@ class BookingForm extends React.Component {
             <Form.Item label="Timezone(ASIA)">
               {getFieldDecorator('timezone', {
                 rules: [
-                { type: 'array', required: true}],
+                { type: 'array'}],
               })(<Cascader options={datelist}  placeholder="select timezone" />)}
               </Form.Item>
           </Col>
