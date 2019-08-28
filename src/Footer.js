@@ -3,7 +3,7 @@ import { Row, Col } from 'antd';
 class Footer extends Component {
     render() {
         return (
-            <div className="col-24 section-footer" style={{margin:'0',padding:'40px 15px 0 15px'  }}>
+            <div className="col-24 section-footer" style={{margin:'0',padding:'40px 15px 0 15px'}}>
                 <Row style={{margin:'0 auto'}}>
                     <Col xs={24} sm={24} md={5} lg={5} style={{maxHeight: 1000, display:'inline-block', position:'relative'}}>
                        
@@ -51,7 +51,7 @@ class Footer extends Component {
                         <h5>Payment Partners </h5>    
                     </Col>
                     <Col xs={24} sm={24} md={24} lg={24}>
-                    <p class="subtitle fancy"><span><img alt="" src="https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/colored+logo.png" className="footer-logo"/>
+                    <p className="subtitle fancy"><span><img alt="" src="https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/colored+logo.png" className="footer-logo"/>
                     </span>
                     </p> 
                     </Col>
