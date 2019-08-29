@@ -48,8 +48,7 @@ export default class CaseStudies extends React.Component {
     return (
       <HashRouter>    
           <Layout className="case-categories" style={{minHeight:"100vh",height:'100%'}}>
-            <Sider 
-              style={{ background: 'rgba(0,0,0,0) !important'}}
+            <Sider className="categorylayout"
               breakpoint="lg"
               collapsedWidth="0"
               onBreakpoint={broken => {
@@ -59,7 +58,7 @@ export default class CaseStudies extends React.Component {
                 console.log(collapsed, type);
               }}
             >
-              <Menu theme="light" mode="inline" defaultSelectedKeys={['16']} className="case-categories">
+              <Menu theme="light" mode="inline" defaultSelectedKeys={['1']} className="case-categories">
                 <h4>Categories</h4>
                 
                 <Menu.Item key="1">
@@ -113,12 +112,12 @@ export default class CaseStudies extends React.Component {
               </Menu>
             </Sider>
             <Layout>
-              <Header style={{ background: '#fff', padding: 0 }} >
+              <Header className="container" style={{ background: '#fff', padding: 0}} >
                 <h3 style={{
                   padding: '15px'
                 }}>Companies Love Us</h3>
               </Header>
-              <Content style={{ margin: '24px 16px 0' }}>
+              <Content style={{ margin: '0 auto' }}>
           
                   <Route path="/Infographic" component={Infographic}/>
                   <Route path="/Posters" component={Posters}/>

@@ -84,5 +84,5 @@ class Login extends React.Component {
         )
     }
 }
-const login = Form.create({ name: 'login' })(Login);
-export default login;
+const AdminLogin = Form.create({ name: 'login' })(Login);
+export default AdminLogin;

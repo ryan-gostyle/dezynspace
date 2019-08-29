@@ -27,7 +27,7 @@ class Footer extends Component {
                            <li><a href="/case-studies">DOTO</a></li>
                            <li><a href="/case-studies">Our Works</a></li>
                            <li><a href="/case-studies">Pricing</a></li>
-                           <li><a href="/case-studies">Case Studies</a></li>
+                           <li><a href="/case-studies#/Infographic">Case Studies</a></li>
                        </ul>
                     </Col>
                     <Col xs={24} sm={24} md={5} lg={5} style={{maxHeight: 1000, display:'inline-block', position:'relative',maxWidth: '320px'}}>

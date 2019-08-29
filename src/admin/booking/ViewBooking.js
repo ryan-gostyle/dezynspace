@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { Table, Button } from 'antd';
+import { Table, Button, Layout } from 'antd';
 import cookie from 'react-cookies';
 import Axios from 'axios';
-
+const { Header } = Layout;
 class ViewBooking extends Component {
     state = {
         filteredInfo: null,
@@ -114,6 +114,11 @@ class ViewBooking extends Component {
     ];
         return (
             <div>
+              <Header  style={{ background: '#fff', padding: 0 }} >
+                <h3 style={{
+                  padding: '15px'
+                }}>Booking List</h3>
+              </Header>
               <div className="table-operations">
                 <Button onClick={this.setEmploymentSort}>Sort Employment Type</Button>
                 <Button onClick={this.clearFilters}>Clear filters</Button>

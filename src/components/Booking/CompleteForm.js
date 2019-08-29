@@ -25,6 +25,7 @@ import {
 } from 'antd';
 import moment from 'moment';
 
+
 function hasErrors(fieldsError) {
   return Object.keys(fieldsError).some(field => fieldsError[field]);
 }
@@ -124,7 +125,7 @@ class CompleteForm extends Component {
         <div className="container">
             <Form {...formItemLayout} onSubmit={this.handleSubmit}>
             <Row>
-              <h2 style={{textAlign:'left'}}>Book you exlusive professional graphic designer</h2>
+              <h2 className="h2Form" style={{textAlign:'center'}}>Book you exlusive professional graphic designer</h2>
               <Col xs={24} sm={24} md={24} lg={24}>
                 <Form.Item label="How Long">
                 {getFieldDecorator('spandate', {
@@ -176,63 +177,76 @@ class CompleteForm extends Component {
                     })(<Input/>)}
                 </Form.Item >
               </Col>
-              <Col xs={24} sm={24} md={12} lg={12} >
+              <Col xs={24} sm={24} md={24} lg={24} >
                 <Form.Item label="Email address of main contact person/the person that the designer will directly report to*">
                     {getFieldDecorator('email', {
                         rules: [{}],
                     })(<Input/>)}
                 </Form.Item >
               </Col>
-              <Col xs={24} sm={24} md={12} lg={12} >
+              <Col xs={24} sm={24} md={24} lg={24} >
                 <Form.Item label="What creative output will you mostly request from your graphic designer during your rented time? (i.e. annual report, social media post, web design, etc.) * ">
                     {getFieldDecorator('output', {
                         rules: [{}],
                     })(<Input/>)}
                 </Form.Item >
               </Col>
+              <Col xs={24} sm={24} md={24} lg={24} style={{margin:'0 auto'}}>
+              <h2 className="h2Form">Please rate the importance of the following (5 being the highest)</h2>
+              </Col>
               <Col xs={24} sm={24} md={12} lg={12} >
                 <Form.Item label="Collaboration (Ability of designer to create and build ideas with you) *">
                     {getFieldDecorator('collaboration', {
                         rules: [{}],
                     })(<Radio.Group onChange={this.onChange} value={this.state.value}>
-                        <Radio value={1}></Radio>
-                        <Radio value={2}></Radio>
-                        <Radio value={3}></Radio>
-                        <Radio value={4}></Radio>
-                        <Radio value={5}></Radio>
+                        <Radio id="collab1" value="1">1</Radio>
+                        <Radio id="collab2" value="2">2</Radio>
+                        <Radio id="collab3" value="3">3</Radio>
+                        <Radio id="collab4" value="4">4</Radio>
+                        <Radio id="collab5 "value="5">5</Radio>
                       </Radio.Group>)}
                 </Form.Item >
               </Col>
               <Col xs={24} sm={24} md={12} lg={12} >
                 <Form.Item label="Speed (Ability of designer to submit designs earlier than promised) *">
-                    {getFieldDecorator('collaboration', {
+                    {getFieldDecorator('speed', {
                         rules: [{}],
                     })(<Radio.Group onChange={this.onChange} value={this.state.value}>
-                        <Radio value={1}></Radio>
-                        <Radio value={2}></Radio>
-                        <Radio value={3}></Radio>
-                        <Radio value={4}></Radio>
-                        <Radio value={5}></Radio>
+                        <Radio id="speed1" value="1">1</Radio>
+                        <Radio id="speed2" value="2">2</Radio>
+                        <Radio id="speed3" value="3">3</Radio>
+                        <Radio id="speed4" value="4">4</Radio>
+                        <Radio id="speed5 "value="5">5</Radio>
                       </Radio.Group>)}
                 </Form.Item >
               </Col>
               <Col xs={24} sm={24} md={12} lg={12} >
                 <Form.Item label="Design Options (Ability of designer to present multiple-options for a design requirement) *">
-                    {getFieldDecorator('collaboration', {
+                    {getFieldDecorator('design', {
                         rules: [{}],
                     })(<Radio.Group onChange={this.onChange} value={this.state.value}>
-                        <Radio style={radioStyle} value={1}>
-                          Option A
+                        <Radio id="design1" value="1">1</Radio>
+                        <Radio id="design2" value="2">2</Radio>
+                        <Radio id="design3" value="3">3</Radio>
+                        <Radio id="design4" value="4">4</Radio>
+                        <Radio id="design5 "value="5">5</Radio>
+                    </Radio.Group>)}
+                </Form.Item >
+              </Col>
+              <Col xs={24} sm={24} md={12} lg={12} >
+                <Form.Item label="Which of the below statement would best describe your approach to deadline? *">
+                    {getFieldDecorator('deadline', {
+                        rules: [{}],
+                    })(<Radio.Group onChange={this.onChange} value={this.state.value}>
+                        <Radio style={radioStyle} id="deadline1" value={"I'm strict on deadlines"}>
+                          I'm strict on deadlines
                         </Radio>
-                        <Radio style={radioStyle} value={2}>
-                          Option B
+                        <Radio style={radioStyle} id="deadline2" value={"I'm open to designer recommendation when it comes to delivery time"}>
+                          I'm open to designer recommendation when it comes to delivery time
                         </Radio>
-                        <Radio style={radioStyle} value={3}>
-                          Option C
-                        </Radio>
-                        <Radio style={radioStyle} value={4}>
-                          More...
-                          {this.state.value === 4 ? <Input style={{ width: 100, marginLeft: 10 }} /> : null}
+                        <Radio style={radioStyle} id="deadline3" value={"more"}>
+                          Other...
+                          {this.state.value === "more" ? <Input style={{ width: 200, marginLeft: 10 }} /> : null}
                         </Radio>
                       </Radio.Group>)}
                 </Form.Item >
@@ -242,37 +256,43 @@ class CompleteForm extends Component {
                     {getFieldDecorator('interest', {
                         rules: [{}],
                     })(<Radio.Group onChange={this.onChange} value={this.state.value}>
-                        <Radio style={radioStyle} value={1}>
-                          Option A
-                        </Radio>
-                        <Radio style={radioStyle} value={2}>
-                          Option B
-                        </Radio>
-                        <Radio style={radioStyle} value={3}>
-                          Option C
-                        </Radio>
-                        <Radio style={radioStyle} value={4}>
-                          More...
-                          {this.state.value === 4 ? <Input style={{ width: 100, marginLeft: 10 }} /> : null}
-                        </Radio>
-                      </Radio.Group>)}
+                      <Radio style={radioStyle} id="interest1" value={"I have no existing design team"}>
+                      I have no existing design team
+                      </Radio>
+                      <Radio style={radioStyle} id="interest2" value={"I’m not happy with my current contractual graphic designer/s"}>
+                      I’m not happy with my current contractual graphic designer/s
+                      </Radio>
+                      <Radio style={radioStyle} id="interest3" value={"I have a design team, but I need extra graphic designer/s for a certain duration only"}>
+                      I have a design team, but I need extra graphic designer/s for a certain duration only
+                      </Radio>
+                      <Radio style={radioStyle} id="interest4" value={"I just want to try your service"}>
+                      I just want to try your service
+                      </Radio>
+                      <Radio style={radioStyle} id="interest5" value={"I need to grow my design team full-time"}>
+                      I need to grow my design team full-time
+                      </Radio>
+                      <Radio style={radioStyle} id="interest6" value={"more"}>
+                        Other...
+                        {this.state.value === 3 ? <Input style={{ width: 200, marginLeft: 10 }} /> : null}
+                      </Radio>
+                    </Radio.Group>)}
                 </Form.Item >
               </Col>
               <Col xs={24} sm={24} md={12} lg={12} >
-                <Form.Item label="Describe a best-fit graphic designer for you/your company **">
-                    {getFieldDecorator('describe', {
+                <Form.Item label="Describe a best-fit graphic designer for you/your company *">
+                    {getFieldDecorator('bestfit', {
                         rules: [{}],
                     })(<Input/>)}
                 </Form.Item >
               </Col>
               <Col xs={24} sm={24} md={12} lg={12} >
-                <Form.Item label="Please write down the email address/es of those that needs to be invited in the *workspace with your designer*">
-                    {getFieldDecorator('others', {
+                <Form.Item label="Please write down the email address/es of those that needs to be invited in the *workspace with your designer *">
+                    {getFieldDecorator('invites', {
                         rules: [{}],
                     })(<Input/>)}
                 </Form.Item >
               </Col>
-                <Col xs={24} sm={24} md={24} lg={24} >
+              <Col xs={24} sm={24} md={24} lg={24} >
                     <Form.Item className="btn-pos">
                         <Button htmlType="submit">
                             Submit

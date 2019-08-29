@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import { Table, Button } from 'antd';
-
+import { Table, Button, Layout } from 'antd';
+import cookie from 'react-cookies';
+import Axios from 'axios';
+const { Header } = Layout;
 const data = [
   {
     key: '1',
@@ -36,8 +38,18 @@ class ViewDesigner extends Component {
     state = {
         filteredInfo: null,
         sortedInfo: null,
+        data: [],
       };
     
+      async componentDidMount() {
+        var data = await Axios.get('http://ec2-18-222-135-215.us-east-2.compute.amazonaws.com/api/designers', 
+        {
+          headers: { Authorization: "Bearer " + cookie.load('token') }
+        });
+        console.log(await data.data.message)
+        this.setState({ data: await data.data.message });
+    }
+
       handleChange = (pagination, filters, sorter) => {
         console.log('Various parameters', pagination, filters, sorter);
         this.setState({
@@ -117,6 +129,11 @@ class ViewDesigner extends Component {
     ];
         return (
             <div>
+              <Header  style={{ background: '#fff', padding: 0 }} >
+                <h3 style={{
+                  padding: '15px'
+                }}>Designer List</h3>
+              </Header>
               <div className="table-operations">
                 <Button onClick={this.setEmploymentSort}>Sort Employment Type</Button>
                 <Button onClick={this.clearFilters}>Clear filters</Button>

@@ -13,40 +13,33 @@ import {
     Button,
     AutoComplete,
     InputNumber,
-    DatePicker 
+    DatePicker,
+    Layout 
   } from 'antd';
+import cookie from 'react-cookies';
+import Axios from 'axios'
   const { Option } = Select;
   const AutoCompleteOption = AutoComplete.Option;
   const {RangePicker} = DatePicker;
 
+  const { Header } = Layout;
 
-  const cities = [
-    {
-      value: 'zhejiang',
-      label: 'Zhejiang',
-    },
-    {
-      value: 'jiangsu',
-      label: 'Jiangsu',
-    },
-
-    
-  ];
 
 class AddDesigner extends Component {
     state = {
         confirmDirty: false,
         autoCompleteResult: [],
-        countries: [],
+        data: [],
       };
-      
-      componentDidMount(){
-        axios.get('http://ec2-18-222-135-215.us-east-2.compute.amazonaws.com/api/countries')
-        .then(countries =>{
-          console.log(countries);
-          
+
+      async componentDidMount() {
+        var data = await Axios.get('http://ec2-18-222-135-215.us-east-2.compute.amazonaws.com/api/countries', 
+        {
+          headers: { Authorization: "Bearer " + cookie.load('token') }
         });
-      }
+        console.log(data.data);
+        this.setState({ data: await data.data });
+    }
 
       handleSubmit = e => {
         e.preventDefault();
@@ -72,7 +65,15 @@ class AddDesigner extends Component {
         this.setState({ autoCompleteResult });
       };
     render() {
-
+      const country = this.state.data.map((country )=>
+      <Option value={country} key={country} >{country}</Option>
+      );
+      const countries = [
+        {
+          value: country,
+          label: country
+        }
+      ];
         const { getFieldDecorator } = this.props.form;
         const { autoCompleteResult } = this.state;
     
@@ -111,6 +112,11 @@ class AddDesigner extends Component {
         ));
         return (
             <div>
+              <Header  style={{ background: '#fff', padding: 0 }} >
+                <h3 style={{
+                  padding: '15px'
+                }}>Add Designer</h3>
+              </Header>
               <Form {...formItemLayout} onSubmit={this.handleSubmit}>
                 <Row>
                   <Col xs={24} sm={24} md={12} lg={12}>
@@ -161,18 +167,18 @@ class AddDesigner extends Component {
                     <Form.Item>
                       {getFieldDecorator('country', {
                           rules: [
-                          { type: 'array', required: true, message: 'Please select your country!' },
+                          { message: 'Please select your country!' },
                           ],
-                      })(<Cascader options={this.state.countries} placeholder="Country"/>)}
+                      })(<Select>{country}</Select>)}
                       </Form.Item>
                   </Col>
                   <Col xs={24} sm={24} md={12} lg={12}>
                       <Form.Item>
                       {getFieldDecorator('city', {
                           rules: [
-                          { type: 'array', required: true, message: 'Please select your city!' },
+                          {message: 'Please select your city!' },
                           ],
-                      })(<Cascader options={cities}  placeholder="City" />)}
+                      })(<Select>{country}</Select>)}
                       </Form.Item>
                   </Col>
                   <Col xs={24} sm={24} md={12} lg={12}>
@@ -204,9 +210,9 @@ class AddDesigner extends Component {
                         })(<RangePicker/>)}
                       </Form.Item>
                   </Col>
-                  <Col xs={24} sm={24} md={12} lg={12}>
+                  <Col xs={24} sm={24} md={24} lg={24}>
                     <Form.Item>
-                      <Button type="primary" htmlType="submit">
+                      <Button type="primary" htmlType="submit" size="large">
                           Submit
                       </Button>
                     </Form.Item>

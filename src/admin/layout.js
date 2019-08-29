@@ -34,7 +34,7 @@ export default class AdminLayout extends React.Component {
     return (
       <HashRouter>    
           <Layout style={{minHeight:"100vh",height:'100%'}}>
-            <Sider
+            <Sider className="admin"
               breakpoint="lg"
               collapsedWidth="0"
               onBreakpoint={broken => {
@@ -67,11 +67,7 @@ export default class AdminLayout extends React.Component {
               </Menu>
             </Sider>
             <Layout>
-              <Header style={{ background: '#fff', padding: 0 }} >
-                <h3 style={{
-                  padding: '15px'
-                }}></h3>
-              </Header>
+
               <Content style={{ margin: '24px 16px 0' }}>
                   <Route path="/designer" component={ViewDesigner}/>
                   <Route path="/add-designer" component={AddDesignerForm}/>

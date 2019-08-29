@@ -197,5 +197,5 @@ class Register extends React.Component {
         )
     }
 }
-const register = Form.create({ name: 'register' })(Register);
-export default register;
+const RegisterCustomer = Form.create({ name: 'register-customer' })(Register);
+export default RegisterCustomer;

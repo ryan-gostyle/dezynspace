@@ -12,9 +12,10 @@ import {
     Button,
     AutoComplete,
     InputNumber,
-    DatePicker 
+    DatePicker,
+    Layout 
   } from 'antd';
-  
+  const { Header } = Layout;
   const { Option } = Select;
   const AutoCompleteOption = AutoComplete.Option;
   const {RangePicker} = DatePicker;
@@ -102,6 +103,11 @@ class EditBooking extends Component {
         ));
         return (
             <div>
+              <Header  style={{ background: '#fff', padding: 0 }} >
+                <h3 style={{
+                  padding: '15px'
+                }}>Edit Booking</h3>
+              </Header>
               <Form {...formItemLayout} onSubmit={this.handleSubmit}>
                 <Row>
                   <Col xs={24} sm={24} md={24} lg={24}>
@@ -134,7 +140,7 @@ class EditBooking extends Component {
                       })(<Input  placeholder='E-mail' />)}
                       </Form.Item>
                   </Col>
-                  <Col xs={24} sm={24} md={24} lg={24}>
+                  <Col xs={24} sm={24} md={24} lg={12}>
                     <Form.Item>
                           {getFieldDecorator('company', {
                               rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }],
@@ -150,9 +156,9 @@ class EditBooking extends Component {
                       })(<Cascader options={designers}  placeholder="Available Designers" />)}
                       </Form.Item>
                   </Col>
-                  <Col xs={24} sm={24} md={12} lg={12}>
+                  <Col xs={24} sm={24} md={24} lg={24}>
                     <Form.Item>
-                      <Button type="primary" htmlType="submit">
+                      <Button type="primary" htmlType="submit" size="large">
                           Submit
                       </Button>
                     </Form.Item>

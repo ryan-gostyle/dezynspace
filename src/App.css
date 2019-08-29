@@ -2211,8 +2211,14 @@ box-shadow: -23px 23px 3px -2px rgba(3,206,164,0.97);
 }
 .ant-form label{
   color:#484848;
-  
+  font-size: 14px;
+  text-align: left;
+  height: auto !important;
 }
+.ant-radio-wrapper,.ant-form-item-label{
+  white-space: normal !important;
+}
+
 .ant-calendar-picker,.ant-time-picker{
   width: 100%;
 }
@@ -2220,13 +2226,16 @@ box-shadow: -23px 23px 3px -2px rgba(3,206,164,0.97);
   background:#FF5A5F;
   color:#fff;
 }
+.ant-form-item-control-wrapper{
+  width: -webkit-fill-available;
+}
 .btn-pos .ant-col.ant-form-item-control-wrapper.ant-col-xs-24.ant-col-sm-24{
   text-align: right;
 }
 .ant-form-item-label{
   text-align:left;
 }
-.ant-time-picker-input
+.ant-time-picker-input,.ant-select-selection
 {
   display: block;
   -webkit-box-sizing: border-box;
@@ -2246,7 +2255,10 @@ box-shadow: -23px 23px 3px -2px rgba(3,206,164,0.97);
 .ant-form a{
   color: #6e6a6a !important;
 }
-
+.h2Form{
+  background: radial-gradient(#FF5A5F, #dea4a400);
+    color: #fff;
+}
 /*footer*/
 .sub-footer{
   text-align: center;
@@ -2289,14 +2301,10 @@ box-shadow: -23px 23px 3px -2px rgba(3,206,164,0.97);
 /*footer*/
 
 /*side bar*/
-.ant-layout-sider {
- 
-}
 .case-categories .ant-menu-inline .ant-menu-item{
   height: auto !important;
   margin-top: 0  !important;
   margin-bottom: 0  !important;
-  padding: 0  !important;
   overflow: hidden;
   font-size: 15px  !important;
   line-height: 33px  !important;
@@ -2313,6 +2321,9 @@ box-shadow: -23px 23px 3px -2px rgba(3,206,164,0.97);
 }
 .case-categories .ant-layout-sider-zero-width-trigger{
   background: #484848;
+}
+.categorylayout.ant-layout-sider {
+  background: rgba(0,0,0,0);
 }
 .ant-card{
   -webkit-box-shadow: 0px 8px 10px -1px rgba(110,101,110,1);
