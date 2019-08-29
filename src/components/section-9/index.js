@@ -4,7 +4,7 @@ import { Row, Col } from 'antd';
 export default class SectionNine extends Component {
     render() {
         return (
-            <div className="col-24 section-nine ">
+            <div className="col-24 section-nine " id="testimonials">
             <Row >
                 <Col xs={24} sm={24} md={24} lg={24} >                
                             <div className="container" >

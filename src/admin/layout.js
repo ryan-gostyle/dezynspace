@@ -6,7 +6,13 @@ import AddDesignerForm from './designer/AddDesigner'
 import ViewDesigner from './designer/ViewDesigner'
 import ViewBooking from './booking/ViewBooking'
 import EditBookingForm from './booking/EditBooking'
+import {
+  Route,
+  NavLink,
+  HashRouter
+} from "react-router-dom";
 const { Header, Content, Footer, Sider } = Layout;
+
 
 export default class AdminLayout extends React.Component {
   state = {
@@ -15,10 +21,6 @@ export default class AdminLayout extends React.Component {
     link: null,
     clicked: '',
   };
-  componentDidMount() {
-    this.setState({ link: this.props.match.params.link });
-    console.log(this.props.match.params.link);
-  }
 
   toggle = () => {
     this.setState({
@@ -29,65 +31,57 @@ export default class AdminLayout extends React.Component {
  
 
   render() {
-    const { link } = this.state;
-    const  pages = () => {
-      switch (this.state.link) {
-        case 'booking':
-          return <ViewBooking/>;
-        case 'designer': 
-        return <ViewDesigner/>;
-        case 'add-designer': 
-        return <AddDesignerForm/>;
-        case 'edit-booking': 
-        return <EditBookingForm/>;
-      }
-    }
     return (
-      <Layout style={{minHeight:"100vh",height:'100%'}}>
-        <Sider
-          breakpoint="lg"
-          collapsedWidth="0"
-          onBreakpoint={broken => {
-            console.log(broken);
-          }}
-          onCollapse={(collapsed, type) => {
-            console.log(collapsed, type);
-          }}
-        >
-          <div className="logo">
-            <img src="https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/DEZYNSPACE+FULL+COLOR+LOGO_Horizontal_FC+(2).png" alt="logo" style={{ width: '100%' }} />
-          </div>
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
-            <Menu.Item key="1">
-              <Icon type="user" />
-             <span className="nav-text"> <a href="/admin/add-designer" >Add Designer</a></span>
-            </Menu.Item>
-            <Menu.Item key="2">
-              <Icon type="video-camera" />
-              <span className="nav-text"><a href="/admin/designer" >View Designer</a></span>
-            </Menu.Item>
-            <Menu.Item key="3">
-              <Icon type="upload" />
-              <span className="nav-text"><a href="/admin/edit-booking" >View Bookings</a></span>
-            </Menu.Item>
-            <Menu.Item key="4">
-              <Icon type="user" />
-              <span className="nav-text"><a href="/admin/booking">Bookings</a></span>
-            </Menu.Item>
-          </Menu>
-        </Sider>
-        <Layout>
-          <Header style={{ background: '#fff', padding: 0 }} >
-            <h3 style={{
-              padding: '15px'
-            }}>{this.state.link}</h3>
-          </Header>
-          <Content style={{ margin: '24px 16px 0' }}>
-              {pages()}
-          </Content>
-          <Footer style={{ textAlign: 'center' }}>Dezynspace ©2019 </Footer>
-        </Layout>
-      </Layout>
+      <HashRouter>    
+          <Layout style={{minHeight:"100vh",height:'100%'}}>
+            <Sider
+              breakpoint="lg"
+              collapsedWidth="0"
+              onBreakpoint={broken => {
+                console.log(broken);
+              }}
+              onCollapse={(collapsed, type) => {
+                console.log(collapsed, type);
+              }}
+            >
+              <div className="logo">
+                <img src="https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/DEZYNSPACE+FULL+COLOR+LOGO_Horizontal_FC+(2).png" alt="logo" style={{ width: '100%' }} />
+              </div>
+              <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
+                <Menu.Item key="1">
+                  <Icon type="user" />
+                <span className="nav-text"> <NavLink to="/add-designer" >Add Designer</NavLink></span>
+                </Menu.Item>
+                <Menu.Item key="2">
+                  <Icon type="video-camera" />
+                  <span className="nav-text"><NavLink to="/designer" >View Designer</NavLink></span>
+                </Menu.Item>
+                <Menu.Item key="3">
+                  <Icon type="upload" />
+                  <span className="nav-text"><NavLink to="/edit-booking" >View Bookings</NavLink></span>
+                </Menu.Item>
+                <Menu.Item key="4">
+                  <Icon type="user" />
+                  <span className="nav-text"><NavLink to="/booking">Bookings</NavLink></span>
+                </Menu.Item>
+              </Menu>
+            </Sider>
+            <Layout>
+              <Header style={{ background: '#fff', padding: 0 }} >
+                <h3 style={{
+                  padding: '15px'
+                }}></h3>
+              </Header>
+              <Content style={{ margin: '24px 16px 0' }}>
+                  <Route path="/designer" component={ViewDesigner}/>
+                  <Route path="/add-designer" component={AddDesignerForm}/>
+                  <Route path="/booking" component={ViewBooking}/>
+                  <Route path="/edit-booking" component={EditBookingForm}/>
+              </Content>
+              <Footer style={{ textAlign: 'center' }}>Dezynspace ©2019 </Footer>
+            </Layout>
+          </Layout>
+      </HashRouter>
     );
   }
 }

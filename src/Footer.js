@@ -3,7 +3,7 @@ import { Row, Col } from 'antd';
 class Footer extends Component {
     render() {
         return (
-            <div className="col-24 section-footer" style={{margin:'0',padding:'40px 15px 0 15px'}}>
+            <div className="col-24 section-footer" style={{padding:'40px 15px 0 15px'}}>
                 <Row style={{margin:'0 auto'}}>
                     <Col xs={24} sm={24} md={5} lg={5} style={{maxHeight: 1000, display:'inline-block', position:'relative'}}>
                        
@@ -23,28 +23,28 @@ class Footer extends Component {
                         
                         <ul>
                         <h5>About Us</h5>
-                           <li>About The Team</li>
-                           <li>DOTO</li>
-                           <li>Our Works</li>
-                           <li>Pricing</li>
-                           <li>Case Studies</li>
+                           <li><a href="/case-studies">About The Team</a></li>
+                           <li><a href="/case-studies">DOTO</a></li>
+                           <li><a href="/case-studies">Our Works</a></li>
+                           <li><a href="/case-studies">Pricing</a></li>
+                           <li><a href="/case-studies">Case Studies</a></li>
                        </ul>
                     </Col>
                     <Col xs={24} sm={24} md={5} lg={5} style={{maxHeight: 1000, display:'inline-block', position:'relative',maxWidth: '320px'}}>
                         
                         <ul>
                         <h5>Help & Support</h5>
-                           <li>FAQs</li>
-                           <li>Contact Us</li>
-                           <li>Chat to Us</li>
+                           <li><a href="/case-studies">FAQs</a></li>
+                           <li><a href="/case-studies">Contact Us</a></li>
+                           <li><a href="/case-studies">Chat to Us</a></li>
                        </ul>
                     </Col>
                     <Col xs={24} sm={24} md={5} lg={5} style={{maxHeight: 1000, display:'inline-block', position:'relative',maxWidth: '320px'}}>
                         
                         <ul>
                         <h5>Legal</h5>
-                           <li>Privacy Policy</li>
-                           <li>Terms and Conditions</li>
+                           <li><a href="/case-studies">Privacy Policy</a></li>
+                           <li><a href="/case-studies">Terms and Conditions</a></li>
                        </ul>
                     </Col>
                     <Col xs={24} sm={24} md={5} lg={5} style={{maxHeight: 1000, display:'inline-block', position:'relative',maxWidth: '320px'}}>

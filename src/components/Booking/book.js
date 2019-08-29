@@ -13,7 +13,7 @@ const steps = [
     content: 'Second-content',
   },
   {
-    title: 'Last',
+    title: 'Payment',
     content: 'Thank you! See you soon!',
   },
 ];

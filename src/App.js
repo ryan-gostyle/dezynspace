@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+// import './App.css';
 import { Layout } from 'antd';
 import Header from './Header';
 import Footer from './Footer';
@@ -22,6 +22,7 @@ import login from './admin/login';
 import register from './components/Accounts/register';
 import Clogin from './components/Accounts/login';
 import CustomerBook from './components/Booking/book';
+import CaseStudies from './components/Case Studies';
 /*admin*/
 import AdminLayout from './admin/layout';
 function App() {
@@ -37,13 +38,16 @@ function App() {
             <Route path="/signup" component={register} exact />
             <Route path="/login" component={Clogin} exact />
             <Route path="/booking" component={CustomerBook} exact />
+            <Route path="/case-studies" component={CaseStudies} exact />
           {/* <Route path="/about" component={About} /> */}
           {/* <Route path="/how-it-works" component={HowItWorksPage}/> */}
           </Switch>
          </Layout>
+         <Footer />
     </Router>
   );
 }
+
 
 const Home = () => (
   <div className="App">
@@ -63,7 +67,7 @@ const Home = () => (
     <SectionTwelve />
     <SectionThirteen />
     <SectionFourteen />
-    <Footer />
+ 
 
   </div>
 );

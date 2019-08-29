@@ -4,27 +4,27 @@ import BookForm from './form-book'
 export default class SectionSeven extends Component {
     render() {
         return (
-            <div className="col-24 section-seven" style={{margin:"0 0 30px 0",overflow:"hidden",}}>
+            <div className="col-24 section-seven" id="pricing" style={{margin:"0 0 30px 0",overflow:"hidden",}}>
                 <Row>
                 <Col xs={24} sm={24} md={7} lg={7} className="pink-gradient" >
                     <h2 style={{color:'#fff',margin:'15px 10px'}}>Pricing</h2>
                     <div className="price-box" style={{height:'auto',minHeight:'145px',width:'300px',background:'#fff',margin:'0 auto',marginTop:'20px',marginBottom:'15px',borderRadius:'2px',padding:'15px 10px'}}>
                         <h2>2 Days</h2>
-                        <p className="price">$xx</p>
+                        <p className="price">$196.80</p>
                     </div>
                     <div className="price-box" style={{height:'auto',minHeight:'145px',width:'300px',background:'#fff',margin:'0 auto',marginTop:'20px',marginBottom:'15px',borderRadius:'2px',padding:'15px 10px'}}>
                         <h2>5 Days</h2>
-                        <p className="price">$399</p>
+                        <p className="price">$467</p>
                     </div>
                     <div className="price-box" style={{height:'auto',minHeight:'145px',width:'300px',background:'#fff',margin:'0 auto',marginTop:'20px',marginBottom:'15px',borderRadius:'2px',padding:'15px 10px'}}>
                         <h2>2 Weeks</h2>
                         <p>(10 working days)</p>
-                        <p className="price">$799</p>
+                        <p className="price">$885</p>
                     </div>
                     <div className="price-box" style={{height:'auto',minHeight:'145px',width:'300px',background:'#fff',margin:'0 auto',marginTop:'20px',marginBottom:'15px',borderRadius:'2px',padding:'15px 10px'}}>
                         <h2>1 Month</h2>
                         <p>(20 working days)</p>
-                        <p className="price">$1,499</p>
+                        <p className="price">$1,670</p>
                     </div>
                 </Col>
 
