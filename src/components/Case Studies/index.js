@@ -48,7 +48,8 @@ export default class CaseStudies extends React.Component {
     return (
       <HashRouter>    
           <Layout className="case-categories" style={{minHeight:"100vh",height:'100%'}}>
-            <Sider
+            <Sider 
+              style={{ background: 'rgba(0,0,0,0) !important'}}
               breakpoint="lg"
               collapsedWidth="0"
               onBreakpoint={broken => {

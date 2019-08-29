@@ -2290,7 +2290,7 @@ box-shadow: -23px 23px 3px -2px rgba(3,206,164,0.97);
 
 /*side bar*/
 .ant-layout-sider {
-  background: rgba(0,0,0,0) !important;
+ 
 }
 .case-categories .ant-menu-inline .ant-menu-item{
   height: auto !important;

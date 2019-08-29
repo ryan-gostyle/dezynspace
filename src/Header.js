@@ -30,7 +30,6 @@ class Header extends Component {
   render() {
     return (
       <div>
-        {/* 'rgba(0,0,0,0)',position:'fixed' */}
       <Navbar color="#fff" style={{background:'white',zIndex:'999999',width:'100%'}} dark expand="md">
           <NavbarBrand href="/"><img src="https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/colored+logo.png" alt=''  style={{width: 'auto',height: '55px',left: '33px'}} /></NavbarBrand>
           <NavbarToggler onClick={this.toggle} />

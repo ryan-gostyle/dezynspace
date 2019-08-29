@@ -47,7 +47,7 @@ export default class AdminLayout extends React.Component {
               <div className="logo">
                 <img src="https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/DEZYNSPACE+FULL+COLOR+LOGO_Horizontal_FC+(2).png" alt="logo" style={{ width: '100%' }} />
               </div>
-              <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
+              <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']} className="admin-menu">
                 <Menu.Item key="1">
                   <Icon type="user" />
                 <span className="nav-text"> <NavLink to="/add-designer" >Add Designer</NavLink></span>
@@ -58,7 +58,7 @@ export default class AdminLayout extends React.Component {
                 </Menu.Item>
                 <Menu.Item key="3">
                   <Icon type="upload" />
-                  <span className="nav-text"><NavLink to="/edit-booking" >View Bookings</NavLink></span>
+                  <span className="nav-text"><NavLink to="/edit-booking" >Edit Bookings</NavLink></span>
                 </Menu.Item>
                 <Menu.Item key="4">
                   <Icon type="user" />

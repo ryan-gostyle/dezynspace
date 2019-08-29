@@ -23,27 +23,24 @@ import register from './components/Accounts/register';
 import Clogin from './components/Accounts/login';
 import CustomerBook from './components/Booking/book';
 import CaseStudies from './components/Case Studies';
+import CompleteFormBook from './components/Booking/CompleteForm'
 /*admin*/
 import AdminLayout from './admin/layout';
 function App() {
   return (
     <Router>
       <Layout className="App">
-      <Header className="header" />
           <Switch>
-            
             <Route path="/admin/:link" component={AdminLayout} exact />
             <Route path="/admin" component={login} exact />
             <Route path="/" component={Home} exact />
             <Route path="/signup" component={register} exact />
             <Route path="/login" component={Clogin} exact />
-            <Route path="/booking" component={CustomerBook} exact />
+            <Route path="/booking" component={CompleteFormBook} exact />
             <Route path="/case-studies" component={CaseStudies} exact />
-          {/* <Route path="/about" component={About} /> */}
-          {/* <Route path="/how-it-works" component={HowItWorksPage}/> */}
           </Switch>
          </Layout>
-         <Footer />
+        
     </Router>
   );
 }
@@ -51,7 +48,7 @@ function App() {
 
 const Home = () => (
   <div className="App">
-  
+   <Header className="header" />
 
     <Banner />
     <SectionTwo />
@@ -68,7 +65,7 @@ const Home = () => (
     <SectionThirteen />
     <SectionFourteen />
  
-
+    <Footer />
   </div>
 );
 

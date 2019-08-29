@@ -101,3 +101,11 @@ box-shadow: 0px 6px 6px -1px rgba(0,0,0,0.8);
 .ant-select-lg .ant-select-selection__rendered{
   line-height: 50px !important;
 }
+
+.admin-menu span a{
+  color:#fff;
+}
+
+.ant-menu-item {
+  text-align:left;
+}
