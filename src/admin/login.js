@@ -28,7 +28,6 @@ class Login extends React.Component {
                 });
                 if (await submit) {
                     cookie.save('token', await submit.data.message, { path: '/' });
-                    console.log(cookie.load('token'));
                     window.location.href = "/admin/booking";
                 }
             }
