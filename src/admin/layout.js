@@ -73,7 +73,7 @@ class AdminLayout extends React.Component {
                   <Route path="/designer" component={ViewDesigner}/>
                   <Route path="/add-designer" component={AddDesignerForm}/>
                   <Route path="/booking" component={ViewBooking}/>
-                  <Route path="/edit-booking" component={EditBookingForm}/>
+                  <Route path="/edit-booking/:id" component={EditBookingForm}/>
               </Content>
               <Footer style={{ textAlign: 'center' }}>Dezynspace ©2019 </Footer>
             </Layout>
