@@ -122,11 +122,12 @@ class CompleteForm extends Component {
             },
           },
         };
-        const [startDate, setStartDate] = useState(null);
-        const isWeekday = date => {
-          const day = getDay(date);
-          return day !== 0 && day !== 6;
-        };
+        () => {
+          const [startDate, setStartDate] = useState(new Date());
+            const isWeekday = date => {
+            const day = getDay(date);
+            return day !== 0 && day !== 6;
+          };
         return (
         <div className="container">
             <Form {...formItemLayout} onSubmit={this.handleSubmit}>
