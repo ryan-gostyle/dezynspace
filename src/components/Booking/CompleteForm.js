@@ -1,10 +1,4 @@
 import React, { Component } from 'react'
-import MomentLocaleUtils, {
-    formatDate,
-    parseDate,
-  } from 'react-day-picker/moment';
-import DayPickerInput from 'react-day-picker/DayPickerInput';
-import 'react-day-picker/lib/style.css';
 import 'antd/dist/antd.css';
 import {
   Form,
@@ -19,7 +13,6 @@ import {
   Button,
   AutoComplete,
   InputNumber,
-  DatePicker,
   Radio ,
   TimePicker
 } from 'antd';
@@ -27,6 +20,7 @@ import moment from 'moment';
 import DatePicker from "react-datepicker";
  
 import "react-datepicker/dist/react-datepicker.css";
+import withAuth from '../../middleware';
 
 
 function hasErrors(fieldsError) {
@@ -338,4 +332,4 @@ class CompleteForm extends Component {
 const CompleteFormBook = Form.create({ name: 'Book-CompleteForm' })(CompleteForm);
 
           
-export default CompleteFormBook;
+export default withAuth(CompleteFormBook, "client");

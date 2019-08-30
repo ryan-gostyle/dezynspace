@@ -23,7 +23,7 @@ import RegisterCustomer from './components/Accounts/register';
 import Clogin from './components/Accounts/login';
 import CustomerBook from './components/Booking/book';
 import CaseStudies from './components/Case Studies';
-import CompleteFormBook from './components/Booking/CompleteForm'
+import CompleteFormBooks from './components/Booking/CompleteForm'
 /*admin*/
 
 
@@ -35,12 +35,13 @@ function App() {
      
       <Layout className="App">
           <Switch>
+            
           <Route path="/admin/:link" render={() => <AdminsLayout> <AdminLayout/></AdminsLayout>} exact />
             <Route path="/admin" render={() => <ClientLayout> <AdminLogin/> </ClientLayout>}  exact />
             <Route path="/" render={() => <ClientLayout> <Home/></ClientLayout>}  exact />
             <Route path="/signup"render={() => <ClientLayout> <RegisterCustomer/></ClientLayout>} exact />
             <Route path="/login" render={() => <ClientLayout> <Clogin/></ClientLayout>}  exact />
-            <Route path="/booking" render={() => <ClientLayout> <CompleteFormBook/></ClientLayout>}  exact />
+            <Route path="/booking" render={() => <ClientLayout> <CompleteFormBooks/></ClientLayout>}  exact />
             <Route path="/case-studies" render={() => <ClientLayout> <CaseStudies/></ClientLayout>}  exact />
           </Switch>
          </Layout>

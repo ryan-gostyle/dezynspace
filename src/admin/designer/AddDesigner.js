@@ -30,6 +30,7 @@ class AddDesigner extends Component {
         confirmDirty: false,
         autoCompleteResult: [],
         data: [],
+        city: [],
       };
 
       async componentDidMount() {
@@ -43,11 +44,52 @@ class AddDesigner extends Component {
 
       handleSubmit = e => {
         e.preventDefault();
-        this.props.form.validateFieldsAndScroll((err, values) => {
+        this.props.form.validateFieldsAndScroll(async (err, values) => {
           if (!err) {
-            console.log('Received values of form: ', values);
+            console.log(values.daterange)
+            var submit = await Axios.post('http://ec2-18-222-135-215.us-east-2.compute.amazonaws.com/api/designer', {
+              first_name: values.fname,
+              last_name: values.lname,
+              mobile_number: values.phone,
+              street: values.street,
+              country: values.country,
+              city: values.city,
+              zip_code: values.zipcode,
+              company: values.company,
+              email: values.email,
+              type: values.type,
+              // schedule: values.,
+              
+
+          }, { headers: { 'Content-Type': 'application/json', Authorization: "Bearer " + cookie.load('token') } }).catch(function (error) {
+              if (error.response) {
+                  console.log(error.response.data);
+                  console.log(error.response.status);
+                  console.log(error.response.headers);
+              } else if (error.request) {
+
+              } else {
+              }
+          });
+          if (await submit) {
+              cookie.save('token', await submit.data.message, { path: '/' });
+              window.location.href = "/admin/booking";
+          }
           }
         });
+      };
+
+      handleChange = async e =>{
+        var data = await Axios.post('http://ec2-18-222-135-215.us-east-2.compute.amazonaws.com/api/city',{
+          city: e
+        }, 
+        {
+          headers: { Authorization: "Bearer " + cookie.load('token') }
+        });
+        let Message = Object.keys(await data.data).map(function(key) {
+          return data.data[key];
+        });
+        this.setState({ city: Message });
       };
     
       handleConfirmBlur = e => {
@@ -68,12 +110,10 @@ class AddDesigner extends Component {
       const country = this.state.data.map((country )=>
       <Option value={country} key={country} >{country}</Option>
       );
-      const countries = [
-        {
-          value: country,
-          label: country
-        }
-      ];
+      
+      const city = this.state.city.length !== 0 && this.state.city.map((country)=>
+      <Option value={country} key={country} >{country}</Option>
+      );
         const { getFieldDecorator } = this.props.form;
         const { autoCompleteResult } = this.state;
     
@@ -87,19 +127,7 @@ class AddDesigner extends Component {
             sm: { span: 16 },
           },
         };
-        const tailFormItemLayout = {
-          wrapperCol: {
-            xs: {
-              span: 24,
-              offset: 0,
-            },
-            sm: {
-              span: 16,
-              offset: 8,
-            },
-          },
-        };
-        const prefixSelector = getFieldDecorator('prefix', {
+       const prefixSelector = getFieldDecorator('prefix', {
           initialValue: '63',
         })(
           <Select style={{ width: 70 }}>
@@ -169,7 +197,7 @@ class AddDesigner extends Component {
                           rules: [
                           { message: 'Please select your country!' },
                           ],
-                      })(<Select>{country}</Select>)}
+                      })(<Select onChange={this.handleChange}>{country}</Select>)}
                       </Form.Item>
                   </Col>
                   <Col xs={24} sm={24} md={12} lg={12}>
@@ -178,7 +206,7 @@ class AddDesigner extends Component {
                           rules: [
                           {message: 'Please select your city!' },
                           ],
-                      })(<Select>{country}</Select>)}
+                      })(<Select>{city}</Select>)}
                       </Form.Item>
                   </Col>
                   <Col xs={24} sm={24} md={12} lg={12}>

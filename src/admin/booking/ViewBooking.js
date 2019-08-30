@@ -15,10 +15,6 @@ class ViewBooking extends Component {
         {
           headers: { Authorization: "Bearer " + cookie.load('token') }
         });
-        console.log(await data.data.message)
-        // let Message = Object.keys(data.data).map(function(key) {
-        //   return data.data.message[key];
-        // });
         this.setState({ data: await data.data.message });
     }
     
