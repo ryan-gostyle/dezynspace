@@ -29,7 +29,7 @@ class Register extends React.Component {
                     password: values.password,
                     password_confirmation: values.password_confirmation
 
-                }, {headers: { 'Content-Type': 'application/json'}}).catch(function (error) {
+                }, { headers: { 'Content-Type': 'application/json' } }).catch(function (error) {
                     if (error.response) {
                         // The request was made and the server responded with a status code
                         // that falls out of the range of 2xx
@@ -43,7 +43,8 @@ class Register extends React.Component {
                     }
                 });
                 if (await submit) {
-                    console.log(await submit)
+                    if(await submit.status == 200)
+                    window.location.href = "/login"
                 }
             }
         });
@@ -91,6 +92,8 @@ class Register extends React.Component {
                                                 />,
                                             )}
                                         </Form.Item>
+                                    </Col>
+                                    <Col lg={12}>
                                         <Form.Item label="Last Name">
                                             {getFieldDecorator('last_name', {
                                                 rules: [{ required: true, message: 'Please input your last name!' }],
@@ -102,6 +105,8 @@ class Register extends React.Component {
                                                 />,
                                             )}
                                         </Form.Item>
+                                    </Col>
+                                    <Col lg={12}>
                                         <Form.Item label="Email">
                                             {getFieldDecorator('email', {
                                                 rules: [{ required: true, message: 'Please input your email!' }],
@@ -113,6 +118,8 @@ class Register extends React.Component {
                                                 />,
                                             )}
                                         </Form.Item>
+                                    </Col>
+                                    <Col lg={12}>
                                         <Form.Item label="Create Password">
                                             {getFieldDecorator('password', {
                                                 rules: [{ required: true, message: 'Please input your password!' }, {
@@ -129,7 +136,7 @@ class Register extends React.Component {
                                         </Form.Item>
                                     </Col>
                                     <Col lg={12}>
-                                        <Form.Item label="Confirm Password" style={{ marginTop: "0%" }}>
+                                        <Form.Item label="Confirm Password">
                                             {getFieldDecorator('password_confirmation', {
                                                 rules: [{ required: true, message: 'Please input your password!' },
                                                 {
@@ -144,30 +151,8 @@ class Register extends React.Component {
                                                 />,
                                             )}
                                         </Form.Item>
-                                        <Form.Item label="Country">
-                                            {getFieldDecorator('country', {
-                                                rules: [{ required: true, message: 'Please select a country' }],
-                                            })(
-                                                <Select size="large">
-                                                    {this.state.countries.map((value, key) => {
-                                                        return (
-                                                            <Option value={value}>{value}</Option>
-                                                        )
-                                                    })}
-                                                </Select>,
-                                            )}
-                                        </Form.Item>
-                                        <Form.Item label="Company">
-                                            {getFieldDecorator('company', {
-                                                rules: [{ required: true, message: 'Please input your company' }],
-                                            })(
-                                                <Input
-                                                    size="large"
-                                                    prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                                                    placeholder="Company"
-                                                />,
-                                            )}
-                                        </Form.Item>
+                                    </Col>
+                                    <Col lg={12}>
                                         <Form.Item label="Industry">
                                             {getFieldDecorator('industry', {
                                                 rules: [{ required: true, message: 'Please input your company' }],
@@ -180,6 +165,35 @@ class Register extends React.Component {
                                             )}
                                         </Form.Item>
                                     </Col>
+                                    <Col lg={12}>
+                                        <Form.Item label="Country">
+                                            {getFieldDecorator('country', {
+                                                rules: [{ required: true, message: 'Please select a country' }],
+                                            })(
+                                                <Select size="large" placeholder="Select a Country">
+                                                    {this.state.countries.map((value, key) => {
+                                                        return (
+                                                            <Option value={value}>{value}</Option>
+                                                        )
+                                                    })}
+                                                </Select>,
+                                            )}
+                                        </Form.Item>
+                                    </Col>
+                                    <Col lg={12}>
+                                        <Form.Item label="Company">
+                                            {getFieldDecorator('company', {
+                                                rules: [{ required: true, message: 'Please input your company' }],
+                                            })(
+                                                <Input
+                                                    size="large"
+                                                    prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                                                    placeholder="Company"
+                                                />,
+                                            )}
+                                        </Form.Item>
+                                    </Col>
+                                   
                                 </Row>
                                 <Form.Item>
                                     <Button htmlType="submit"

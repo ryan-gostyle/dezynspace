@@ -2,6 +2,7 @@ import React from 'react';
 import { Row, Col, Card, Form, Icon, Input, Button, Checkbox } from 'antd'
 import '../../admin/Admin.css';
 import Axios from 'axios';
+import cookie from 'react-cookies';
 
 
 class CLogin extends React.Component {
@@ -25,7 +26,10 @@ class CLogin extends React.Component {
                     }
                 });
                 if (await submit) {
-                    console.log(await submit)
+                    if (await submit.status === 200) {
+                        cookie.save('token', await submit.data.message, { path: '/' });
+                        window.location.href = "/booking"
+                    }
                 }
             }
         });
@@ -72,8 +76,8 @@ class CLogin extends React.Component {
                                         Log in
                                   </Button>
                                 </Form.Item>
-
                             </Form>
+                            <span>Don't have an account?</span><a href="/signup">Sign up!</a>
                         </Card>
                     </Col>
                 </Row>
