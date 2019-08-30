@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import 'antd/dist/antd.css';
 import {
   Form,
@@ -17,7 +17,7 @@ import {
   TimePicker
 } from 'antd';
 import moment from 'moment';
-import DatePicker from "react-datepicker";
+import {DatePicker, getDay} from "react-datepicker";
  
 import "react-datepicker/dist/react-datepicker.css";
 import withAuth from '../../middleware';
@@ -93,6 +93,12 @@ class CompleteForm extends Component {
     
     
     render() {
+      const [startDate, setStartDate] = useState(new Date());
+      const isWeekday = date => {
+      const day = getDay(date);
+      return day !== 0 && day !== 6;
+    };
+ 
         const { selectedDay, isDisabled, isEmpty } = this.state;
         const radioStyle = {
             display: 'block',
@@ -110,25 +116,7 @@ class CompleteForm extends Component {
             sm: { span: 24 },
           },
         };
-        const tailFormItemLayout = {
-          wrapperCol: {
-            xs: {
-              span: 24,
-              offset: 0,
-            },
-            sm: {
-              span: 16,
-              offset: 8,
-            },
-          },
-        };
-        () => {
-          const [startDate, setStartDate] = useState(new Date());
-            const isWeekday = date => {
-            const day = getDay(date);
-            return day !== 0 && day !== 6;
-          };
-        }
+
         return (
         <div className="container">
             <Form {...formItemLayout} onSubmit={this.handleSubmit}>
@@ -147,7 +135,7 @@ class CompleteForm extends Component {
                 <Form.Item label="Start Date">
                   {getFieldDecorator('startdate', {
                       rules: [{}],
-                  })(     <DatePicker
+                  })(<DatePicker
                     selected={startDate}
                     onChange={date => setStartDate(date)}
                     filterDate={isWeekday}
