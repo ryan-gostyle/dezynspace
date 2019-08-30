@@ -3,36 +3,7 @@ import { Table, Button, Layout } from 'antd';
 import cookie from 'react-cookies';
 import Axios from 'axios';
 const { Header } = Layout;
-const data = [
-  {
-    key: '1',
-    id: '1',
-    name: 'John Brown',
-    email: 32,
-    type: 'New York No. 1 Lake Park',
-  },
-  {
-    key: '2',
-    id: '2',
-    name: 'Jim Green',
-    email: 42,
-    type: 'London No. 1 Lake Park',
-  },
-  {
-    key: '3',
-    id: '3',
-    name: 'Joe Black',
-    email: 32,
-    type: 'Sidney No. 1 Lake Park',
-  },
-  {
-    key: '4',
-    id: '4',
-    name: 'Jim Red',
-    email: 32,
-    type: 'London No. 2 Lake Park',
-  },
-];
+
 
 class ViewDesigner extends Component {
     state = {
@@ -46,8 +17,8 @@ class ViewDesigner extends Component {
         {
           headers: { Authorization: "Bearer " + cookie.load('token') }
         });
-        console.log(await data.data.message)
-        this.setState({ data: await data.data.message });
+        console.log(await data.data.message);
+        this.setState({ data: await data.data.designer });
     }
 
       handleChange = (pagination, filters, sorter) => {
@@ -79,7 +50,7 @@ class ViewDesigner extends Component {
       };
     
     render() {
-    let { sortedInfo, filteredInfo } = this.state;
+    let { sortedInfo, filteredInfo,data } = this.state;
     sortedInfo = sortedInfo || {};
     filteredInfo = filteredInfo || {};
     const columns = [
@@ -95,8 +66,8 @@ class ViewDesigner extends Component {
         },
       {
         title: 'Name',
-        dataIndex: 'name',
-        key: 'name',
+        dataIndex: 'first_name',
+        key: 'first_name',
         filters: [{ text: 'Joe', value: 'Joe' }, { text: 'Jim', value: 'Jim' }],
         filteredValue: filteredInfo.name || null,
         onFilter: (value, record) => record.name.includes(value),
