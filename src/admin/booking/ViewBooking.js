@@ -2,7 +2,11 @@ import React, { Component } from 'react'
 import { Table, Button, Layout } from 'antd';
 import cookie from 'react-cookies';
 import Axios from 'axios';
+import { Link } from "react-router-dom";
+
+
 const { Header } = Layout;
+
 class ViewBooking extends Component {
     state = {
         filteredInfo: null,
@@ -105,7 +109,16 @@ class ViewBooking extends Component {
         title: 'Action',
         dataIndex: 'action',
         key: 'action',
-
+        render: (text, record) => (
+          <span>
+            {text !== "No Product data found" && (
+              <span>
+                <Link to={`/edit-booking/${record.id}`}>Edit Booking</Link>
+                <br />
+              </span>
+            )}
+          </span>
+        )
       },
     ];
         return (

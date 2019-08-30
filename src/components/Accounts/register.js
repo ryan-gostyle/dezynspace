@@ -43,7 +43,7 @@ class Register extends React.Component {
                     }
                 });
                 if (await submit) {
-                    if(await submit.status == 200)
+                    if(await submit.status === 200)
                     window.location.href = "/login"
                 }
             }

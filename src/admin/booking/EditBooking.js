@@ -15,30 +15,42 @@ import {
     DatePicker,
     Layout 
   } from 'antd';
+import Axios from 'axios';
+import cookie from 'react-cookies';
+import moment from 'moment';
+
+
   const { Header } = Layout;
   const { Option } = Select;
   const AutoCompleteOption = AutoComplete.Option;
   const {RangePicker} = DatePicker;
 
 
-  const designers = [
-    {
-      value: 'John Doe',
-      label: 'John Doe',
-    },
-    {
-      value: 'John Doe',
-      label: 'John Doe',
-    },
-
-    
-  ];
+  
 
 class EditBooking extends Component {
     state = {
         confirmDirty: false,
         autoCompleteResult: [],
+        details: [],
+        designers: [],
+        client: [],
+        address: [],
       };
+
+      async componentDidMount()
+      {
+        var data = await Axios.get(`http://ec2-18-222-135-215.us-east-2.compute.amazonaws.com/api/booking/${this.props.match.params.id}`, 
+        {
+          headers: { Authorization: "Bearer " + cookie.load('token') }
+        });
+        console.log(await data.data.message)
+        this.setState({ 
+          details: await data.data.message.details,
+          client: await data.data.message.details.client, 
+          address: await data.data.message.details.client.address,           
+          designers: await data.data.message.designers });
+      }
     
       handleSubmit = e => {
         e.preventDefault();
@@ -66,8 +78,11 @@ class EditBooking extends Component {
     render() {
 
         const { getFieldDecorator } = this.props.form;
-        const { autoCompleteResult } = this.state;
-    
+        const { autoCompleteResult,details,designers,client,address } = this.state;
+  
+        const designerss = designers.length !== 0 && designers.map((designer)=>
+        <Option value={designer} key={designer} >{designer}</Option>
+        );
         const formItemLayout = {
           labelCol: {
             xs: { span: 24 },
@@ -76,18 +91,6 @@ class EditBooking extends Component {
           wrapperCol: {
             xs: { span: 24 },
             sm: { span: 16 },
-          },
-        };
-        const tailFormItemLayout = {
-          wrapperCol: {
-            xs: {
-              span: 24,
-              offset: 0,
-            },
-            sm: {
-              span: 16,
-              offset: 8,
-            },
           },
         };
         const prefixSelector = getFieldDecorator('prefix', {
@@ -113,13 +116,15 @@ class EditBooking extends Component {
                   <Col xs={24} sm={24} md={24} lg={24}>
                     <Form.Item>
                         {getFieldDecorator('name', {
+                            initialValue: client.last_name + ", " + client.first_name,
                             rules: [{ required: true, message: 'Please input your Name!', whitespace: true}],
-                        })(<Input placeholder='Name'  />)}
+                        })(<Input placeholder='Name' disabled={true}  />)}
                     </Form.Item >
                   </Col>
                   <Col xs={24} sm={24} md={24} lg={24}>
                     <Form.Item>
                         {getFieldDecorator('daterange', {
+                            initialValue: [moment(details.start_date, 'YYYY/MM/DD'), moment(details.end_date, 'YYYY/MM/DD')],
                             rules: [{ required: true}],
                         })(<RangePicker/>)}
                       </Form.Item>
@@ -127,6 +132,7 @@ class EditBooking extends Component {
                   <Col xs={24} sm={24} md={24} lg={24}>
                     <Form.Item>
                       {getFieldDecorator('email', {
+                            initialValue: client.email,
                           rules: [
                           {
                               type: 'email',
@@ -137,14 +143,15 @@ class EditBooking extends Component {
                               message: 'Please input your E-mail!',
                           },
                           ],
-                      })(<Input  placeholder='E-mail' />)}
+                      })(<Input  placeholder='E-mail' disabled={true} />)}
                       </Form.Item>
                   </Col>
                   <Col xs={24} sm={24} md={24} lg={12}>
                     <Form.Item>
                           {getFieldDecorator('company', {
+                              initialValue: address.company,
                               rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }],
-                          })(<Input placeholder="Company" />)}
+                          })(<Input placeholder="Company" disabled={true} />)}
                       </Form.Item>
                   </Col>
                   <Col xs={24} sm={24} md={12} lg={12}>
@@ -153,7 +160,7 @@ class EditBooking extends Component {
                           rules: [
                           { type: 'array', required: true},
                           ],
-                      })(<Cascader options={designers}  placeholder="Available Designers" />)}
+                      })(<Select options={designerss}  placeholder="Available Designers" />)}
                       </Form.Item>
                   </Col>
                   <Col xs={24} sm={24} md={24} lg={24}>
