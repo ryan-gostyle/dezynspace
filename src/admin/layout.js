@@ -57,10 +57,10 @@ class AdminLayout extends React.Component {
                   <Icon type="video-camera" />
                   <span className="nav-text"><NavLink to="/designer" >View Designer</NavLink></span>
                 </Menu.Item>
-                <Menu.Item key="3">
+                {/* <Menu.Item key="3">
                   <Icon type="upload" />
                   <span className="nav-text"><NavLink to="/edit-booking" >Edit Bookings</NavLink></span>
-                </Menu.Item>
+                </Menu.Item> */}
                 <Menu.Item key="4">
                   <Icon type="user" />
                   <span className="nav-text"><NavLink to="/booking">Bookings</NavLink></span>

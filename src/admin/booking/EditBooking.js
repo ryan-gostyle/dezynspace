@@ -34,7 +34,8 @@ class EditBooking extends Component {
         autoCompleteResult: [],
         details: [],
         designers: [],
-        client: []
+        client: [],
+        address: [],
       };
 
       async componentDidMount()
@@ -43,7 +44,12 @@ class EditBooking extends Component {
         {
           headers: { Authorization: "Bearer " + cookie.load('token') }
         });
-        this.setState({ details: await data.data.message.details,client: await data.data.message.details.client, designers: await data.data.message.designers });
+        console.log(await data.data.message)
+        this.setState({ 
+          details: await data.data.message.details,
+          client: await data.data.message.details.client, 
+          address: await data.data.message.details.client.address,           
+          designers: await data.data.message.designers });
       }
     
       handleSubmit = e => {
@@ -72,9 +78,9 @@ class EditBooking extends Component {
     render() {
 
         const { getFieldDecorator } = this.props.form;
-        const { autoCompleteResult,details,designers,client } = this.state;
+        const { autoCompleteResult,details,designers,client,address } = this.state;
   
-        const designerss = this.state.designers.length !== 0 && this.state.designers.map((designer)=>
+        const designerss = designers.length !== 0 && designers.map((designer)=>
         <Option value={designer} key={designer} >{designer}</Option>
         );
         const formItemLayout = {
@@ -143,7 +149,7 @@ class EditBooking extends Component {
                   <Col xs={24} sm={24} md={24} lg={12}>
                     <Form.Item>
                           {getFieldDecorator('company', {
-                              initialValue: client.company,
+                              initialValue: address.company,
                               rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }],
                           })(<Input placeholder="Company" disabled={true} />)}
                       </Form.Item>
