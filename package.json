@@ -15,6 +15,7 @@
     "react-axios": "^2.0.3",
     "react-cookies": "^0.1.1",
     "react-countup": "^4.2.2",
+    "react-datepicker": "^2.9.3",
     "react-day-picker": "^7.3.2",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",

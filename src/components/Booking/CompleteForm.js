@@ -24,6 +24,9 @@ import {
   TimePicker
 } from 'antd';
 import moment from 'moment';
+import DatePicker from "react-datepicker";
+ 
+import "react-datepicker/dist/react-datepicker.css";
 
 
 function hasErrors(fieldsError) {
@@ -36,16 +39,20 @@ function handleChange(value) {
 }
 const datelist = [
   {
-    value: '3',
-    label: '3',
+    value: '2',
+    label: '2 days',
   },
   {
     value: '5',
-    label: '5',
+    label: '5 days',
   },
   {
     value: '7',
-    label: '7',
+    label: '10 days',
+  },
+  {
+    value: '7',
+    label: '1 month',
   },
 ];
 
@@ -121,6 +128,11 @@ class CompleteForm extends Component {
             },
           },
         };
+        const [startDate, setStartDate] = useState(null);
+        const isWeekday = date => {
+          const day = getDay(date);
+          return day !== 0 && day !== 6;
+        };
         return (
         <div className="container">
             <Form {...formItemLayout} onSubmit={this.handleSubmit}>
@@ -135,30 +147,43 @@ class CompleteForm extends Component {
                 </Form.Item>
                   <a href="" style={{textDecoration:'underline'}}>Not sure how long you need a designer for? Click here</a>
               </Col>  
-              <Col xs={24} sm={24} md={24} lg={24}>
+              <Col xs={24} sm={24} md={12} lg={12}>
                 <Form.Item label="Start Date">
                   {getFieldDecorator('startdate', {
                       rules: [{}],
-                  })(<DayPickerInput
-                    value={selectedDay}
-                    onDayChange={this.handleDayChange}
-                    formatDate={formatDate}
-                    parseDate={parseDate}
-                    placeholder={`${formatDate(new Date())}`}
-                    dayPickerProps={{
-                        selectedDays: selectedDay,
-                        disabledDays: {
-                        daysOfWeek: [0, 6],
-                        },
-                    }}
-                    />)}
+                  })(     <DatePicker
+                    selected={startDate}
+                    onChange={date => setStartDate(date)}
+                    filterDate={isWeekday}
+                    minDate={new Date()}
+                    placeholderText="Select a weekday"
+                  />)}
+                </Form.Item>
+              </Col>
+              <Col xs={24} sm={24} md={12} lg={12}>
+                <Form.Item label="End Date">
+                  {getFieldDecorator('enddate', {
+                      rules: [{}],
+                  })(    <DatePicker
+                    selected={startDate}
+                    onChange={date => setStartDate(date)}
+                    filterDate={isWeekday}
+                    minDate={new Date()}
+                    placeholderText="Select a weekday"
+                  />)}
                 </Form.Item>
               </Col>
               <Col xs={24} sm={24} md={12} lg={12}>
                 <Form.Item label="Reporting Time">
                 {getFieldDecorator('reportingtime', {
                           rules: [{}],
-                      })(<TimePicker defaultOpenValue={moment('00:00:00', 'HH:mm:ss')} />
+                      })(<Select>
+                        <Option value="09:00am-06:00pm">09:00am - 06:00pm</Option>
+                        <Option value="09:00am-06:00pm">10:00am - 07:00pm</Option>
+                        <Option value="09:00am-06:00pm">11:00am - 08:00pm</Option>
+                        <Option value="09:00am-06:00pm">12:00am - 09:00pm</Option>
+                        <Option value="09:00am-06:00pm">01:00pm - 10:00pm</Option>
+                      </Select> 
                   )}
                 </Form.Item>
               </Col>
@@ -198,7 +223,7 @@ class CompleteForm extends Component {
                 <Form.Item label="Collaboration (Ability of designer to create and build ideas with you) *">
                     {getFieldDecorator('collaboration', {
                         rules: [{}],
-                    })(<Radio.Group onChange={this.onChange} value={this.state.value}>
+                    })(<Radio.Group onChange={this.onChange} >
                         <Radio id="collab1" value="1">1</Radio>
                         <Radio id="collab2" value="2">2</Radio>
                         <Radio id="collab3" value="3">3</Radio>
@@ -211,7 +236,7 @@ class CompleteForm extends Component {
                 <Form.Item label="Speed (Ability of designer to submit designs earlier than promised) *">
                     {getFieldDecorator('speed', {
                         rules: [{}],
-                    })(<Radio.Group onChange={this.onChange} value={this.state.value}>
+                    })(<Radio.Group onChange={this.onChange} >
                         <Radio id="speed1" value="1">1</Radio>
                         <Radio id="speed2" value="2">2</Radio>
                         <Radio id="speed3" value="3">3</Radio>
@@ -224,7 +249,7 @@ class CompleteForm extends Component {
                 <Form.Item label="Design Options (Ability of designer to present multiple-options for a design requirement) *">
                     {getFieldDecorator('design', {
                         rules: [{}],
-                    })(<Radio.Group onChange={this.onChange} value={this.state.value}>
+                    })(<Radio.Group onChange={this.onChange} >
                         <Radio id="design1" value="1">1</Radio>
                         <Radio id="design2" value="2">2</Radio>
                         <Radio id="design3" value="3">3</Radio>
@@ -237,7 +262,7 @@ class CompleteForm extends Component {
                 <Form.Item label="Which of the below statement would best describe your approach to deadline? *">
                     {getFieldDecorator('deadline', {
                         rules: [{}],
-                    })(<Radio.Group onChange={this.onChange} value={this.state.value}>
+                    })(<Radio.Group onChange={this.onChange} >
                         <Radio style={radioStyle} id="deadline1" value={"I'm strict on deadlines"}>
                           I'm strict on deadlines
                         </Radio>
@@ -255,7 +280,7 @@ class CompleteForm extends Component {
                 <Form.Item label="What interested you to rent a graphic designer from us? *">
                     {getFieldDecorator('interest', {
                         rules: [{}],
-                    })(<Radio.Group onChange={this.onChange} value={this.state.value}>
+                    })(<Radio.Group onChange={this.onChange} >
                       <Radio style={radioStyle} id="interest1" value={"I have no existing design team"}>
                       I have no existing design team
                       </Radio>
