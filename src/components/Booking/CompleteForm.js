@@ -24,6 +24,7 @@ import {
   TimePicker
 } from 'antd';
 import moment from 'moment';
+import withAuth from '../../middleware';
 
 
 function hasErrors(fieldsError) {
@@ -313,4 +314,4 @@ class CompleteForm extends Component {
 const CompleteFormBook = Form.create({ name: 'Book-CompleteForm' })(CompleteForm);
 
           
-export default CompleteFormBook;
+export default withAuth(CompleteFormBook, "client");

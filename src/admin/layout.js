@@ -11,10 +11,11 @@ import {
   NavLink,
   HashRouter
 } from "react-router-dom";
+import withAuth from '../middleware';
 const { Header, Content, Footer, Sider } = Layout;
 
 
-export default class AdminLayout extends React.Component {
+class AdminLayout extends React.Component {
   state = {
     collapsed: false,
     headerTitle: '',
@@ -81,3 +82,5 @@ export default class AdminLayout extends React.Component {
     );
   }
 }
+
+export default withAuth(AdminLayout, "admin")
