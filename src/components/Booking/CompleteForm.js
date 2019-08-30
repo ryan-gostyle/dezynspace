@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react'
+import React, { Component } from 'react'
 import 'antd/dist/antd.css';
 import {
   Form,
@@ -13,15 +13,14 @@ import {
   Button,
   AutoComplete,
   InputNumber,
-  Radio ,
-  TimePicker
+  Radio 
 } from 'antd';
-import moment from 'moment';
-import {DatePicker, getDay} from "react-datepicker";
- 
+import DatePicker from "react-datepicker";
+import cookie from 'react-cookies';
+import Axios from 'axios';
 import "react-datepicker/dist/react-datepicker.css";
 import withAuth from '../../middleware';
-
+import moment from 'moment';
 
 function hasErrors(fieldsError) {
   return Object.keys(fieldsError).some(field => fieldsError[field]);
@@ -31,24 +30,7 @@ const dateFormatList = ['MM/DD/YYYY', 'MM/DD/YY'];
 function handleChange(value) {
   console.log(`selected ${value}`);
 }
-const datelist = [
-  {
-    value: '2',
-    label: '2 days',
-  },
-  {
-    value: '5',
-    label: '5 days',
-  },
-  {
-    value: '7',
-    label: '10 days',
-  },
-  {
-    value: '7',
-    label: '1 month',
-  },
-];
+
 
 class CompleteForm extends Component {
     constructor(props) {
@@ -59,46 +41,115 @@ class CompleteForm extends Component {
           isEmpty: true,
           isDisabled: false,
           value: 1,
+          startDate : new Date(),
+          data: [],
+          price: null,
         };
       }
-    
-      handleDayChange(selectedDay, modifiers, dayPickerInput) {
+        
+
+      handleDayChange(selectedDay, modifiers, dayPickerInput, date ) {
         const input = dayPickerInput.getInput();
         this.setState({
           selectedDay,
           isEmpty: !input.value.trim(),
           isDisabled: modifiers.disabled === true,
+          startDate: date,
         });
       }
-      componentDidMount() {
-        // To disabled submit button at the beginning.
+
+      async componentDidMount() {
+        var data = await Axios.get('http://ec2-18-222-135-215.us-east-2.compute.amazonaws.com/api/asia', 
+        {
+          headers: { Authorization: "Bearer " + cookie.load('token') }
+        });
+        
+        this.setState({ data: data.data});
         this.props.form.validateFields();
-      }
+    }
       
-    
       handleSubmit = e => {
         e.preventDefault();
-        this.props.form.validateFields((err, values) => {
+        this.props.form.validateFieldsAndScroll(async (err, values) => {
           if (!err) {
-            console.log('Hello ', values);
+
+            // console.log(this.state.price);
+            var submit = await Axios.post('http://ec2-18-222-135-215.us-east-2.compute.amazonaws.com/api/booking', {
+              plan: values.spandate,
+              start_date: moment(values.startdate, 'YYYY/MM/DD').format('YYYY/MM/DD'),
+              end_date: moment(values.enddate, 'YYYY/MM/DD').format('YYYY/MM/DD'),
+              report_time: values.reportingtime,
+              timezone: values.timezone,
+              zip_code: values.zipcode,
+              price: this.state.price,
+              ans1: values.name,
+              ans2: values.email,
+              ans3: values.output,
+              ans4: values.collaboration,
+              ans5: values.speed,
+              ans6: values.design,
+              ans7: values.deadline,
+              ans8: values.interest,
+              ans9: values.bestfit,
+              ans10: values.invites,
+          }, { headers: { 'Content-Type': 'application/json', Authorization: "Bearer " + cookie.load('token') } }).catch(function (error) {
+              if (error.response) {
+                  console.log(error.response.data);
+                  console.log(error.response.status);
+                  console.log(error.response.headers);
+              } else if (error.request) {
+
+              } else {
+              }
+          });
+          if (await submit) {
+            // console.log(submit)
+              cookie.save('id', submit.data.message.id, {path: '/'});
+              window.location.href = submit.data.message.paypal;
+          }
           }
         });
       };
-      onChange = e => {
-        console.log('radio checked', e.target.value);
+      setStartDate = e => {
+        
         this.setState({
-          value: e.target.value,
+          setStartDate: this.state.startDate,
         });
+      }; 
+
+      priceChange = e => {
+        ;
+        if(e == "2"){
+          this.setState({
+            price: 196.80,
+           
+          });
+          console.log(this.state.price);
+        }
+        else if(e == "5"){
+          this.setState({
+            price: 467.00,
+          });
+        
+        }
+        else if(e == "10"){
+          this.setState({
+            price: 885.00,
+          });
+         
+        }
+        else{
+          this.setState({
+            price: 1670.00,
+          });
+         
+        }
       };
     
-    
     render() {
-      const [startDate, setStartDate] = useState(new Date());
-      const isWeekday = date => {
-      const day = getDay(date);
-      return day !== 0 && day !== 6;
-    };
- 
+        const timezone = this.state.data.map((country )=>
+        <Option value={country} key={country} >{country}</Option>
+        );
         const { selectedDay, isDisabled, isEmpty } = this.state;
         const radioStyle = {
             display: 'block',
@@ -117,6 +168,13 @@ class CompleteForm extends Component {
           },
         };
 
+         const startDate = this.state.startDate;
+         const setStartDate = this.state.setStartDate;
+         const isWeekday = date => {
+          const day = date.getDay()
+          return day !== 0 && day !== 6
+        }
+    
         return (
         <div className="container">
             <Form {...formItemLayout} onSubmit={this.handleSubmit}>
@@ -126,34 +184,33 @@ class CompleteForm extends Component {
                 <Form.Item label="How Long">
                 {getFieldDecorator('spandate', {
                     rules: [
-                    { type: 'array'}],
-                })(<Cascader options={datelist}  placeholder="select one" />)}
+                    { required: true}],
+                })(<Select  onChange={this.priceChange} placeholder="select one" >
+                  <Option value="2">2 Days </Option>
+                  <Option value="5">5 Days </Option>
+                  <Option value="10">2 Weeks </Option>
+                  <Option value="20"> 1 Month </Option>
+                </Select>)}
                 </Form.Item>
                   <a href="" style={{textDecoration:'underline'}}>Not sure how long you need a designer for? Click here</a>
               </Col>  
               <Col xs={24} sm={24} md={12} lg={12}>
                 <Form.Item label="Start Date">
-                  {getFieldDecorator('startdate', {
-                      rules: [{}],
-                  })(<DatePicker
-                    selected={startDate}
-                    onChange={date => setStartDate(date)}
+                  {getFieldDecorator('startdate')(<DatePicker
+                    selected={this.state.startDate}
+                    onChange={this.state.setStartDate}
                     filterDate={isWeekday}
-                    minDate={new Date()}
-                    placeholderText="Select a weekday"
+                    minDate= {new Date()}
                   />)}
                 </Form.Item>
               </Col>
               <Col xs={24} sm={24} md={12} lg={12}>
                 <Form.Item label="End Date">
-                  {getFieldDecorator('enddate', {
-                      rules: [{}],
-                  })(    <DatePicker
+                  {getFieldDecorator('enddate')
+                  (<DatePicker
                     selected={startDate}
-                    onChange={date => setStartDate(date)}
                     filterDate={isWeekday}
-                    minDate={new Date()}
-                    placeholderText="Select a weekday"
+                    minDate= {new Date()}
                   />)}
                 </Form.Item>
               </Col>
@@ -173,10 +230,12 @@ class CompleteForm extends Component {
               </Col>
               <Col xs={24} sm={24} md={12} lg={12}>
                 <Form.Item label="Timezone(ASIA)">
-                  {getFieldDecorator('timezone', {
-                    rules: [
-                    { type: 'array'}],
-                  })(<Cascader options={datelist}  placeholder="select timezone" />)}
+                  {getFieldDecorator('timezone',{
+                          rules: [{ required:true}],
+                      })(<Select  placeholder="select timezone" >
+                      {timezone}
+                      </Select>
+                    )}
                   </Form.Item>
               </Col>
               <Col xs={24} sm={24} md={24} lg={24} >

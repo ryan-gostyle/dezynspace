@@ -72,7 +72,6 @@ class AddDesigner extends Component {
               }
           });
           if (await submit) {
-              cookie.save('token', await submit.data.message, { path: '/' });
               window.location.href = "/admin/booking";
           }
           }

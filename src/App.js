@@ -23,6 +23,7 @@ import RegisterCustomer from './components/Accounts/register';
 import Clogin from './components/Accounts/login';
 import CustomerBook from './components/Booking/book';
 import CaseStudies from './components/Case Studies';
+import Confirm from './components/Booking/Confirm';
 import CompleteFormBooks from './components/Booking/CompleteForm'
 /*admin*/
 
@@ -39,6 +40,7 @@ function App() {
           <Route path="/admin/:link" render={() => <AdminsLayout> <AdminLayout/></AdminsLayout>} exact />
             <Route path="/admin" render={() => <ClientLayout> <AdminLogin/> </ClientLayout>}  exact />
             <Route path="/" render={() => <ClientLayout> <Home/></ClientLayout>}  exact />
+            <Route path="/confirm" component={Confirm} />
             <Route path="/signup"render={() => <ClientLayout> <RegisterCustomer/></ClientLayout>} exact />
             <Route path="/login" render={() => <ClientLayout> <Clogin/></ClientLayout>}  exact />
             <Route path="/booking" render={() => <ClientLayout> <CompleteFormBooks/></ClientLayout>}  exact />
