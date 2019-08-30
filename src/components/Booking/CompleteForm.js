@@ -128,6 +128,7 @@ class CompleteForm extends Component {
             const day = getDay(date);
             return day !== 0 && day !== 6;
           };
+        }
         return (
         <div className="container">
             <Form {...formItemLayout} onSubmit={this.handleSubmit}>
