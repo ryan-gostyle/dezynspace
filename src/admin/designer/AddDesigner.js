@@ -1,15 +1,10 @@
 import React, { Component } from 'react'
-import axios from 'axios'; 
 import {
     Form,
     Input,
-    Tooltip,
-    Icon,
-    Cascader,
     Select,
     Row,
     Col,
-    Checkbox,
     Button,
     AutoComplete,
     InputNumber,

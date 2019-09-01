@@ -2,16 +2,10 @@ import React, { Component } from 'react'
 import {
     Form,
     Input,
-    Tooltip,
-    Icon,
-    Cascader,
     Select,
     Row,
     Col,
-    Checkbox,
     Button,
-    AutoComplete,
-    InputNumber,
     DatePicker,
     Layout 
   } from 'antd';
@@ -22,7 +16,6 @@ import moment from 'moment';
 
   const { Header } = Layout;
   const { Option } = Select;
-  const AutoCompleteOption = AutoComplete.Option;
   const {RangePicker} = DatePicker;
 
 
@@ -66,19 +59,10 @@ class EditBooking extends Component {
         this.setState({ confirmDirty: this.state.confirmDirty || !!value });
       };
        
-      handleWebsiteChange = value => {
-        let autoCompleteResult;
-        if (!value) {
-          autoCompleteResult = [];
-        } else {
-          autoCompleteResult = ['.com', '.org', '.net'].map(domain => `${value}${domain}`);
-        }
-        this.setState({ autoCompleteResult });
-      };
     render() {
 
         const { getFieldDecorator } = this.props.form;
-        const { autoCompleteResult,details,designers,client,address } = this.state;
+        const { details,designers,client,address } = this.state;
   
         const designerss = designers.length !== 0 && designers.map((designer)=>
         <Option value={designer} key={designer} >{designer}</Option>
@@ -101,9 +85,6 @@ class EditBooking extends Component {
           </Select>,
         );
     
-        const websiteOptions = autoCompleteResult.map(website => (
-          <AutoCompleteOption key={website}>{website}</AutoCompleteOption>
-        ));
         return (
             <div>
               <Header  style={{ background: '#fff', padding: 0 }} >

@@ -26,8 +26,6 @@ import CaseStudies from './components/Case Studies';
 import Confirm from './components/Booking/Confirm';
 import CompleteFormBooks from './components/Booking/CompleteForm'
 /*admin*/
-
-
 import AdminLayout from './admin/layout';
 function App() {
   return (

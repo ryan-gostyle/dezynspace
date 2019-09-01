@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Row, Col } from 'antd';
-import { relative } from 'path';
 
 export default class SectionThree extends Component {
     render() {

@@ -1,7 +1,7 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import './Admin.css';
-import { Layout, Menu, Icon, Switch } from 'antd';
+import { Layout, Menu, Icon } from 'antd';
 import AddDesignerForm from './designer/AddDesigner'
 import ViewDesigner from './designer/ViewDesigner'
 import ViewBooking from './booking/ViewBooking'
@@ -12,7 +12,7 @@ import {
   HashRouter
 } from "react-router-dom";
 import withAuth from '../middleware';
-const { Header, Content, Footer, Sider } = Layout;
+const { Content, Footer, Sider } = Layout;
 
 
 class AdminLayout extends React.Component {

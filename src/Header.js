@@ -12,6 +12,7 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem } from 'reactstrap'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -28,6 +29,7 @@ class Header extends Component {
   }
   
   render() {
+    
     return (
       <div>
       <Navbar color="#fff" style={{background:'white',zIndex:'999999',width:'100%'}} dark expand="md">
@@ -36,7 +38,7 @@ class Header extends Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/">Home</NavLink>
+                <NavLink><AnchorLink href="#top">Home</AnchorLink></NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/">About</NavLink>
@@ -45,13 +47,13 @@ class Header extends Component {
                 <NavLink href="/">Portfolio</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#testimonials">Success Stories</NavLink>
+                <NavLink><AnchorLink href="#testimonials">Success Stories</AnchorLink></NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#pricing">Pricing</NavLink>
+                <NavLink ><AnchorLink href="#pricing">Pricing</AnchorLink></NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/">Book</NavLink>
+                <NavLink href="/booking">Book</NavLink>
               </NavItem>
               <NavItem className="login-navitem">
                 <NavLink className="login" href="/login" >Login</NavLink>

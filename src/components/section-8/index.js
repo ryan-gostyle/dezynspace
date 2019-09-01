@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Row, Col } from 'antd';
-import { relative } from 'path';
 import CountUp from 'react-countup';
 
 export default class SectionEight extends Component {

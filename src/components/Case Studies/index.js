@@ -1,7 +1,7 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import '../../App.css';
-import { Layout, Menu, Icon} from 'antd';
+import { Layout, Menu} from 'antd';
 import {
   Route,
   NavLink,
@@ -24,7 +24,7 @@ import ThreeD from './ThreeD';
 import WebBanners from './WebBanners';
 import WebsiteUI from './WebsiteUI';
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Content, Sider } = Layout;
 
 
 
