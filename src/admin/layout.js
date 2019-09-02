@@ -12,6 +12,7 @@ import {
   HashRouter
 } from "react-router-dom";
 import withAuth from '../middleware';
+import cookie from 'react-cookies';
 const { Content, Footer, Sider } = Layout;
 
 
@@ -28,6 +29,11 @@ class AdminLayout extends React.Component {
       collapsed: !this.state.collapsed,
     });
   };
+
+  handlelogout = e => {
+    cookie.remove('token', { path: '/' })
+    window.location.href = "/"
+  }
 
  
 
@@ -64,6 +70,10 @@ class AdminLayout extends React.Component {
                 <Menu.Item key="4">
                   <Icon type="user" />
                   <span className="nav-text"><NavLink to="/booking">Bookings</NavLink></span>
+                </Menu.Item>
+                <Menu.Item key="5">
+                  <Icon type="user" />
+                  <span className="nav-text"><NavLink to="/" onClick={this.handlelogout}>logout</NavLink></span>
                 </Menu.Item>
               </Menu>
             </Sider>

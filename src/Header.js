@@ -11,8 +11,10 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem } from 'reactstrap'
+  DropdownItem
+} from 'reactstrap'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
+import cookie from 'react-cookies';
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -27,13 +29,18 @@ class Header extends Component {
       isOpen: !this.state.isOpen
     });
   }
-  
+
+  handlelogout = e => {
+    cookie.remove('token', { path: '/' })
+    window.location.href = "/"
+  }
+
   render() {
-    
+
     return (
       <div>
-      <Navbar color="#fff" style={{background:'white',zIndex:'999999',width:'100%'}} dark expand="md">
-          <NavbarBrand href="/"><img src="https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/colored+logo.png" alt=''  style={{width: 'auto',height: '55px',left: '33px'}} /></NavbarBrand>
+        <Navbar color="#fff" style={{ background: 'white', zIndex: '999999', width: '100%' }} dark expand="md">
+          <NavbarBrand href="/"><img src="https://lynagails-caters.s3-ap-southeast-1.amazonaws.com/uploads/Dezynspace/colored+logo.png" alt='' style={{ width: 'auto', height: '55px', left: '33px' }} /></NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
@@ -56,7 +63,25 @@ class Header extends Component {
                 <NavLink href="/booking">Book</NavLink>
               </NavItem>
               <NavItem className="login-navitem">
-                <NavLink className="login" href="/login" >Login</NavLink>
+                {cookie.load('token') === undefined &&
+                  <NavLink className="login" href="/login" >Login</NavLink>
+                }
+                {cookie.load('token') !== undefined  &&
+
+                  <UncontrolledDropdown>
+                    <DropdownToggle nav caret>
+                     Account
+                    </DropdownToggle>
+                    <DropdownMenu right>
+                      <DropdownItem>
+                        <a href="/bookings">Bookings</a>
+                      </DropdownItem>
+                      <DropdownItem>
+                        <a onClick={this.handlelogout}>Logout</a>
+                      </DropdownItem>
+                    </DropdownMenu>
+                  </UncontrolledDropdown>
+                }
               </NavItem>
             </Nav>
           </Collapse>
