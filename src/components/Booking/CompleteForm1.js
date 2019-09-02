@@ -320,7 +320,7 @@ const steps = [
 
             {/* step 1 */}
             {/* step 2 */}
-            <Col xs={24} sm={24} md={24} lg={24} style={{ margin: '0 auto' }}>
+            {/* <Col xs={24} sm={24} md={24} lg={24} style={{ margin: '0 auto' }}>
               <h2 className="" style={{ color: '#484848', margin: '5px 0' }}>Please rate the importance of the following (5 being the highest)</h2>
               <hr style={{ width: '100%' }} />
             </Col>
@@ -443,8 +443,9 @@ const steps = [
                 })(<Input />)}
               </Form.Item >
             </Col>
+             */}
             {/* step 3 */}
-            <Col xs={24} sm={24} md={24} lg={24} >
+            {/* <Col xs={24} sm={24} md={24} lg={24} >
               <Form.Item className="" style={{ textAlign: 'center' }}>
                 <Button htmlType="submit">
                   Submit
@@ -455,7 +456,7 @@ const steps = [
               <Form.Item style={{ textAlign: 'center', margin: '0 auto' }}>
                 <a href="">Looking for long term graphic designer? Click here</a>
               </Form.Item>
-            </Col>
+            </Col> */}
           </Row>
         </Form>
       </div>
