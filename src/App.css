@@ -2145,12 +2145,9 @@ p.price {
 
 .steps-content {
   margin-top: 16px;
-  border: 1px dashed #e9e9e9;
-  border-radius: 2px;
-  background-color: #fafafa;
   min-height: 200px;
   text-align: center;
-  padding-top: 80px;
+  padding-top: 50px;
 }
 
 .steps-action {
@@ -2162,7 +2159,7 @@ p.price {
 
 /*booking form*/
 .completeform{
-  margin: 80px;
+  margin: 80px 0;
   background:#fff;
   border: 1px solid #484848;
   padding: 10px 30px;
@@ -2255,9 +2252,10 @@ box-shadow: -23px 23px 3px -2px rgba(3,206,164,0.97);
 .ant-calendar-picker,.ant-time-picker{
   width: 100%;
 }
-.ant-btn{
-  background:#FF5A5F;
+.completeform .ant-btn{
+  /* background:#FF5A5F; */
   color:#fff;
+  
 }
 .ant-form-item-control-wrapper{
   width: -webkit-fill-available;

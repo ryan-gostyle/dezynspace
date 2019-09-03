@@ -82,7 +82,7 @@ class CompleteForm extends Component {
                   console.log(error.response.status);
                   console.log(error.response.headers);
               } else if (error.request) {
-
+                  
               } else {
               }
           });
@@ -99,7 +99,7 @@ class CompleteForm extends Component {
       handleChangeStartDate = (date) => {
         this.setState({
           startDate: date,
-   
+          
         });
       };
       
@@ -172,7 +172,17 @@ class CompleteForm extends Component {
           const day = date.getDay()
           return day !== 0 && day !== 6
         }
-    
+        console.log(this.state.startDate.getTime());
+        console.log(this.state.endDate.getTime());
+        var msDiff = this.state.endDate.getTime() - this.state.startDate.getTime();
+        var daysdiff = Math.floor(msDiff / (1000 * 60 * 60 * 24));
+        console.log("day diff is:" + daysdiff);
+        if(daysdiff == "5"){
+          console.log("Got it!")
+        }
+        else{
+          console.log("no no no!")
+        }
         return (
         <div className="container">
             <Form {...formItemLayout} onSubmit={this.handleSubmit} className="completeform">
