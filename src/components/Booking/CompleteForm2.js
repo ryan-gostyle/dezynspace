@@ -37,6 +37,7 @@ class CompleteForm extends Component {
           value: 1,
           startDate: new Date(),
           endDate : new Date(),
+          spanDate: null,
           data: [],
           price: null,
           activeTab: "1",
@@ -122,25 +123,28 @@ class CompleteForm extends Component {
         if(e === "2"){
           this.setState({
             price: 196.00,
-           
+            spanDate: 2,
           });
           console.log(this.state.price);
         }
         else if(e === "5"){
           this.setState({
             price: 467.00,
+            spanDate: 5,
           });
         
         }
         else if(e === "10"){
           this.setState({
             price: 885.00,
+            spanDate: 10,
           });
          
         }
         else{
           this.setState({
             price: 1670.00,
+            spanDate: 20,
           });
          
         }
@@ -203,7 +207,7 @@ class CompleteForm extends Component {
           const day = date.getDay()
           return day !== 0 && day !== 6
         }
-        
+        /* datepicker */
         const returnfinaldate = () => {
         const getYear = new Date().getFullYear();
         let holidayDays = ['/01/01','/02/05','/02/25','/03/21','/04/03','/04/09','/04/18','/04/19','/04/20','/04/21','/05/01','/05/13','/06/05','/06/12','/06/21',
@@ -213,8 +217,8 @@ class CompleteForm extends Component {
         
         let startDate = this.state.startDate;
         let endDate = new Date();
-        startDate = new Date('2019/09/04');// '2019/09/04';
-        let noOfDaysToAdd = 5, count = 0;
+        startDate = new Date(this.state.startDate);// '2019/09/04';
+        let noOfDaysToAdd = this.state.spanDate, count = 0;
         endDate = startDate;   
 
         while (count < noOfDaysToAdd) {

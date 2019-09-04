@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { Layout } from 'antd';
 import Header from './Header';
+import HeaderHome from './HeaderHome';
 import Footer from './Footer';
 import Banner from './components/section-1/banner';
 import SectionTwo from './components/section-2';
@@ -37,7 +38,7 @@ function App() {
             
           <Route path="/admin/:link" render={() => <AdminsLayout> <AdminLayout/></AdminsLayout>} exact />
             <Route path="/admin" render={() => <ClientLayout> <AdminLogin/> </ClientLayout>}  exact />
-            <Route path="/" render={() => <ClientLayout> <Home/></ClientLayout>}  exact />
+            <Route path="/" component={Home}   exact />
             <Route path="/confirm" component={Confirm} />
             <Route path="/signup"render={() => <ClientLayout> <RegisterCustomer/></ClientLayout>} exact />
             <Route path="/login" render={() => <ClientLayout> <Clogin/></ClientLayout>}  exact />
@@ -64,6 +65,7 @@ const AdminsLayout = ({ children }) => (
 );
 const Home = () => (
   <div className="App">
+     <HeaderHome/>
     <Banner />
     <SectionTwo />
     <SectionThree />
@@ -78,6 +80,7 @@ const Home = () => (
     <SectionTwelve />
     <SectionThirteen />
     <SectionFourteen />
+    <Footer/>
   </div>
 );
 
