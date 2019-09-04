@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Table, Button, Layout } from 'antd';
+import { Table, Button, Layout,Tag } from 'antd';
 import cookie from 'react-cookies';
 import Axios from 'axios';
 const { Header } = Layout;
@@ -17,8 +17,8 @@ class ViewDesigner extends Component {
         {
           headers: { Authorization: "Bearer " + cookie.load('token') }
         });
-        console.log(await data.data.message);
-        this.setState({ data: await data.data.designer });
+        console.log(await data.data.message.designer);
+        this.setState({ data: await data.data.message.designer });
     }
 
       handleChange = (pagination, filters, sorter) => {
@@ -58,45 +58,43 @@ class ViewDesigner extends Component {
         title: 'ID',
         dataIndex: 'id',
         key: 'id',
-        filters: [{ text: '1', value: '1' }, { text: '2', value: '2' }],
-        filteredValue: filteredInfo.id || null,
-        onFilter: (value, record) => record.id.includes(value),
-        sorter: (a, b) => a.id.length - b.id.length,
-        sortOrder: sortedInfo.columnKey === 'id' && sortedInfo.order,
-        },
+      },
       {
         title: 'Name',
-        dataIndex: 'first_name',
-        key: 'first_name',
-        filters: [{ text: 'Joe', value: 'Joe' }, { text: 'Jim', value: 'Jim' }],
-        filteredValue: filteredInfo.name || null,
-        onFilter: (value, record) => record.name.includes(value),
-        sorter: (a, b) => a.name.length - b.name.length,
-        sortOrder: sortedInfo.columnKey === 'name' && sortedInfo.order,
+        dataIndex: 'user',
+        key: 'name',
+        render: user => `${user.last_name} ${user.first_name}`,
       },
       {
         title: 'Email',
-        dataIndex: 'email',
+        dataIndex: 'user.email',
         key: 'email',
-        sorter: (a, b) => a.age - b.age,
-        sortOrder: sortedInfo.columnKey === 'age' && sortedInfo.order,
       },
       {
         title: 'Employment Type',
         dataIndex: 'type',
         key: 'type',
-        filters: [{ text: 'London', value: 'London' }, { text: 'New York', value: 'New York' }],
-        filteredValue: filteredInfo.type || null,
-        onFilter: (value, record) => record.type.includes(value),
-        sorter: (a, b) => a.type.length - b.type.length,
-        sortOrder: sortedInfo.columnKey === 'type' && sortedInfo.order,
+        render: (text, record) => (
+          <span>
+            {text === 1 ? <Tag color="green">Full Time</Tag> : <Tag color="blue">Project Based</Tag>}
+          </span>
+        )
       },
       {
         title: 'Action',
         dataIndex: 'action',
         key: 'action',
-
-      },
+        render: (text, record) => (
+          <span>
+            {text !== "No designer found" && (
+              <span>
+                <a href={`/edit-designer/${record.id}`}>Details</a>
+                <br />
+              </span>
+            )}
+          </span>
+        )
+      }
     ];
         return (
             <div>

@@ -13,12 +13,11 @@ import {
   } from 'antd';
 import cookie from 'react-cookies';
 import Axios from 'axios'
-  const { Option } = Select;
-  const AutoCompleteOption = AutoComplete.Option;
-  const {RangePicker} = DatePicker;
-
-  const { Header } = Layout;
-
+  
+const { Option } = Select;
+const AutoCompleteOption = AutoComplete.Option;
+const {RangePicker} = DatePicker;
+const { Header } = Layout;
 
 class AddDesigner extends Component {
     state = {
@@ -26,9 +25,10 @@ class AddDesigner extends Component {
         autoCompleteResult: [],
         data: [],
         city: [],
+        date: []
       };
 
-      async componentDidMount() {
+    async componentDidMount() {
         var data = await Axios.get('http://ec2-18-222-135-215.us-east-2.compute.amazonaws.com/api/countries', 
         {
           headers: { Authorization: "Bearer " + cookie.load('token') }
@@ -45,7 +45,7 @@ class AddDesigner extends Component {
             var submit = await Axios.post('http://ec2-18-222-135-215.us-east-2.compute.amazonaws.com/api/designer', {
               first_name: values.fname,
               last_name: values.lname,
-              mobile_number: values.phone,
+              mobile_number: "09"+values.phone,
               street: values.street,
               country: values.country,
               city: values.city,
@@ -53,8 +53,8 @@ class AddDesigner extends Component {
               company: values.company,
               email: values.email,
               type: values.type,
-              // schedule: values.,
-              
+              start_date: this.state.date[0],
+              end_date: this.state.date[1]
 
           }, { headers: { 'Content-Type': 'application/json', Authorization: "Bearer " + cookie.load('token') } }).catch(function (error) {
               if (error.response) {
@@ -85,22 +85,13 @@ class AddDesigner extends Component {
         });
         this.setState({ city: Message });
       };
+
+      onChange = (value, dateString) => {
+        this.setState({date: dateString})
+       }
     
-      handleConfirmBlur = e => {
-        const { value } = e.target;
-        this.setState({ confirmDirty: this.state.confirmDirty || !!value });
-      };
-       
-      handleWebsiteChange = value => {
-        let autoCompleteResult;
-        if (!value) {
-          autoCompleteResult = [];
-        } else {
-          autoCompleteResult = ['.com', '.org', '.net'].map(domain => `${value}${domain}`);
-        }
-        this.setState({ autoCompleteResult });
-      };
     render() {
+
       const country = this.state.data.map((country )=>
       <Option value={country} key={country} >{country}</Option>
       );
@@ -108,8 +99,9 @@ class AddDesigner extends Component {
       const city = this.state.city.length !== 0 && this.state.city.map((country)=>
       <Option value={country} key={country} >{country}</Option>
       );
-        const { getFieldDecorator } = this.props.form;
-        const { autoCompleteResult } = this.state;
+
+      const { getFieldDecorator } = this.props.form;
+      const { autoCompleteResult } = this.state;
     
         const formItemLayout = {
           labelCol: {
@@ -122,10 +114,10 @@ class AddDesigner extends Component {
           },
         };
        const prefixSelector = getFieldDecorator('prefix', {
-          initialValue: '63',
+          initialValue: '09',
         })(
           <Select style={{ width: 70 }}>
-            <Option value="63">+63</Option>
+            <Option value="09">09</Option>
           </Select>,
         );
     
@@ -229,7 +221,7 @@ class AddDesigner extends Component {
                     <Form.Item>
                         {getFieldDecorator('daterange', {
                             rules: [{ required: true}],
-                        })(<RangePicker/>)}
+                        })(<RangePicker onChange={this.onChange}/>)}
                       </Form.Item>
                   </Col>
                   <Col xs={24} sm={24} md={24} lg={24}>
