@@ -1,14 +1,18 @@
 import React from 'react';
-import { Row, Col, Card, Form, Icon, Input, Button, Checkbox } from 'antd'
+import { Row, Col, Card, Form, Icon, Input, Button, Checkbox,Alert } from 'antd'
 import '../../admin/Admin.css';
 import Axios from 'axios';
 import cookie from 'react-cookies';
 
 
 class CLogin extends React.Component {
+ state = {
+        error: null
+    }
 
     handleSubmit = e => {
         e.preventDefault();
+        const currenthis = this;
         this.props.form.validateFields(async (err, values) => {
             if (!err) {
                 var submit = await Axios.post('http://ec2-18-222-135-215.us-east-2.compute.amazonaws.com/api/login', {
@@ -17,9 +21,7 @@ class CLogin extends React.Component {
                     accesstoken: "dezynspace"
                 }, { headers: { 'Content-Type': 'application/json' } }).catch(function (error) {
                     if (error.response) {
-                        console.log(error.response.data);
-                        console.log(error.response.status);
-                        console.log(error.response.headers);
+                        currenthis.setState({error: error.response.data.error})
                     } else if (error.request) {
 
                     } else {
@@ -35,6 +37,10 @@ class CLogin extends React.Component {
         });
     };
 
+    onClose = e =>{
+        this.setState({error: null});
+    }
+
     render() {
         const { getFieldDecorator } = this.props.form;
 
@@ -43,6 +49,8 @@ class CLogin extends React.Component {
                 <Row type="flex" justify="center" align="middle" style={{ height: "80vh" }}>
                     <Col lg={9}>
                         <h1 >Login</h1>
+                         {this.state.error !== null &&
+                         <Alert message={this.state.error} type="error" onClose={this.onClose} closable />}
                         <br />
                         <Card className="login-card">
                             <Form onSubmit={this.handleSubmit} className="login-form" style={{ textAlign: "left" }}>
