@@ -54,7 +54,7 @@ export class Step1 extends Component{
       <div>
           <h2 className="" style={{ textAlign: 'center', color: '#484848', margin: '5px 0', margin: '80px' }}>Book you exlusive professional graphic designer</h2>
             <hr style={{ width: '100%' }} />
-            <Col xs={24} sm={24} md={24} lg={24}>
+            <Col xs={24} sm={24} md={8} lg={8}>
               <Form.Item label="How Long">
                 {getFieldDecorator('spandate', {
                   rules: [{ required: true, message: 'Field is required' }],
@@ -67,7 +67,7 @@ export class Step1 extends Component{
               </Form.Item>
               <a href="" style={{ textDecoration: 'underline' }}>Not sure how long you need a designer for? Click here</a>
             </Col>
-             <Col xs={24} sm={24} md={12} lg={12}>
+             <Col xs={24} sm={24} md={8} lg={8}>
               <Form.Item label="Start Date">
                 {getFieldDecorator('startdate', {
                   rules: [{ required: true, message: 'Field is required' }],
@@ -83,7 +83,7 @@ export class Step1 extends Component{
                 />)}
               </Form.Item>
             </Col>
-            <Col xs={24} sm={24} md={12} lg={12}>
+            <Col xs={24} sm={24} md={8} lg={8}>
               <Form.Item label="End Date">
                 {getFieldDecorator('enddate', {
                   rules: [{ required: true, message: 'Field is required' }],
@@ -488,10 +488,8 @@ const steps = [
 
             {/* step 1 */}
             {/* step 2 */}
-            {/* 
-             */}
             {/* step 3 */}
-            {/*  */}
+
           </Row>
         </Form>
       </div>

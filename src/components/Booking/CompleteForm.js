@@ -120,7 +120,7 @@ class CompleteForm extends Component {
         ;
         if(e === "2"){
           this.setState({
-            price: 196.80,
+            price: 196.00,
            
           });
           console.log(this.state.price);
@@ -190,7 +190,7 @@ class CompleteForm extends Component {
               {/* step 1 */}
               <h2 className="" style={{textAlign:'center',color:'#484848',margin:'5px 0',margin: '80px'}}>Book you exlusive professional graphic designer</h2>
               <hr style={{width:'100%'}}/>
-              <Col xs={24} sm={24} md={24} lg={24}>
+              <Col xs={24} sm={24} md={5} lg={5}>
                 <Form.Item label="How Long">
                 {getFieldDecorator('spandate',{
                     rules: [{ required:true,message: 'Field is required'}],
@@ -203,7 +203,7 @@ class CompleteForm extends Component {
                 </Form.Item>
                   <a href="" style={{textDecoration:'underline'}}>Not sure how long you need a designer for? Click here</a>
               </Col>  
-              <Col xs={24} sm={24} md={12} lg={12}>
+              <Col xs={24} sm={24} md={5} lg={5}>
                 <Form.Item label="Start Date">
                   {getFieldDecorator('startdate',{
                           rules: [{ required:true,message: 'Field is required'}],
@@ -219,7 +219,7 @@ class CompleteForm extends Component {
                   />)}
                 </Form.Item>
               </Col>
-              <Col xs={24} sm={24} md={12} lg={12}>
+              <Col xs={24} sm={24} md={5} lg={5}>
                 <Form.Item label="End Date">
                   {getFieldDecorator('enddate',{
                           rules: [{ required:true,message: 'Field is required'}],
@@ -235,7 +235,7 @@ class CompleteForm extends Component {
                   />)}
                 </Form.Item>
               </Col>
-              <Col xs={24} sm={24} md={12} lg={12}>
+              <Col xs={24} sm={24} md={5} lg={5}>
                 <Form.Item label="Reporting Time">
                 {getFieldDecorator('reportingtime',{
                           rules: [{ required:true,message: 'Field is required'}],
@@ -249,7 +249,7 @@ class CompleteForm extends Component {
                   )}
                 </Form.Item>
               </Col>
-              <Col xs={24} sm={24} md={12} lg={12}>
+              <Col xs={24} sm={24} md={4} lg={4}>
                 <Form.Item label="Timezone(ASIA)">
                   {getFieldDecorator('timezone',{
                           rules: [{ required:true,message: 'Field is required'}],
@@ -264,14 +264,14 @@ class CompleteForm extends Component {
                   <h2 className="" style={{color:'#484848',margin:'5px 0'}}>Please rate the importance of the following (5 being the highest)</h2>
                   <hr style={{width:'100%'}}/>
                 </Col>
-                <Col xs={24} sm={24} md={24} lg={24} >
+                <Col xs={24} sm={24} md={10} lg={10} >
                   <Form.Item label="Your Name">
                       {getFieldDecorator('name',{
                           rules: [{ required:true,message: 'Field is required'}],
                       })(<Input/>)}
                   </Form.Item >
                 </Col>
-                <Col xs={24} sm={24} md={24} lg={24} >
+                <Col xs={24} sm={24} md={14} lg={14} >
                   <Form.Item label="Email address of main contact person/the person that the designer will directly report to">
                       {getFieldDecorator('email',{
                           rules: [{ required:true,message: 'Field is required'}],
@@ -285,7 +285,7 @@ class CompleteForm extends Component {
                       })(<Input/>)}
                   </Form.Item >
                 </Col>
-                <Col xs={24} sm={24} md={12} lg={12} >
+                <Col xs={24} sm={24} md={8} lg={8} >
                   <Form.Item label="Collaboration (Ability of designer to create and build ideas with you)">
                       {getFieldDecorator('collaboration',{
                           rules: [{ required:true,message: 'Field is required'}],
@@ -298,7 +298,7 @@ class CompleteForm extends Component {
                         </Radio.Group>)}
                   </Form.Item >
                 </Col>
-                <Col xs={24} sm={24} md={12} lg={12} >
+                <Col xs={24} sm={24} md={8} lg={8} >
                   <Form.Item label="Speed (Ability of designer to submit designs earlier than promised)">
                       {getFieldDecorator('speed',{
                           rules: [{ required:true,message: 'Field is required'}],
@@ -311,7 +311,7 @@ class CompleteForm extends Component {
                         </Radio.Group>)}
                   </Form.Item >
                 </Col>
-                <Col xs={24} sm={24} md={12} lg={12} >
+                <Col xs={24} sm={24} md={8} lg={8} >
                   <Form.Item label="Design Options (Ability of designer to present multiple-options for a design requirement)">
                       {getFieldDecorator('design',{
                           rules: [{ required:true,message: 'Field is required'}],
@@ -322,24 +322,6 @@ class CompleteForm extends Component {
                           <Radio id="design4" value="4">4</Radio>
                           <Radio id="design5 "value="5">5</Radio>
                       </Radio.Group>)}
-                  </Form.Item >
-                </Col>
-                <Col xs={24} sm={24} md={12} lg={12} >
-                  <Form.Item label="Which of the below statement would best describe your approach to deadline?">
-                      {getFieldDecorator('deadline',{
-                          rules: [{ required:true,message: 'Field is required'}],
-                      })(<Radio.Group onChange={this.onChange} >
-                          <Radio style={radioStyle} id="deadline1" value={"I'm strict on deadlines"}>
-                            I'm strict on deadlines
-                          </Radio>
-                          <Radio style={radioStyle} id="deadline2" value={"I'm open to designer recommendation when it comes to delivery time"}>
-                            I'm open to designer recommendation when it comes to delivery time
-                          </Radio>
-                          <Radio style={radioStyle} id="deadline3" value={"other"}>
-                            Other...
-                            {this.state.value === "other" ? <Input style={{ width: 200, marginLeft: 10 }} /> : null}
-                          </Radio>
-                        </Radio.Group>)}
                   </Form.Item >
                 </Col>
                 <Col xs={24} sm={24} md={12} lg={12} >
@@ -370,19 +352,39 @@ class CompleteForm extends Component {
                   </Form.Item >
                 </Col>
                 <Col xs={24} sm={24} md={12} lg={12} >
+                  <Form.Item label="Which of the below statement would best describe your approach to deadline?">
+                      {getFieldDecorator('deadline',{
+                          rules: [{ required:true,message: 'Field is required'}],
+                      })(<Radio.Group onChange={this.onChange} >
+                          <Radio style={radioStyle} id="deadline1" value={"I'm strict on deadlines"}>
+                            I'm strict on deadlines
+                          </Radio>
+                          <Radio style={radioStyle} id="deadline2" value={"I'm open to designer recommendation when it comes to delivery time"}>
+                            I'm open to designer recommendation when it comes to delivery time
+                          </Radio>
+                          <Radio style={radioStyle} id="deadline3" value={"other"}>
+                            Other...
+                            {this.state.value === "other" ? <Input style={{ width: 200, marginLeft: 10 }} /> : null}
+                          </Radio>
+                        </Radio.Group>)}
+                  </Form.Item >
+                  <Col xs={24} sm={24} md={24} lg={24} >
                   <Form.Item label="Describe a best-fit graphic designer for you/your company">
                       {getFieldDecorator('bestfit',{
                           rules: [{ required:true,message: 'Field is required'}],
                       })(<Input/>)}
                   </Form.Item >
                 </Col>
-                <Col xs={24} sm={24} md={12} lg={12} >
+                </Col>
+
+                <Col xs={24} sm={24} md={24} lg={24} >
                   <Form.Item label="Please write down the email address/es of those that needs to be invited in the workspace with your designer" >
                       {getFieldDecorator('invites',{
                           rules: [{ required:true,message: 'Field is required'}],
                       })(<Input/>)}
                   </Form.Item >
                 </Col>
+
                           {/* step 3 */}  
                 <Col xs={24} sm={24} md={24} lg={24} >
                 <Form.Item className="" style={{textAlign:'center'}}> 

@@ -24,7 +24,7 @@ import Clogin from './components/Accounts/login';
 import CustomerBook from './components/Booking/book';
 import CaseStudies from './components/Case Studies';
 import Confirm from './components/Booking/Confirm';
-import CompleteFormBooks from './components/Booking/CompleteForm1'
+import CompleteFormBooks from './components/Booking/CompleteForm2'
 /*admin*/
 import AdminLayout from './admin/layout';
 function App() {

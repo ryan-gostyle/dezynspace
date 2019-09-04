@@ -2161,9 +2161,50 @@ p.price {
 .completeform{
   margin: 80px 0;
   background:#fff;
-  border: 1px solid #484848;
+  /* border: 1px solid #484848; */
   padding: 10px 30px;
 }
+.ant-tabs{
+  overflow: visible;
+}
+.ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab {
+  height: 40px;
+  color: #fff;
+  background: #484848;
+  border-radius: 5px;
+  height: 40px;
+  font-size: 1.3em;
+  margin: 0 auto;
+  /* margin-left: 50px;
+  margin-right: 50px; */
+  padding: 0px 45px;
+  line-height: 38px;
+  /* background: #fafafa; */
+  /* border: 1px solid #e8e8e8; */
+  /* border-radius: 4px 4px 0 0; */
+  -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab-active{
+  background:#f4a460;
+}
+.ant-tabs-bar{
+  border-bottom: none;
+  margin:0 0 56px 0;
+}
+.next-prev{
+  width:150px;
+  margin:10px 18px;
+  border-radius:20px;
+  border:1px solid  #60a2f4; 
+}
+.next-prev:hover{
+  width:150px;
+  margin:10px 18px;
+  background: #60a2f4;
+  color:#fff;
+}
+
 .react-datepicker-wrapper {
   display: inline-block;
   padding: 0;
@@ -2252,10 +2293,15 @@ box-shadow: -23px 23px 3px -2px rgba(3,206,164,0.97);
 .ant-calendar-picker,.ant-time-picker{
   width: 100%;
 }
-.completeform .ant-btn{
+.completeform .paynow-button{
   /* background:#FF5A5F; */
   color:#fff;
-  
+  border-radius:25px;
+  padding:7px 30px;
+  text-emphasis: 3px; 
+  text-transform: uppercase;
+  background: sandybrown;
+  font-style:italic;
 }
 .ant-form-item-control-wrapper{
   width: -webkit-fill-available;

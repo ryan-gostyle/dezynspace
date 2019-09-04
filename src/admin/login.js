@@ -28,7 +28,7 @@ class Login extends React.Component {
                 });
                 if (await submit) {
                     cookie.save('token', await submit.data.message, { path: '/' });
-                    window.location.href = "/admin/dashboard";
+                    window.location.href = "/admin/dashboard#/booking";
                 }
             }
         });

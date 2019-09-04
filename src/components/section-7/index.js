@@ -10,7 +10,7 @@ export default class SectionSeven extends Component {
                     <h2 style={{color:'#fff',margin:'15px 10px'}}>Pricing</h2>
                     <div className="price-box" style={{height:'auto',minHeight:'145px',width:'300px',background:'#fff',margin:'0 auto',marginTop:'20px',marginBottom:'15px',borderRadius:'2px',padding:'15px 10px'}}>
                         <h2>2 Days</h2>
-                        <p className="price">$196.80</p>
+                        <p className="price">$196</p>
                     </div>
                     <div className="price-box" style={{height:'auto',minHeight:'145px',width:'300px',background:'#fff',margin:'0 auto',marginTop:'20px',marginBottom:'15px',borderRadius:'2px',padding:'15px 10px'}}>
                         <h2>5 Days</h2>
