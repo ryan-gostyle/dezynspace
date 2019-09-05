@@ -27,6 +27,7 @@ import Confirm from './components/Booking/Confirm';
 import CompleteFormBooks from './components/Booking/CompleteForm2'
 /*admin*/
 import AdminLayout from './admin/layout';
+import History from './components/Accounts/history';
 function App() {
   return (
     
@@ -42,6 +43,7 @@ function App() {
             <Route path="/signup"render={() => <ClientLayout> <RegisterCustomer/></ClientLayout>} exact />
             <Route path="/login" render={() => <ClientLayout> <Clogin/></ClientLayout>}  exact />
             <Route path="/booking" render={() => <ClientLayout> <CompleteFormBooks/></ClientLayout>}  exact />
+            <Route path="/history" render={() => <ClientLayout> <History/></ClientLayout>}  exact />
             <Route path="/case-studies" render={() => <ClientLayout> <CaseStudies/></ClientLayout>}  exact />
           </Switch>
          </Layout>

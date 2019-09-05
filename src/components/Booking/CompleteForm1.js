@@ -17,6 +17,7 @@ import Axios from 'axios';
 import "react-datepicker/dist/react-datepicker.css";
 import withAuth from '../../middleware';
 import moment from 'moment';
+import Step1 from './StepOne';
 
 const { Step } = Steps;
 const { Option } = Select;
@@ -435,9 +436,7 @@ const steps = [
     title: 'Book',
     content: <Step1 
     form={this.props.form} 
-    data={this.state.data} 
-    startDate={this.state.startDate} 
-    endDate={this.state.endDate}/>,
+    data={this.state.data} />,
   },
   {
     title: 'Survey',

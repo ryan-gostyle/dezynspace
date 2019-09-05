@@ -55,7 +55,6 @@ class AddDesigner extends Component {
               type: values.type,
               start_date: this.state.date[0],
               end_date: this.state.date[1]
-
           }, { headers: { 'Content-Type': 'application/json', Authorization: "Bearer " + cookie.load('token') } }).catch(function (error) {
               if (error.response) {
                   console.log(error.response.data);
