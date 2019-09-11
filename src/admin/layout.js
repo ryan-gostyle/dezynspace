@@ -6,6 +6,7 @@ import AddDesignerForm from './designer/AddDesigner'
 import ViewDesigner from './designer/ViewDesigner'
 import ViewBooking from './booking/ViewBooking'
 import EditBookingForm from './booking/EditBooking'
+import EditDesignerForm from './designer/EditDesigner'
 import {
   Route,
   NavLink,
@@ -84,6 +85,7 @@ class AdminLayout extends React.Component {
                   <Route path="/add-designer" component={AddDesignerForm}/>
                   <Route path="/booking" component={ViewBooking}/>
                   <Route path="/edit-booking/:id" component={EditBookingForm}/>
+                  <Route path="/edit-designer/:id" component={EditDesignerForm}/>
               </Content>
               <Footer style={{ textAlign: 'center' }}>Dezynspace ©2019 </Footer>
             </Layout>

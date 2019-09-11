@@ -88,7 +88,7 @@ class ViewDesigner extends Component {
           <span>
             {text !== "No designer found" && (
               <span>
-                <a href={`/edit-designer/${record.id}`}>Details</a>
+                <a href={`/admin/dashboard#/edit-designer/${record.id}`}>Details</a>
                 <br />
               </span>
             )}

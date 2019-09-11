@@ -62,8 +62,8 @@ class CompleteForm extends Component {
             // console.log(this.state.price);
             var submit = await Axios.post('http://ec2-18-222-135-215.us-east-2.compute.amazonaws.com/api/booking', {
               plan: values.spandate,
-              start_date: moment(values.startdate, 'YYYY/MM/DD').format('YYYY/MM/DD'),
-              end_date: moment(values.enddate, 'YYYY/MM/DD').format('YYYY/MM/DD'),
+              start_date: moment(this.state.startDate, 'YYYY/MM/DD').format('YYYY/MM/DD'),
+              end_date: moment(this.state.endDate, 'YYYY/MM/DD').format('YYYY/MM/DD'),
               report_time: values.reportingtime,
               timezone: values.timezone,
               zip_code: values.zipcode,
@@ -184,7 +184,7 @@ class CompleteForm extends Component {
         const timezone = this.state.data.map((country )=>
           <Option value={country} key={country} >{country}</Option>
         );
-        const { selectedDay, isDisabled, isEmpty } = this.state;
+        // const { selectedDay, isDisabled, isEmpty } = this.state;
         const radioStyle = {
             display: 'block',
             height: '30px',
@@ -211,7 +211,7 @@ class CompleteForm extends Component {
         const returnfinaldate = () => {
         const getYear = new Date().getFullYear();
         let holidayDays = ['/01/01','/02/05','/02/25','/03/21','/04/03','/04/09','/04/18','/04/19','/04/20','/04/21','/05/01','/05/13','/06/05','/06/12','/06/21',
-        ,'/08/12','/08/13','/08/21','/08/26','/08/31','/09/03','/09/23','/11/01','/11/02','/11/10','/11/30','/12/08','/12/22','/12/24','/12/25','/12/30','/12/31'];
+        '/08/12','/08/13','/08/21','/08/26','/08/31','/09/03','/09/23','/11/01','/11/02','/11/10','/11/30','/12/08','/12/22','/12/24','/12/25','/12/30','/12/31'];
         let holiday = [];
         holidayDays.forEach(day => holiday.push( new Date(`${getYear+day}`)));
         
@@ -225,7 +225,7 @@ class CompleteForm extends Component {
                 endDate.setDate(endDate.getDate() + 1)
                 // Date.getDay() gives weekday starting from 0(Sunday) to
                 // 6(Saturday)
-                if (endDate.getDay() != 0 && endDate.getDay() != 6 && !isHoliday(endDate, holiday)) {
+                if (endDate.getDay() !== 0 && endDate.getDay() !== 6 && !isHoliday(endDate, holiday)) {
                     count++;
                 }
             }
@@ -243,7 +243,7 @@ class CompleteForm extends Component {
         }
         const compare = (dt1, dt2) =>{
             let equal = false;
-            if(dt1.getDate() == dt2.getDate() && dt1.getMonth() == dt2.getMonth() && dt1.getFullYear() == dt2.getFullYear()) {
+            if(dt1.getDate() === dt2.getDate() && dt1.getMonth() === dt2.getMonth() && dt1.getFullYear() === dt2.getFullYear()) {
                 equal = true;
             }
             return equal;
@@ -252,7 +252,7 @@ class CompleteForm extends Component {
         this.state.endDate = returnfinaldate();
             const getYear = new Date().getFullYear();
             let holidayDays = ['/01/01','/02/05','/02/25','/03/21','/04/03','/04/09','/04/18','/04/19','/04/20','/04/21','/05/01','/05/13','/06/05','/06/12','/06/21',
-            ,'/08/12','/08/13','/08/21','/08/26','/08/31','/09/03','/09/23','/11/01','/11/02','/11/10','/11/30','/12/08','/12/22','/12/24','/12/25','/12/30','/12/31'];
+            '/08/12','/08/13','/08/21','/08/26','/08/31','/09/03','/09/23','/11/01','/11/02','/11/10','/11/30','/12/08','/12/22','/12/24','/12/25','/12/30','/12/31'];
             let holiday = [];
             holidayDays.forEach(day => holiday.push( new Date(`${getYear+day}`)));
         
@@ -261,8 +261,8 @@ class CompleteForm extends Component {
         <div className="container">
             <Form {...formItemLayout} onSubmit={this.handleSubmit} className="completeform">
                 <Row>
-                    <Tabs type="card" tabBarGutter="80px" activeKey={this.state.activeTab}>
-                        <TabPane tab={<span><Icon type="apple" />Tab 1</span>} key="1">
+                    <Tabs type="card" tabBarGutter={80} activeKey={this.state.activeTab}>
+                        <TabPane tab={<span><Icon type="form" />Book</span>} key="1">
                             <h4 className="" style={{textAlign:'center',color:'#484848',margin:'5px 0'}}>Book you exlusive professional graphic designer</h4>
                             <hr style={{width:'100%'}}/>
                             <Col xs={24} sm={24} md={10} lg={10} >
@@ -290,7 +290,7 @@ class CompleteForm extends Component {
                                 <Option value="20"> 1 Month </Option>
                                 </Select>)}
                                 </Form.Item>
-                                <a href="" style={{textDecoration:'underline'}}>Not sure how long you need a designer for? Click here</a>
+                                
                             </Col>  
                             <Col xs={24} sm={24} md={5} lg={5}>
                             <Form.Item label="Start Date">
@@ -357,9 +357,10 @@ class CompleteForm extends Component {
                                         Next
                                     </Button>
                                 </Form.Item>
+                                <a href="" style={{textDecoration:'underline'}}>Not sure how long you need a designer for? Click here</a>
                             </Col>
                         </TabPane>
-                        <TabPane tab="Step 2" key="2">
+                        <TabPane tab={<span><Icon type="solution" />Designer</span>} key="2">
                             <Col xs={24} sm={24} md={24} lg={24} >
                                 <Form.Item label="What creative output will you mostly request from your graphic designer during your rented time? (i.e. annual report, social media post, web design, etc.) ">
                                     {getFieldDecorator('output',{
@@ -392,7 +393,7 @@ class CompleteForm extends Component {
                                 </Form.Item>
                             </Col>
                         </TabPane>
-                        <TabPane tab="Step 3 " key="3">
+                        <TabPane tab={<span><Icon type="credit-card" />Payment</span>} key="3">
                             <Col xs={24} sm={24} md={24} lg={24} style={{margin:'0 auto'}}>
                             <h6 className="" style={{color:'#484848',margin:'5px 0'}}>Please rate the importance of the following (5 being the highest)</h6>
                             <hr style={{width:'100%'}}/>
@@ -436,7 +437,7 @@ class CompleteForm extends Component {
                                     </Radio.Group>)}
                                 </Form.Item >
                             </Col>
-                            <Col xs={24} sm={24} md={12} lg={12} >
+                            <Col xs={24} sm={24} md={24} lg={24} >
                                 <Form.Item label="What interested you to rent a graphic designer from us?">
                                     {getFieldDecorator('interest',{
                                         rules: [{ required:true,message: 'Field is required'}],
@@ -463,7 +464,7 @@ class CompleteForm extends Component {
                                     </Radio.Group>)}
                                 </Form.Item >
                             </Col>
-                            <Col xs={24} sm={24} md={12} lg={12} >
+                            <Col xs={24} sm={24} md={24} lg={24} >
                                 <Form.Item label="Which of the below statement would best describe your approach to deadline?">
                                     {getFieldDecorator('deadline',{
                                         rules: [{ required:true,message: 'Field is required'}],
@@ -487,8 +488,7 @@ class CompleteForm extends Component {
                                     </Button>
                                 </Form.Item>
                             </Col>
-                            
-                                <Col xs={24} sm={24} md={24} lg={24}>
+                            <Col xs={24} sm={24} md={24} lg={24}>
                                     <Form.Item style={{textAlign:'center',margin:'0 auto'}}>
                                     <a href="">Looking for long term graphic designer? Click here</a>
                                 </Form.Item>

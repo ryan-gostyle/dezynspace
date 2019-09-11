@@ -66,7 +66,7 @@ class AddDesigner extends Component {
               }
           });
           if (await submit) {
-              window.location.href = "/admin/booking";
+              window.location.href = "/admin/dashboard#/designer";
           }
           }
         });
@@ -119,10 +119,6 @@ class AddDesigner extends Component {
             <Option value="09">09</Option>
           </Select>,
         );
-    
-        const websiteOptions = autoCompleteResult.map(website => (
-          <AutoCompleteOption key={website}>{website}</AutoCompleteOption>
-        ));
         return (
             <div>
               <Header  style={{ background: '#fff', padding: 0 }} >
@@ -209,12 +205,14 @@ class AddDesigner extends Component {
                       </Form.Item>
                   </Col>
                   <Col xs={24} sm={24} md={12} lg={12}>
-                    <Form.Item
-                          >
-                          {getFieldDecorator('type', {
-                              rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }],
-                          })(<Input placeholder="Type"/>)}
-                      </Form.Item>
+                  <Form.Item>
+                                {getFieldDecorator('type',{
+                                    rules: [{ required:true,message: 'Field is required'}],
+                            })(<Select placeholder="select one" >
+                                <Option value="1">Full Time</Option>
+                                <Option value="0">Part Time</Option>
+                                </Select>)}
+                                </Form.Item>
                   </Col>
                   <Col xs={24} sm={24} md={12} lg={12}>
                     <Form.Item>

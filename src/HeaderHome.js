@@ -74,7 +74,7 @@ class HeaderHome extends Component {
                     </DropdownToggle>
                     <DropdownMenu right>
                       <DropdownItem>
-                        <a href="/bookings">Bookings</a>
+                        <a href="/history">Bookings</a>
                       </DropdownItem>
                       <DropdownItem>
                         <a onClick={this.handlelogout}>Logout</a>

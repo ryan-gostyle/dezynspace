@@ -12,14 +12,14 @@ import {
 } from 'antd';
 import moment from 'moment';
 
-function hasErrors(fieldsError) {
-  return Object.keys(fieldsError).some(field => fieldsError[field]);
-}
-const { Option } = Select;
-const dateFormatList = ['MM/DD/YYYY', 'MM/DD/YY'];
-function handleChange(value) {
-  console.log(`selected ${value}`);
-}
+// function hasErrors(fieldsError) {
+//   return Object.keys(fieldsError).some(field => fieldsError[field]);
+// }
+// const { Option } = Select;
+// const dateFormatList = ['MM/DD/YYYY', 'MM/DD/YY'];
+// function handleChange(value) {
+//   console.log(`selected ${value}`);
+// }
 const datelist = [
   {
     value: '3',
@@ -53,7 +53,7 @@ class BookingForm extends React.Component {
 
   
   render() {
-    const { getFieldDecorator, getFieldsError, getFieldError, isFieldTouched } = this.props.form;
+    const { getFieldDecorator} = this.props.form;
     const formItemLayout = {
       labelCol: {
         xs: { span: 24 },
@@ -62,18 +62,6 @@ class BookingForm extends React.Component {
       wrapperCol: {
         xs: { span: 24 },
         sm: { span: 24 },
-      },
-    };
-    const tailFormItemLayout = {
-      wrapperCol: {
-        xs: {
-          span: 24,
-          offset: 0,
-        },
-        sm: {
-          span: 16,
-          offset: 8,
-        },
       },
     };
    

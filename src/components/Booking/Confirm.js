@@ -14,8 +14,7 @@ export default class Confirm extends Component {
         });
         console.log(await data.data.message);
         this.setState({ data: await data.data.designer });
-        window.location.href = "/";
-        window.alert('Payment Success!');
+        window.location.href = "/history";
     }
     render() {
         return (

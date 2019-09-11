@@ -45,7 +45,7 @@ class Header extends Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink><AnchorLink href="#top">Home</AnchorLink></NavLink>
+                <NavLink href="/">Home</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/">About</NavLink>
@@ -54,10 +54,10 @@ class Header extends Component {
                 <NavLink href="/">Portfolio</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink><AnchorLink href="#testimonials">Success Stories</AnchorLink></NavLink>
+                <NavLink href="/">Success Stories</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink ><AnchorLink href="#pricing">Pricing</AnchorLink></NavLink>
+                <NavLink href="/">Pricing</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/booking">Book</NavLink>
@@ -74,7 +74,7 @@ class Header extends Component {
                     </DropdownToggle>
                     <DropdownMenu right>
                       <DropdownItem>
-                        <a href="/bookings">Bookings</a>
+                        <a href="/history">Bookings</a>
                       </DropdownItem>
                       <DropdownItem>
                         <a onClick={this.handlelogout}>Logout</a>
